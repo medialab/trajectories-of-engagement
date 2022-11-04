@@ -1,0 +1,176 @@
+$schema: http://json-schema.org/draft-07/schema#
+title: answer
+description: one single answer to our questionnaire
+type: object
+properties:
+  id:
+    type: string
+  lang:
+    type: string
+  date_created:
+    type: string
+  date_updated:
+    type: string
+  part1_general:
+    type: object
+    labels:
+      en: General information
+      fr: Information générale
+    properties:
+      name:
+        type: string
+        labels:
+          en: What is the name of the project?
+          fr: Quel est le nom du projet
+      urls:
+        type: array
+        labels:
+          en: What is/are the URL(s)?
+          fr: Quel est/en sont les URLs ?
+        items:
+          type: string
+      concern:
+        type: string
+        labels:
+          en: What is the social concern or public issue which the trajectory of implication intends to address?
+          fr: Quel est le concernement social ou le problème public auquel la trajectoire d'implication entend répondre ?
+      actors_from_inside:
+        type: array
+        items: 
+          type: string
+        labels:
+          en: List the actors from the academic world (laboratories, consortia, research institutes, etc.) involved in the trajectory
+          fr: Lister les acteurs du monde universitaire (laboratoires, consortia, instituts de recherche, etc.) impliqués dans la trajectoire
+      actors_from_outside:
+        type: array
+        items:
+          type: string
+        labels:
+          en: List the actors from outside academia (NGOs, associations, informal groups...) involved in the trajectory
+          fr: Lister les acteurs de l'extérieur du monde universitaire (ONGs, associations, groupes informels...) impliqués dans la trajectoire
+      outside_inside_definition:
+        type: string
+        labels:
+          en: How would you define *the outside* the trajectory with which *the inside* negotiates processes of implication? Which actors constitute *the outside* and which actors constitute *the inside*?
+          fr: Comment définiriez-vous *l'extérieur* de la trajectoire avec laquelle *l'intérieur* négocie des processus d'implication ? Quels acteurs constituent *l'extérieur* et quels acteurs constituent *l'intérieur* ?
+    part2_description:
+      type: array
+      labels:
+        en: List the phases that constitute the research trajectory specifying whether they concern only the internal actors (i) or also in relation with the external actors (o)
+        fr: Lister les phases qui constituent la trajectoire de recherche en spécifiant si elles concernent uniquement les acteurs internes ou également les acteurs externes
+      items:
+        type: object
+        properties:
+          order:
+            type: number
+          title:
+            type: string
+            labels:
+              en: Name this phase of the trajectory
+              fr: Nommez cette phase de la trajectoire
+          classification:
+            type: string
+            labels: 
+              en: How would you define this phase according to the following typology?
+              fr: Comment définiriez-vous cette phase selon la typologie suivante ?
+            enum: [
+              'identification of issues / problematization',
+              'formulation of hypotheses',
+              'data collection',
+              'fieldwork (recordings, interviews)',
+              'handling of materials',
+              'data analysis',
+              'data interpretation',
+              'dissemination / exploitation of results',
+              'other (specify)',
+            ]
+          external_involved:
+            type: boolean
+            labels:
+              en: Are external actors involved in this phase?
+              fr: Des acteurs externes sont-ils impliqués dans cette phase ?
+          external_actors_involvement:
+            type: string
+            labels:
+              en: How are the external actors involved in this specific phase? Are they different from the rest of the project?
+              fr: Comment les acteurs externes se sont impliqués dans cette phase spécifique ? Sont-ils différents du reste du projet ?
+          external_actors_agency:
+            type: string
+            labels:
+              en: Could you describe in what form and in what way the external actors have the possibility to influence, direct and/or control the activities carried out during this phase?
+              fr: Pourriez-vous décrire sous quelle forme et de quelle manière les acteurs externes ont-ils la possibilité d'influencer, de diriger et/ou de contrôler les activités conduites durant cette phase ?
+          digital_tools:
+            type: string
+            labels:
+              en: Do digital tools play a role in the inside/outside relationship during this phase? If yes, which role?
+              fr: Les outils numériques jouent-ils un rôle dans la relation entre intérieur et extérieur durant cette phase ? Le cas échéant, lequel ?
+          tracing_devices:
+            type: array
+            items:
+              type: string
+            labels:
+              en: Which devices (digital or not) have produced materials (documents, logs, traces, images, videos, etc.) tracing the relationship between inside and outside? List the produced materials.
+              fr: Quels appareils (numériques ou pas) ont produit des matériaux (documents, journaux, traces, images, vidéos, etc.) permettant de tracer la relation entre l'intérieur et l'extérieur ? Lister les matériaux produits.
+          materials_exterior_for_interior:
+            type: string
+            labels:
+              en: What materials do the external actors produce for the internal actors in this phase?
+              fr: Quels matériaux les acteurs externes produisent-ils pour les acteurs internes durant cette phase ?
+          materials_interior_for_exterior:
+            type: string
+            labels:
+              en: What materials do the internal actors produce for the external actors in this phase?
+              fr: Quels matériaux les acteurs internes produisent-ils pour les acteurs externes durant cette phase ?
+  part3_reflection:
+    type: object
+    properties:
+      transformation_external:
+        type: string
+        labels:
+          en: How were the external actors transformed by the internal contributions?
+          fr: Comment les acteurs externes ont-ils été transformés par les contributions depuis l'intérieur ?
+      transformation_internal:
+        type: string
+        labels:
+          en: How were the internal actors transformed by the external contributions?
+          fr: Comment les acteurs de l'intérieur ont-ils été transformés par les contributions de l'extérieur ?
+      impact:
+        type: string
+        labels:
+          en: Which is or should be the impact of this trajectory of implication on the relationship between the outside and the inside? And more generally which is the expected impact on the related social concern?
+          fr: Quel est ou devrait être l'impact de cette trajectoire d'implication sur la relation entre l'extérieur et l'intérieur ? Et plus généralement quel est l'impact attendu sur le concernement social du projet ?
+      other_public_contributions:
+        type: string
+        labels:
+          en: Are there any public contributions of the trajectory? Which ones?
+          fr: Y a-t-il d'autres contributions publiques à la trajectoire ? Lesquelles ?
+      
+  part4_contacts:
+    type: array
+    items:
+      type: object
+      properties:
+        givenName:
+          labels:
+            en: Given name
+            fr: Nom de famille
+          type: string
+        familyName:
+          labels:
+            en: Family name
+            fr: Prénom
+          type: string
+        institution:
+          labels:
+            en: Institution
+            fr: Institution
+          type: string
+        email:
+          labels:
+            en: Email
+            fr: Email
+          type: string
+        interested_for_interview:
+          labels:
+            en: Would you be interested in participating to an interview (possibly in video) about the trajectory you described in this questionnaire?
+            fr: Seriez-vous intéressé.e pour participer à un entretien (possiblement en vidéo) concernant la trajectoire que vous avez décrite dans ce questionnaire ?

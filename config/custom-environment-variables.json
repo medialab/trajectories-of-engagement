@@ -1,0 +1,14 @@
+{
+  "port": "API_PORT",
+  "adminPassword": "ADMIN_PASSWORD",
+  "mongo": {
+    "db": "MONGO_DB",
+    "host": "MONGO_HOST",
+    "port": {
+      "__name": "MONGO_PORT",
+      "__format": "json"
+    },
+    "user": "MONGO_USER",
+    "password": "MONGO_PASSWORD"
+  }
+}

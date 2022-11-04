@@ -1,0 +1,11 @@
+{
+  "port": 4000,
+  "mongo": {
+    "db": "trajectories-of-engagement",
+    "host": "localhost",
+    "port": 27117,
+    "user": "admin",
+    "password": "password"
+  },
+  "adminPassword": "medial"
+}
