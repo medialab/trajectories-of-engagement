@@ -52,7 +52,7 @@ export default function AdminView ({lang}) {
   const params = useParams();
   const navigate = useNavigate();
   const [trajectories, setTrajectories] = useState(null);
-  const [loadingStatus, setLoadingStatus] = useState('pending');
+  const [loadingStatus, setLoadingStatus] = useState(null);
   const [newTrajectoryPrompted, setNewTrajectoryPrompted] = useState(false);
 
   const refreshTrajectories = () => {
@@ -86,7 +86,7 @@ export default function AdminView ({lang}) {
       error: 'could not load trajectories'
     })
   }
-  // useEffect(refreshTrajectories, [password, location, navigate, params]);
+  useEffect(refreshTrajectories, [password, location, navigate, params]);
 
   const handlePromptNewTrajectory = () => {
     setNewTrajectoryPrompted(true);

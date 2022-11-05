@@ -9,7 +9,7 @@ import { useAuth } from "../utils";
 
 export default function RequireAuth({ children, isAdmin}) {
   let {isAuthenticated} = useAuth();
-  let location = useLocation();
+  const location = useLocation();
   const params = useParams();
   if (!isAuthenticated) {
     return <Navigate to="/login" state={{ from: location, isAdmin, params }} replace />;

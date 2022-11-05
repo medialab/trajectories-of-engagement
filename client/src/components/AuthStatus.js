@@ -14,7 +14,7 @@ export default function AuthStatus() {
 
   return (
     <p>
-      Welcome
+      Welcome !!
       <button
         onClick={() => {
           auth.signout().then(() => navigate("/"));
