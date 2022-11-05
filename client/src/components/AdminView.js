@@ -1,6 +1,12 @@
 import { useEffect, useState } from 'react';
-import { NavLink } from 'react-router-dom';
 import { useForm } from "react-hook-form";
+
+import {
+  useParams,
+  useNavigate,
+  NavLink,
+  useLocation,
+} from "react-router-dom";
 
 import { toast } from 'react-toastify';
 
@@ -42,6 +48,9 @@ const NewTrajectoryForm = ({
 export default function AdminView ({lang}) {
 
   const { password } = useAuth();
+  const location = useLocation();
+  const params = useParams();
+  const navigate = useNavigate();
   const [trajectories, setTrajectories] = useState(null);
   const [loadingStatus, setLoadingStatus] = useState('pending');
   const [newTrajectoryPrompted, setNewTrajectoryPrompted] = useState(false);
@@ -57,6 +66,16 @@ export default function AdminView ({lang}) {
       })
       .catch(err => {
         console.error(err);
+        if (err?.response?.status === 403) {
+          navigate("/login", {
+            replace: true,
+            state: {
+              from: location, 
+              isAdmin: false, 
+              params
+            }
+          })
+        }
         setLoadingStatus('error');
         reject();
       })
@@ -67,7 +86,7 @@ export default function AdminView ({lang}) {
       error: 'could not load trajectories'
     })
   }
-  useEffect(refreshTrajectories, [password]);
+  // useEffect(refreshTrajectories, [password, location, navigate, params]);
 
   const handlePromptNewTrajectory = () => {
     setNewTrajectoryPrompted(true);
