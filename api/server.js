@@ -122,7 +122,6 @@ const authenticate = (password, trajectoryId) =>
       // if a trajectory is specified look
       // for its specific password
     } else if (trajectoryId) {
-      console.log('checking pwd', password);
       TRAJECTORIES.findOne({ 'data.id': trajectoryId }, (err, item) => {
         if (err) {
           console.error(err);
