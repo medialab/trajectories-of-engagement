@@ -20,8 +20,8 @@ secretGenerator:
 
 images:
   - name: scpomedialab/trajectories-of-engagement-client
-    newTag: '1.4'
+    newTag: 'prod'
   - name: scpomedialab/trajectories-of-engagement-api
-    newTag: '1.4'
+    newTag: 'prod'
   - name: mongo
     newTag: '4.2'
