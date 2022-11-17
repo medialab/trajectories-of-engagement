@@ -40,3 +40,5 @@ spec:
                 path: MONGO_USER
               - key: root_password
                 path: MONGO_PASSWORD
+              - key: admin_password
+                path: ADMIN_PASSWORD
