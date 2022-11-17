@@ -6,7 +6,7 @@ metadata:
     ingress.kubernetes.io/rewrite-target: /
 spec:
   rules:
-  - host: trajectories-of-engagement-pprd.medialab.sciences-po.fr
+  - host: trajectories-pprd.sciencespo.fr
     http:
       paths:
         - path: /

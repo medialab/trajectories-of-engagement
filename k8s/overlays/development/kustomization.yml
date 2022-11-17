@@ -23,8 +23,8 @@ secretGenerator:
 
 images:
   - name: scpomedialab/trajectories-of-engagement-client
-    newTag: 'master'
+    newTag: 'main'
   - name: scpomedialab/trajectories-of-engagement-api
-    newTag: 'master'
+    newTag: 'main'
   - name: mongo
     newTag: '4.2'

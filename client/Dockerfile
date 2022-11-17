@@ -1,14 +1,14 @@
-FROM node:11.10.0-alpine AS builder
+FROM node:16.4.0-alpine AS builder
 
 WORKDIR /frontend
 
 ADD . /frontend/
 
-RUN apk add --update --virtual --no-cache python build-base \
+RUN apk add --update --virtual --no-cache python3 build-base \
     && npm ci --production false \
     && PUBLIC_URL="/" REACT_APP_API_URL="/api/" npm run build \
     && rm -rf ./node_modules /root/.npm /root/.node-gyp /root/.config /usr/lib/node_modules \
-    && apk del python build-base
+    && apk del python3 build-base
 
 FROM nginx:alpine
 
