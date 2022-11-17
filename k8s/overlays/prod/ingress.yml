@@ -4,10 +4,10 @@ metadata:
   name: ingress
   annotations:
     ingress.kubernetes.io/rewrite-target: /
-    nginx.ingress.kubernetes.io/server-alias: trajectories-of-engagement-prod.medialab.sciences-po.fr
+    nginx.ingress.kubernetes.io/server-alias: trajectories.sciencespo.fr
 spec:
   rules:
-  - host: trajectories-of-engagement.medialab.sciences-po.fr
+  - host: trajectories.sciencespo.fr
     http:
       paths:
         - path: /
