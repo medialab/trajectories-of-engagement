@@ -19,7 +19,7 @@ build_client:
   tags:
     - proxy
   only:
-    - master
+    - main
     - staging
     - prod
     - tags
@@ -36,7 +36,7 @@ build_api:
   tags:
     - proxy
   only:
-    - master
+    - main
     - staging
     - prod
     - tags
