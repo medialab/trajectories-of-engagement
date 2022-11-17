@@ -20,8 +20,8 @@ secretGenerator:
 
 images:
   - name: scpomedialab/trajectories-of-engagement-client
-    newTag: '1.4'
+    newTag: 'staging'
   - name: scpomedialab/trajectories-of-engagement-api
-    newTag: '1.4'
+    newTag: 'staging'
   - name: mongo
     newTag: '4.2'
