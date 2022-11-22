@@ -1,4 +1,4 @@
-FROM node:13.13.0-alpine3.10
+FROM node:16.4.0-alpine
 
 COPY --chown=node:node . /api
 
