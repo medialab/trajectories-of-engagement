@@ -16,6 +16,8 @@ import Landing from "./components/Landing";
 import TrajectoryView from "./components/TrajectoryView";
 import AdminView from "./components/AdminView";
 
+import './App.scss'
+
 function NoMatch() {
   return (
     <div>
@@ -27,7 +29,7 @@ function NoMatch() {
 function App() {
   return (
     <AuthProvider>
-      <h1><NavLink to={'/'}>Trajectories of engagement</NavLink></h1>
+      {/* <h1><NavLink to={'/'}>Trajectories of engagement</NavLink></h1> */}
 
       <Routes>
         <Route element={<Layout />}>

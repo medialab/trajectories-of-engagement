@@ -1,5 +1,4 @@
-# Trajectories of implication
-## Material Production and Digital Environments in the Humanities and Social Sciences 
+## Public Participation, Material Production and Digital Environments in the Humanities and Social Sciences 
 
 
 Research in humanities and social sciences is often driven by a social concern or a public issue. In these contexts, the researcher is pushed to build a trajectory of implication. With the term **‘trajectory of implications’**, we refer to a research trajectory that includes at least one phase where the researcher builds a relationship with ‘the outside’. 
