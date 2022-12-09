@@ -271,7 +271,7 @@ app.delete('/trajectory/:id', authMiddleware, (req, res) => {
 
 app.put('/checkauth/:id?', (req, res) => {
   const pwd = req.body.password;
-  const id = req.params?.id;
+  const id = req.params && req.params.id;
   authenticate(pwd, id)
     .then(() => {
       res.status(200).send('Valid password');
