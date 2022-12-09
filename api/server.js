@@ -232,7 +232,7 @@ app.put('/trajectory/:id', validateMiddleware, authMiddleware, (req, res) => {
 app.put('/trajectory/password/:id', authMiddleware, (req, res) => {
   const { id } = req.params;
   const query = { 'data.id': id };
-  const pwd = req.body?.password;
+  const pwd = req.body && req.body.password;
   if (isValidPassword(pwd)) {
     hash(pwd)
       .then(hashedPassword => {
