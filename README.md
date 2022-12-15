@@ -37,7 +37,7 @@ npm run start
 It will open automatically the website in your browser on `http://localhost:3000`
 
 
-## Prod Deployment with Docker
+## Prod deployment with Docker
 
 Build the containers:
 ```
