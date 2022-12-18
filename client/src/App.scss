@@ -16,6 +16,9 @@ body {
     font-size: var(--fontsizebase);
     box-sizing: border-box;
   }
+  > p:last-of-type {
+    margin-bottom: 20vh;
+  }
   @media (max-width: 900px) {
     > * {
       width: 100%;
@@ -41,6 +44,22 @@ body {
     text-transform: uppercase;
     pointer-events: none;
     // font-variant: small-caps;
+  }
+
+  .title-letter {
+    transition: all .5s ease;
+    pointer-events: all;
+    z-index: 3;
+    text-align: center;
+    text-shadow: -1px -1px 0 #FFF, 1px -1px 0 #FFF, -1px 1px 0 #FFF, 1px 1px 0 #FFF;
+  }
+
+  .vector-path {
+    stroke: red;
+    stroke-dasharray: 5px 2px;
+  }
+  #arrowhead polygon {
+    fill : red;
   }
 }
 
