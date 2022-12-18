@@ -15,7 +15,7 @@ export default function Landing({
   const [curve, setCurve] = useState('');
   // trick
   const [heightIsSetup, setHeightIsSetup] = useState(false);
-  const [hoveredTitleCharIndex, setHoveredTitleCharIndex] = useState(null);
+  const [hoveredTitleCharIndex, setHoveredTitleCharIndex] = useState(undefined);
   const [measureRef, bounds] = useMeasure();
   const { width, height: realHeight } = bounds;
   const height = realHeight;
