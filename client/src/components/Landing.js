@@ -3,50 +3,64 @@ import intro from '../contents/en/introduction.md';
 import Md from 'react-markdown';
 import useMeasure from 'react-use-measure'
 import { useState, useEffect, useMemo } from 'react';
+import {Path} from './animatedPrimitives'
 import * as d3 from 'd3-shape';
-console.log('d3', d3);
 
-export default function Landing ({
+export default function Landing({
   lang = 'en',
   debug = false
 }) {
   const [content, setContent] = useState(null);
+  const [shapePoints, setShapePoints] = useState([]);
+  const [curve, setCurve] = useState('');
+  // trick
+  const [heightIsSetup, setHeightIsSetup] = useState(false);
+  const [hoveredTitleCharIndex, setHoveredTitleCharIndex] = useState(null);
   const [measureRef, bounds] = useMeasure();
-  const {width, height: realHeight} = bounds;
+  const { width, height: realHeight } = bounds;
   const height = realHeight;
   useEffect(
     () => {
       fetch(intro)
-      .then(response => {
-        return response.text()
-      })
-      .then((txt) => {
-        setContent(txt)
-      })
+        .then(response => {
+          return response.text()
+        })
+        .then((txt) => {
+          setContent(txt)
+        })
     }
-  , [lang]);
+    , [lang]);
 
-  const titleLetters = useMemo(() => Array.from(lang === 'en' ? "Toajectories of engagement" : "Trajectoires d'implication"), [lang]);
+  const titleLetters = useMemo(() => Array.from(lang === 'en' ? "Trajectories of engagement" : "Trajectoires d'implication"), [lang]);
 
   const fontHeight = 75;
 
   const letters = useMemo(() => {
     const yColumnHeight = 1 / titleLetters.length;
+    let currentRow = 0;
+    let indexInRow = 0;
     return titleLetters.map((letter, index) => {
       const x = 0.25 + Math.random() * .5;
+      if (letter === ' ') {
+        currentRow++;
+        indexInRow = -1;
+      }
+      indexInRow++;
       return {
         letter,
         // [0,1]
         x,
         // [0,1]
-        y: index * yColumnHeight
+        y: index * yColumnHeight,
+        row: currentRow,
+        indexInRow
       }
     })
   }, [titleLetters]);
 
   const curvePoints = useMemo(() => {
     return [
-      ...letters.reduce((cur, {x,y}, index) => {
+      ...letters.reduce((cur, { x, y }, index) => {
         return [
           ...cur,
           {
@@ -58,77 +72,95 @@ export default function Landing ({
     ]
   }, [letters, width, height]);
 
-  const shapePoints = useMemo(() => {
-    const margin = 10;
-    return [
-      ...letters.reduce((cur, {x, y}, index) => {
-        const next = index === letters.length - 1 ? undefined : letters[index + 1];
-      return [
-        ...cur,
-        {
-          x: x * width - margin, 
-          y: y * height
-        },
-        {
-          x: x * width - margin, 
-          y: y * height + fontHeight * 1.3
-        },
-        next ?
-        next.x < x ?
-        {
-          x: x * width + fontHeight,
-          y:  y * height + fontHeight * 1.3
-        }
-        :
-        {
-          x: next.x * width + fontHeight,
-          y:  y * height + fontHeight * 1.3
-        }
-        : undefined,
-        next ?
-        next.x < x ?
+  useEffect(() => {
+    if (height) {
+      setTimeout(() => {
+        setHeightIsSetup(true);        
+      }, 700)
+    }
+  }, [height])
 
+  // const curveFn = useMemo(() => d3.line().x(d => d.x).y(d => d.y).curve(d3.curveBasisOpen), [width, height, letters]);
+
+  useEffect(function updateShapePoints() {
+    const margin = 10;
+    const newShapePoints = [
+      ...letters.reduce((cur, { x, y }, index) => {
+        const next = index === letters.length - 1 ? undefined : letters[index + 1];
+        return [
+          ...cur,
+          {
+            x: x * width - margin,
+            y: y * height
+          },
+          {
+            x: x * width - margin,
+            y: y * height + fontHeight * 1.3
+          },
+          next ?
+            next.x < x ?
+              {
+                x: x * width + fontHeight,
+                y: y * height + fontHeight * 1.3
+              }
+              :
+              {
+                x: next.x * width + fontHeight,
+                y: y * height + fontHeight * 1.3
+              }
+            : undefined,
+          next ?
+            next.x < x ?
+
+              {
+                x: x * width + fontHeight,
+                y: next.y * height
+              }
+              :
+              {
+                x: next.x * width + fontHeight,
+                y: next.y * height
+              }
+            : undefined
+        ].filter(p => p)
+      }, [
         {
-          x: x * width + fontHeight,
-          y:  next.y * height
+          x: width,
+          y: 0
         }
-        :
-        {
-          x: next.x * width + fontHeight,
-          y: next.y * height
-        }
-        : undefined
-      ].filter(p => p)
-    }, [
+      ]),
       {
         x: width,
-        y: 0
+        y: height
       }
-    ]),
-    {
-      x: width,
-      y: height
-    }
-    ]
-  }, [letters, width, height]);
+    ];
+    setShapePoints(newShapePoints)
+  }, [letters, width, content, heightIsSetup]); /* eslint react-hooks/exhaustive-deps : 0 */
 
-  // const curve = curve(curveCatmullRom.alpha(0.5));
-  // console.log(d3.curve(curvePoints.map(({x, y}) => [x, y])));
-
+  useEffect(() => {
+    const curveFn = d3.line().x(d => d.x).y(d => d.y).curve(d3.curveBasisOpen);
+    let newCurve = curveFn(shapePoints);
+    // console.log('width : ', width, 'shape points : ', shapePoints[2], 'curve : ', newCurve && newCurve.substring(0, 100));
+    setCurve(newCurve);
+    setTimeout(() => {
+      let newCurve = curveFn(shapePoints);
+      setCurve(newCurve);
+    }, 500)
+  }, [shapePoints, width, content, height])
   return (
     <div ref={measureRef} className="Landing">
       <svg
-      width={width}
-      height={height}
-      style={{
-        position: 'absolute',
-        left: 0,
-        top: 0,
-        width: width,
-        height: height,
-        zIndex: -1,
-        // display: 'none'
-      }}
+        width={width}
+        height={height}
+        style={{
+          position: 'absolute',
+          left: 0,
+          top: 0,
+          width: width,
+          height: height,
+          zIndex: -1,
+          // display: 'none'
+        }}
       >
         {/* <rect
           fill="red"
@@ -138,65 +170,36 @@ export default function Landing ({
           height={height}
         /> */}
         {
-          curvePoints.map(({x, y}, index) => {
+          debug ?
+            curvePoints.map(({ x, y }, index) => {
+              return (
+                <circle
+                  key={index}
+                  cx={x}
+                  cy={y}
+                  r={5}
+                  fill="red"
+                />
+              )
+            })
+            : false
+        }
+        
+        {
+          debug ?
+            <polygon points={
+              shapePoints.map(({ x, y }) => {
+                return `${x}, ${y}`
+              }).join(', ')
+            } fill="purple" />
+            : null
+        }
+
+        {debug ?
+          shapePoints.map(({ x, y }, index) => {
             return (
               <circle
                 key={index}
-                cx={x}
-                cy={y}
-                r={5}
-                fill="red"
-              />
-            )
-          })
-        }
-        {
-          <path
-            stroke="red"
-            fill="transparent"
-            d={`M ${curvePoints[0].x} ${curvePoints[0].y} 
-            Q ${curvePoints[1].x} ${curvePoints[1].y}, ${curvePoints[2].x} ${curvePoints[2].y}
-            ${
-              []
-              // curvePoints.slice(2)
-              .map(({x, y}) => `T ${x} ${y}`)
-              .join(' ')
-              // curvePoints.slice(1).map(({x, y}) => `L ${x} ${y}`).join(' ')
-              // curvePoints.slice(1)
-              // .reduce((cur, {x, y}, index) => {
-              //   if (index%2 === 0) {
-              //     return cur;
-              //   }
-              //   if (index === curvePoints.length - 2) {
-              //     return cur;
-              //   }
-              //   const next = curvePoints[index + 1];
-              //   const nextNext = curvePoints[index + 2];
-              //   // if (index === 0) {
-              //   //   return `${cur} Q ${next.x} ${next.y} ${x} ${y}`
-              //   // }
-              //   // return `${cur} T ${x} ${y}`
-              //   return `${cur} ${index === 0 ? 'Q' : 'Q'} ${x} ${y}, ${next.x} ${next.y}`;
-              // }, '')
-            }
-            `}
-          />
-        } 
-        {
-          debug ?
-          <polygon points={
-            shapePoints.map(({x, y}) => {
-              return `${x}, ${y}`
-            }).join(', ')
-          } fill="purple" />
-          : null
-        }
-        
-        { debug ?
-          shapePoints.map(({x, y}, index) => {
-            return (
-              <circle 
-              key={index}
                 cx={x}
                 cy={y}
                 r={5}
@@ -206,35 +209,81 @@ export default function Landing ({
           })
           : null
         }
+        {
+          <Path
+            fill="transparent"
+            d={curve}
+            markerEnd="url(#arrowhead)"
+            className="vector-path"
+            style={{
+              opacity: heightIsSetup ? 1 : 0
+            }}
+          />
+        }
+        <defs>
+          <marker id="arrowhead" markerWidth="10" markerHeight="7"
+            refX="0" refY="3.5" orient="auto">
+            <polygon points="0 0, 10 3.5, 0 7" fill="red" stroke="red" />
+          </marker>
+        </defs>
       </svg>
       {content ? <Md>{content}</Md> : <div>Loading</div>}
-      <h1 
+      <h1
         className="title"
-        // style={{display: 'none'}}
+      // style={{display: 'none'}}
       >
-      {
-        letters.map(({x, y, letter}, index) => {
-          return (
-            <span
-              style={{
-                position: 'absolute',
-                left: `${x * width}px`,
-                top: `${y * height}px`,
-                fontSize: fontHeight
-              }}
-              key={index}
-            >
-              {letter === ' ' ? '⨯' : letter}
-            </span>
-          )
-        })
-      }
+        {
+          letters.map(({ x, y, letter, row, indexInRow }, index) => {
+            const handleMouseMove = () => {
+               if (hoveredTitleCharIndex === undefined) {
+                setHoveredTitleCharIndex(index);
+              }
+            }
+            const handleMouseLeave = () => {
+              if (hoveredTitleCharIndex === index) {
+                setHoveredTitleCharIndex(undefined);
+              }
+            }
+
+            let realX = x * width;
+            let realY = y * height;
+
+            if (hoveredTitleCharIndex !== undefined) {
+              const refPos = letters[hoveredTitleCharIndex];
+              const fontWidth = fontHeight;
+              if (hoveredTitleCharIndex !== index) {
+                const rowDisplace = refPos.row - row;
+                realY = refPos.y * height - rowDisplace * fontHeight * 1.5;
+                const indexDisplace = refPos.indexInRow - indexInRow;
+                realX =  refPos.x * width - indexDisplace * fontWidth;
+              }
+            }
+
+            return (
+              <span
+                style={{
+                  position: 'absolute',
+                  left: `${realX}px`,
+                  top: `${realY}px`,
+                  fontSize: fontHeight
+                }}
+                className="title-letter"
+                onMouseEnter={handleMouseMove}
+                onMouseMove={handleMouseMove}
+                onMouseLeave={handleMouseLeave}
+                key={index}
+              >
+                {letter === ' ' ? '⨯' : letter}
+              </span>
+            )
+          })
+        }
       </h1>
       <style>{
         `
         /*  // polygon(71.78% 23.22%, 99.4% 23.3%, 99.56% 77.52%, 72.19% 80.87%); */
         .Landing::before {
-      shape-outside : polygon(${shapePoints.map(({x, y}) => `${x / width * 100}% ${y / height * 100}%`).join(', ')});
+      shape-outside : polygon(${shapePoints.map(({ x, y }) => `${x / width * 100}% ${y / height * 100}%`).join(', ')});
       content: "";
       float: right;
       height: ${height}px;
