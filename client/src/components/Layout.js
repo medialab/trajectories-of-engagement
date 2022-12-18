@@ -1,12 +1,12 @@
 import * as React from "react";
 import {
-  Link,
+  // Link,
   Outlet,
 } from "react-router-dom";
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
-import AuthStatus from "./AuthStatus";
+// import AuthStatus from "./AuthStatus";
 
 export default function Layout() {
   return (
@@ -14,12 +14,12 @@ export default function Layout() {
     
 
       <Outlet />
-      <ul>
+      {/* <ul>
         <li>
           <Link to="/admin">Go to admin</Link>
         </li>
       </ul>
-      <AuthStatus />
+      <AuthStatus /> */}
       <ToastContainer autoClose={1000} />
     </div>
   );
