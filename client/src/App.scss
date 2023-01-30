@@ -8,6 +8,22 @@ body {
   position: relative;
   margin: calc(var(--fontsizebase) * 2);
   box-sizing: border-box;
+
+  .lang-switch-container {
+    position: fixed;
+    left: calc(100vw - 5rem);
+    top: 0;
+    .lang-btn {
+      background: none;
+      border: none;
+      font-family: inherit;
+      font-size: 1rem;
+      cursor: pointer;
+      &.is-active {
+        font-weight: 800;
+      }
+    }
+  }
   > * {
     width: 50%;
   }

@@ -1,16 +1,19 @@
 /* eslint import/no-webpack-loader-syntax : 0 */
-import intro from '../contents/en/introduction.md';
+import introEn from '../contents/en/introduction.md';
+import introFr from '../contents/fr/introduction.md';
+import { useSearchParams } from 'react-router-dom';
 import Md from 'react-markdown';
 import useMeasure from 'react-use-measure'
 import { useState, useEffect, useMemo } from 'react';
-import {Path} from './animatedPrimitives'
+import { Path } from './animatedPrimitives'
 import * as d3 from 'd3-shape';
 
 export default function Landing({
-  lang = 'en',
+  // lang = 'en',
   debug = false
 }) {
   const [content, setContent] = useState(null);
+  const [searchParams, setSearchParams] = useSearchParams();
   const [shapePoints, setShapePoints] = useState([]);
   const [curve, setCurve] = useState('');
   // trick
@@ -20,8 +23,14 @@ export default function Landing({
   const [measureRef, bounds] = useMeasure();
   const { width, height: realHeight } = bounds;
   const height = realHeight;
+  let lang = useMemo(() => {
+    return searchParams && searchParams.get('lang');
+  }, [searchParams]);
+  lang = lang || 'en';
+
   useEffect(
     () => {
+      const intro = lang === 'en' ? introEn : introFr;
       fetch(intro)
         .then(response => {
           return response.text()
@@ -76,7 +85,7 @@ export default function Landing({
   useEffect(() => {
     if (height) {
       setTimeout(() => {
-        setHeightIsSetup(true);        
+        setHeightIsSetup(true);
       }, 700)
     }
   }, [height])
@@ -185,7 +194,7 @@ export default function Landing({
             })
             : false
         }
-        
+
         {
           debug ?
             <polygon points={
@@ -236,7 +245,7 @@ export default function Landing({
         {
           letters.map(({ x, y, letter, row, indexInRow }, index) => {
             const handleMouseMove = () => {
-               if (hoveredTitleCharIndex === undefined && !lettersAreMoving) {
+              if (hoveredTitleCharIndex === undefined && !lettersAreMoving) {
                 setHoveredTitleCharIndex(index);
                 setLettersAreMoving(true);
                 setTimeout(() => setLettersAreMoving(false), 500);
@@ -260,7 +269,7 @@ export default function Landing({
                 const rowDisplace = refPos.row - row;
                 realY = refPos.y * height - rowDisplace * fontHeight * 1.5;
                 const indexDisplace = refPos.indexInRow - indexInRow;
-                realX =  refPos.x * width - indexDisplace * fontWidth;
+                realX = refPos.x * width - indexDisplace * fontWidth;
               }
             }
 
@@ -296,6 +305,20 @@ export default function Landing({
           })
         }
       </h1>
+
+      <div className="lang-switch-container">
+        <button onClick={() => {
+          setSearchParams({ lang: 'en' })
+        }} className={`lang-btn ${lang === 'en' ? 'is-active' : ''}`}>
+          en
+        </button>
+        <button onClick={() => {
+          setSearchParams({ lang: 'fr' })
+        }} className={`lang-btn ${lang === 'fr' ? 'is-active' : ''}`}>
+          fr
+        </button>
+      </div>
+
       <style>{
         `
         /*  // polygon(71.78% 23.22%, 99.4% 23.3%, 99.56% 77.52%, 72.19% 80.87%); */
