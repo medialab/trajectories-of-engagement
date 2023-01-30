@@ -1,13 +1,18 @@
 /* eslint import/no-webpack-loader-syntax : 0 */
-import introEn from '../contents/en/introduction.md';
-import introFr from '../contents/fr/introduction.md';
+import { useState, useEffect, useMemo } from 'react';
+
 import { useSearchParams } from 'react-router-dom';
 import Helmet from 'react-helmet';
 import Md from 'react-markdown';
 import useMeasure from 'react-use-measure'
-import { useState, useEffect, useMemo } from 'react';
-import { Path } from './animatedPrimitives'
+import { Path } from '../animatedPrimitives'
 import * as d3 from 'd3-shape';
+
+import './Landing.scss';
+
+
+import introEn from '../../contents/en/introduction.md';
+import introFr from '../../contents/fr/introduction.md';
 
 const ANIMATION_DURATION = 500;
 

@@ -12,8 +12,9 @@ import { toast } from 'react-toastify';
 
 import {v4 as genId} from 'uuid';
 
-import { deleteTrajectory, getTrajectories, createTrajectory, updateTrajectoryPassword } from "../client";
-import { useAuth } from '../utils';
+import { deleteTrajectory, getTrajectories, createTrajectory, updateTrajectoryPassword } from "../../client";
+import { useAuth } from '../../utils';
+import AuthStatus from '../AuthStatus';
 
 const isPasswordValid = pwd => {
   return pwd !== null 
@@ -127,13 +128,17 @@ export default function AdminView ({lang}) {
         loadingStatus === 'success'
         ?
         <>
-        <h2>Trajectories list</h2>
+        <header>
+          <h2>Trajectoires d'implication | admin | Liste des trajectoires</h2>
+          <AuthStatus />
+        </header>
+        
         <ul>
           {
             trajectories.map(({_id, data}) => {
 
               const handleDelete = () => {
-                if (window.confirm(`Are you sure you want to delete the trajectory "${data?.part1_general?.name}"`)) {
+                if (window.confirm(`Es-tu sûr de vouloir détruire la trajectoire "${data?.part1_general?.name}"`)) {
                   const deleteTrajectoryPm = new Promise((resolve, reject) => {
                     deleteTrajectory(data?.id, password)
                     .then(refreshTrajectories)

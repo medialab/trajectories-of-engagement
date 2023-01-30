@@ -14,13 +14,13 @@ export default function AuthStatus() {
 
   return (
     <p>
-      Welcome !!
+      Vous êtes connecté.e en tant qu'admin
       <button
         onClick={() => {
           auth.signout().then(() => navigate("/"));
         }}
       >
-        Sign out
+        Se déconnecter
       </button>
     </p>
   );
