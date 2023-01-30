@@ -15,6 +15,7 @@ body {
   > ul {
     font-size: var(--fontsizebase);
     box-sizing: border-box;
+    padding-left: 0;
   }
   > p:last-of-type {
     margin-bottom: 20vh;
@@ -52,6 +53,7 @@ body {
     z-index: 3;
     text-align: center;
     text-shadow: -1px -1px 0 #FFF, 1px -1px 0 #FFF, -1px 1px 0 #FFF, 1px 1px 0 #FFF;
+    padding: 2rem;
   }
 
   .vector-path {

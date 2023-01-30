@@ -1,72 +1,69 @@
 ## Public Participation, Material Production and Digital Environments in the Humanities and Social Sciences 
 
+Join our network and share your experience on the forms and trajectories of public participation in your research process !
 
-Research in humanities and social sciences is often driven by a social concern or a public issue. In these contexts, the researcher is pushed to build a trajectory of implication. With the term **‘trajectory of implications’**, we refer to a research trajectory that includes at least one phase where the researcher builds a relationship with ‘the outside’. 
+### Abstract
 
-With the term **‘outside’**, we refer to any actor who is not part of the research team carrying out the project (the ‘inside’). This can refer to other researchers, institutions, associations, companies, students and, of course, the citizen in general. 
+Trajectories of engagement refer to moments in the research process where external actors are involved and co-construct knowledge with the research team. These research paths involving an outside can take various forms of material production based on physical and/or digital environments . Often used in digital data-grounded labs or citizen science projects, trajectories of engagement are shaped in research which aims to address social concerns or public issues. 
 
-So, **trajectories of implications are research paths that articulate moments where only the inside is involved with other moments where inside and outside are both implicated**. External actors can be involved in different ways: providing data, interpreting data and also cocreating the research protocol. 
+This research project aims to explore and describe the different forms that trajectories of engagement can take in the humanities and social sciences, the interactions between internal and external actors that they can generate, and the materiality of the socio-technical choices involved. The expected outputs are to build an observatory and a network of researchers interested in studying these trajectories and a book will be written to present the identified trajectories.
 
-In recent years, the emergence of digital tools and the dynamics of voluntary or involuntary **traceability of social life** (logs, mobile data, creation of content on the web and social media, etc.) have favoured the diffusion of these types of research trajectories in several disciplinary areas of the humanities and social sciences. However, these trajectories do not need the digital device to exist. They can rely on different types of material configurations mixing physical and digital media: focus groups, design thinking meetings, participatory platforms, crowdsourcing tools, research-creation activities, etc.
+You  can participate in the project by contacting us to schedule an interview or filling out the questionnaire on their own. All participants will be invited to the final event, the 15 september 2023 in Paris and may be included in a collective book on the identified trajectories.
 
-These trajectories have three common properties: 
-They respond to a public issue or **social concern** (climate change, AI, disinformation, cancel culture, etc.)
-They aim to create strategies of involvement of external actors related to the **research in progress** (and not just at the end of the research)
-They are supported by the **social traceability** made possible by digital devices (logs, texts, media, traces that document the implication of the different actors in the trajectories) 
+### Context
 
-Trajectories of implications are particularly popular in **lab-type structures** (media labs, digital humanities labs, data labs, etc.) that ground their identity on the use of digital data and that are frequently solicited by decision makers for carrying out projects that involve external actors (at least in the phase of data collection). They are also used in citizen science projects whose research protocols are designed to involve citizens in the production of science. Yet, trajectories of implication can also be carried out by traditional research centers that can propose original material configurations for involving the outside.
+Research in humanities and social sciences is often driven by a desire to address social concerns or public issues. In these contexts, the researcher is often pushed to build a trajectory of engagement.
 
-Trajectories of implication are configured as research paths dotted with moments of external involvement that can take different **forms**:
-- interfaces (e.g. artistic installations)
-- experimental protocols (e.g. publication protocols) 
-- devices (e.g. participatory platforms)
-- events (e.g. hackathon)
-- ….
+What do we mean by trajectory of engagement? Simply put, it’s a research trajectory where the research team (the “inside”) engages and builds relationships with external actors (the “outside”). This outside could be other researchers, institutions, associations, companies, students, or even the general public. This engagement from the “outside” can take different forms such as providing or interpreting data or even co-creating the research protocol.
 
-The implication can be configured in **both directions**: 
-- the research team (inside) can implicate in the research trajectory external actors or strategies from the outside  (e.g. reproduction of models from third places, play practices, etc.)
-- external actors (outside) can be implicated in the research trajectories with different kinds of contribution (e.g. data, tasks, ideas, etc.)
+So, trajectories of engagement are research paths that articulate moments where only the inside is involved with other moments where inside and outside are both implicated.
 
-Thus, trajectories of implication, which consist of moments of entry and exit from the classic research path, are moments of **knowledge production** in which the outside co-constructs with the inside.  What is interesting in these contexts is to observe the porosity and the role played by the material infrastructure: what is the role of the technical device? What is its transformative potential? What is the material configuration more favourable to the implication (in different contexts)?  
+These trajectories share three key properties:
 
-Coping with these new research trends, this call for participation aims to develop a **critical and collective reflection** on this new way of doing research in interaction with the outside that has spread in the humanities and social sciences. 
-We aim at building:
-An **observatory** of trajectories of implication
-A **network** of researchers and professionals interested in investigating the materiality of these trajectories of implication and the choices implicit in this approach. 
+* They respond to a public issue or social concern (such as climate change, AI, disinformation, etc.)
+* They aim to actively engage external actors in the research process, rather than just consulting them at the end.
+* They might be  supported by the traceability of social interactions made possible by digital devices.
 
-In particular, we wish to explore the following aspects:
-- The different **forms** that these trajectories can take
-- The **interactions** between internal and external actors that they can generate
-- The **materiality** of the socio-technical choices that are adopted
+Involvement of external actors can take various forms, such as interfaces (artistic installations), experimental protocols (publication protocols), devices (participatory platforms), and events (hackathons). The involvement of the outside in research trajectories can go both ways. The research team can incorporate external actors or strategies from the outside into the research process (such as reproducing models from third places or using play practices). Alternatively, external actors can contribute to the research trajectories in various ways, such as by providing data, tasks, or ideas. In short trajectories of engagement are moments of knowledge production in which the outside co-constructs with the inside.
 
+### Goals & Purposes
 
-### How to participate
+The purpose of this research project is to engage in a critical and collective reflection  on trajectories of engagement in the humanities and social sciences. The goals of the project include building an observatory and network of researchers interested in investigation the materiality of these trajectories and exploring the following research questions:
 
-Do you cope with these questions in your research? Have you ever built a trajectory of implication? Or are you just intrigued by this approach?
+* What are the different forms that trajectories of engagement can take in the humanities and social sciences?
+* How do internal and external actors interact in trajectories of engagement, and what are the implications of these interactions for knowledge production?
+* What is the role of the material infrastructure in trajectories of engagement, and how does it shape the involvement of external actors? What are material configurations that foster involvement in different contexts ? 
+* What are the material and socio-technical choices involved in the use of trajectories of engagement, and how do these choices impact the research process and outcomes?
+
+### Participation
+
+*Do you cope with these questions in your research? Have you ever built a trajectory of engagement? Or are you just intrigued by this approach?*
 
 You can join this project in three ways:
-You can fill the questionnaire online describing your trajectory of implication (link)
-You can contact us and we can organize an interview to fill the questionnaire together (msevero@parisnanterre.fr)
-You can also contact us to obtain more information about the project and be involved even if you don’t have a project to share (msevero@parisnanterre.fr).
 
-All people that will fill the questionnaire or accept the interview will be also proposed to make a video to represent the trajectory in a summarized way.
-Results of the questionnaire/interview and the video will be published in the observatory.
-All participants will be invited in a final event (juin 2023) in Paris to present their trajectories and share their experience.
-After this event, a collective book will be prepared to present the identified trajectories.
+1. Contact us and we can organize an interview to fill the questionnaire together.
+1. (coming soon) You can directly fill the questionnaire online
+1. You can also contact us to obtain more information about the project and be involved even if you don’t have a project to share.
 
-### Calendar
+All participants who fill out the questionnaire or participate in an interview will have the opportunity to make a video summarizing their trajectory. The results of the query and the video will be published in the observatory. All participants will also be invited to a final event in Paris the 15 September 2023 to present their trajectories and share their experiences. After the event, a collective book will be produced to present the identified trajectories.
 
-Launch of project            September 2022
-Questionnaire/Interviews        October 2022 – February 2023
-Publication of the observatory    April 2023
-Final event                June 2023
-Collective book            December 2023
+### Research Team
 
-
-### Organisers 
 Robin De Mourat, médialab, Sciences Po
+
+Alex Pellier, Dicen-IdF, Université Paris Nanterre
+
 Donato Ricci, médialab, Sciences Po
-Marta Severo, Dicen-IdF, Université Paris Nanterre, msevero@parisnanterre.fr 
+
+Marta Severo, Dicen-IdF, Université Paris Nanterre, msevero@parisnanterre.fr
 
 ### Funding
-This project is funded by the Institut Universitaire de France (Marta Severo, junior grant), ANR COLLABORA (ANR-18-CE38-0005). 
+
+This project is funded by the Institut Universitaire de France (Marta Severo, junior grant)
+
+### Participants (so far)
+
+* Muriel Amar - À l’ombre des bibliothèques - Enssib
+* Valentine Crosset - Gouverner la parole en ligne - médialab Sciences Po
+* Pauline Gourlet - Shaping AI - médialab Sciences Po
+* Thomas Tari - Zone Critique - Controverses en action - médialab Sciences Po

@@ -16,6 +16,7 @@ export default function Landing({
   // trick
   const [heightIsSetup, setHeightIsSetup] = useState(false);
   const [hoveredTitleCharIndex, setHoveredTitleCharIndex] = useState(undefined);
+  const [lettersAreMoving, setLettersAreMoving] = useState(false);
   const [measureRef, bounds] = useMeasure();
   const { width, height: realHeight } = bounds;
   const height = realHeight;
@@ -40,7 +41,7 @@ export default function Landing({
     let currentRow = 0;
     let indexInRow = 0;
     return titleLetters.map((letter, index) => {
-      const x = 0.25 + Math.random() * .5;
+      const x = 0.3 + Math.random() * .5;
       if (letter === ' ') {
         currentRow++;
         indexInRow = -1;
@@ -235,13 +236,17 @@ export default function Landing({
         {
           letters.map(({ x, y, letter, row, indexInRow }, index) => {
             const handleMouseMove = () => {
-               if (hoveredTitleCharIndex === undefined) {
+               if (hoveredTitleCharIndex === undefined && !lettersAreMoving) {
                 setHoveredTitleCharIndex(index);
+                setLettersAreMoving(true);
+                setTimeout(() => setLettersAreMoving(false), 500);
               }
             }
             const handleMouseLeave = () => {
-              if (hoveredTitleCharIndex === index) {
+              if (hoveredTitleCharIndex === index && !lettersAreMoving) {
                 setHoveredTitleCharIndex(undefined);
+                setLettersAreMoving(true);
+                setTimeout(() => setLettersAreMoving(false), 500);
               }
             }
 
@@ -259,6 +264,17 @@ export default function Landing({
               }
             }
 
+            const handleClick = () => {
+              const supportsTouch = 'ontouchstart' in window || navigator.msMaxTouchPoints;
+              if (supportsTouch) {
+                if (hoveredTitleCharIndex) {
+                  setHoveredTitleCharIndex(undefined);
+                } else {
+                  setHoveredTitleCharIndex(index);
+                }
+              }
+            }
+
             return (
               <span
                 style={{
@@ -271,6 +287,7 @@ export default function Landing({
                 onMouseEnter={handleMouseMove}
                 onMouseMove={handleMouseMove}
                 onMouseLeave={handleMouseLeave}
+                onClick={handleClick}
                 key={index}
               >
                 {letter === ' ' ? '⨯' : letter}
