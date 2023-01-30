@@ -15,6 +15,7 @@ body {
     position: fixed;
     left: calc(100vw - 5rem);
     top: 4rem;
+    z-index: 3;
     @media only screen and (max-width: 768px) {
       top: unset;
       bottom: 1rem;

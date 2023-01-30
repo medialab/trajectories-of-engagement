@@ -9,6 +9,8 @@ import { useState, useEffect, useMemo } from 'react';
 import { Path } from './animatedPrimitives'
 import * as d3 from 'd3-shape';
 
+const ANIMATION_DURATION = 500;
+
 export default function Landing({
   // lang = 'en',
   debug = false
@@ -20,7 +22,7 @@ export default function Landing({
   // trick
   const [heightIsSetup, setHeightIsSetup] = useState(false);
   const [hoveredTitleCharIndex, setHoveredTitleCharIndex] = useState(undefined);
-  const [lettersAreMoving, setLettersAreMoving] = useState(false);
+  const [lettersAreMoving, setLettersAreMoving] = useState(true);
   const [measureRef, bounds] = useMeasure();
   const { width, height: realHeight } = bounds;
   const height = realHeight;
@@ -32,6 +34,8 @@ export default function Landing({
   useEffect(
     () => {
       const intro = lang === 'en' ? introEn : introFr;
+      setLettersAreMoving(true);
+      setTimeout(() => setLettersAreMoving(false), ANIMATION_DURATION);
       fetch(intro)
         .then(response => {
           return response.text()
@@ -147,7 +151,7 @@ export default function Landing({
       }
     ];
     setShapePoints(newShapePoints)
-  }, [letters, width, content, heightIsSetup]); /* eslint react-hooks/exhaustive-deps : 0 */
+  }, [letters, width, content, heightIsSetup, lettersAreMoving]); /* eslint react-hooks/exhaustive-deps : 0 */
 
   useEffect(() => {
     const curveFn = d3.line().x(d => d.x).y(d => d.y).curve(d3.curveBasisOpen);
@@ -157,10 +161,16 @@ export default function Landing({
     setTimeout(() => {
       let newCurve = curveFn(shapePoints);
       setCurve(newCurve);
-    }, 500)
+    }, ANIMATION_DURATION)
   }, [shapePoints, width, content, height])
+
+  const handleGlobalMouseMove = () => {
+    if (hoveredTitleCharIndex !== undefined && !lettersAreMoving) {
+      setHoveredTitleCharIndex(undefined);
+    }
+  }
   return (
-    <div ref={measureRef} className="Landing">
+    <div ref={measureRef} className="Landing" onMouseMove={handleGlobalMouseMove}>
       <Helmet>
         <title>{metaTitle}</title>
       </Helmet>
@@ -249,18 +259,20 @@ export default function Landing({
       >
         {
           letters.map(({ x, y, letter, row, indexInRow }, index) => {
-            const handleMouseMove = () => {
+            const handleMouseMove = (e) => {
+              e.stopPropagation();
               if (hoveredTitleCharIndex === undefined && !lettersAreMoving) {
                 setHoveredTitleCharIndex(index);
                 setLettersAreMoving(true);
-                setTimeout(() => setLettersAreMoving(false), 500);
+                setTimeout(() => setLettersAreMoving(false), ANIMATION_DURATION);
               }
             }
-            const handleMouseLeave = () => {
+            const handleMouseLeave = (e) => {
+              e.stopPropagation();
               if (hoveredTitleCharIndex === index && !lettersAreMoving) {
                 setHoveredTitleCharIndex(undefined);
                 setLettersAreMoving(true);
-                setTimeout(() => setLettersAreMoving(false), 500);
+                setTimeout(() => setLettersAreMoving(false), ANIMATION_DURATION);
               }
             }
 
@@ -278,7 +290,8 @@ export default function Landing({
               }
             }
 
-            const handleClick = () => {
+            const handleClick = (e) => {
+              e.stopPropagation();
               const supportsTouch = 'ontouchstart' in window || navigator.msMaxTouchPoints;
               if (supportsTouch) {
                 if (hoveredTitleCharIndex) {
