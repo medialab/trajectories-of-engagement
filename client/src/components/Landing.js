@@ -2,6 +2,7 @@
 import introEn from '../contents/en/introduction.md';
 import introFr from '../contents/fr/introduction.md';
 import { useSearchParams } from 'react-router-dom';
+import Helmet from 'react-helmet';
 import Md from 'react-markdown';
 import useMeasure from 'react-use-measure'
 import { useState, useEffect, useMemo } from 'react';
@@ -43,6 +44,7 @@ export default function Landing({
 
   const titleLetters = useMemo(() => Array.from(lang === 'en' ? "Trajectories of engagement" : "Trajectoires d'implication"), [lang]);
 
+  const metaTitle = useMemo(() => Array.from(lang === 'en' ? "Trajectories of engagement | Public Participation, Material Production and Digital Environments in the Humanities and Social Sciences" : "Trajectoires d'implication | Participation publique, productions matérielles et environnements numériques dans les sciences humaines et sociales"), [lang]);
   const fontHeight = 75;
 
   const letters = useMemo(() => {
@@ -159,6 +161,9 @@ export default function Landing({
   }, [shapePoints, width, content, height])
   return (
     <div ref={measureRef} className="Landing">
+      <Helmet>
+        <title>{metaTitle}</title>
+      </Helmet>
       <svg
         width={width}
         height={height}
