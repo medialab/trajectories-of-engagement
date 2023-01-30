@@ -1,58 +1,39 @@
 import { useEffect, useState } from 'react';
-import { useForm } from "react-hook-form";
+
+import NewTrajectoryForm from './NewTrajectoryForm';
 
 import {
   useParams,
   useNavigate,
-  NavLink,
   useLocation,
+  NavLink,
 } from "react-router-dom";
 
 import { toast } from 'react-toastify';
 
-import {v4 as genId} from 'uuid';
+import { v4 as genId } from 'uuid';
 
 import { deleteTrajectory, getTrajectories, createTrajectory, updateTrajectoryPassword } from "../../client";
 import { useAuth } from '../../utils';
 import AuthStatus from '../AuthStatus';
 
+import './AdminView.scss';
+import TrajectoryCard from './TrajectoryCard';
+
 const isPasswordValid = pwd => {
-  return pwd !== null 
-  && pwd.length > 2;
+  return pwd !== null
+    && pwd.length > 2;
 }
 
-const NewTrajectoryForm = ({
-  onSubmit,
-  onCancel
-}) => {
-  const { register, handleSubmit, } = useForm();
-  return (
-    <form onSubmit={handleSubmit(onSubmit)}>
-      <div>
-        <label>Name: </label>
-        <input placeholder="name" {...register("part1_general.name", { required: true })} />
-      </div>
-      <div>
-        <label>Trajectory-specific password: </label>
-        <input placeholder="password" {...register("password", { required: true })} />
-      </div>
-      <div>
-        <button type="submit">Create new trajectory</button>
-      <button onClick={onCancel}>
-        Cancel
-      </button>
-      </div>
-    </form>
-  )
-}
 
-export default function AdminView ({lang}) {
+export default function AdminView({ lang }) {
 
   const { password } = useAuth();
   const location = useLocation();
   const params = useParams();
   const navigate = useNavigate();
   const [trajectories, setTrajectories] = useState(null);
+  const [searchStr, setSearchStr] = useState('');
   const [loadingStatus, setLoadingStatus] = useState(null);
   const [newTrajectoryPrompted, setNewTrajectoryPrompted] = useState(false);
 
@@ -60,26 +41,26 @@ export default function AdminView ({lang}) {
     setLoadingStatus('pending');
     const pm = new Promise((resolve, reject) => {
       getTrajectories(password)
-      .then(res => {
-        setLoadingStatus('success');
-        setTrajectories(res);
-        resolve();
-      })
-      .catch(err => {
-        console.error(err);
-        if (err?.response?.status === 403) {
-          navigate("/login", {
-            replace: true,
-            state: {
-              from: location, 
-              isAdmin: false, 
-              params
-            }
-          })
-        }
-        setLoadingStatus('error');
-        reject();
-      })
+        .then(res => {
+          setLoadingStatus('success');
+          setTrajectories(res);
+          resolve();
+        })
+        .catch(err => {
+          console.error(err);
+          if (err?.response?.status === 403) {
+            navigate("/login", {
+              replace: true,
+              state: {
+                from: location,
+                isAdmin: false,
+                params
+              }
+            })
+          }
+          setLoadingStatus('error');
+          reject();
+        })
     })
     toast.promise(pm, {
       pending: 'loading trajectories',
@@ -103,9 +84,9 @@ export default function AdminView ({lang}) {
         date_edited: new Date(),
         id: genId()
       }, password)
-      .then(refreshTrajectories)
-      .then(resolve)
-      .catch(reject)
+        .then(refreshTrajectories)
+        .then(resolve)
+        .catch(reject)
     })
     toast.promise(createTrajectoryPm, {
       pending: `creating trajectory "${trajectory?.part1_general?.name}"`,
@@ -118,106 +99,103 @@ export default function AdminView ({lang}) {
     <div className="AdminView">
       {
         loadingStatus === 'pending' ?
-        <div>Loading</div>: null
+          <div className="loading-container">Chargement</div> : null
       }
       {
         loadingStatus === 'error' ?
-        <div>Error</div>: null
+          <div className="error-container">Il y a une erreur - essaie de recharger la page ça devrait remarcher.</div> : null
       }
       {
         loadingStatus === 'success'
-        ?
-        <>
-        <header>
-          <h2>Trajectoires d'implication | admin | Liste des trajectoires</h2>
-          <AuthStatus />
-        </header>
-        
-        <ul>
-          {
-            trajectories.map(({_id, data}) => {
+          ?
+          <>
+            <header>
+              <h2><NavLink to="/">Trajectoires d'implication</NavLink> / admin</h2>
+              <AuthStatus />
+            </header>
+            <div className="tools-row">
+            <ul className="tools-container">
+              <li className="search-container">
+                <span>Rechercher une trajectoire</span>
+                <input
+                  type="text"
+                  value={searchStr}
+                  onChange={e => setSearchStr(e.target.value)}
+                  placeholder="🔍 Rechercher"
+                />
+              </li>
+            </ul>
+            </div>
+            <main>
+              <ul className="cards-container">
+                {
+                  trajectories
+                  .filter(({data}) => searchStr.length ? JSON.stringify(data).toLowerCase().includes(searchStr.toLowerCase()) : true)
+                  .map(({ _id, data }) => {
 
-              const handleDelete = () => {
-                if (window.confirm(`Es-tu sûr de vouloir détruire la trajectoire "${data?.part1_general?.name}"`)) {
-                  const deleteTrajectoryPm = new Promise((resolve, reject) => {
-                    deleteTrajectory(data?.id, password)
-                    .then(refreshTrajectories)
-                    .then(resolve)
-                    .catch(reject)
-                  })
-                  toast.promise(deleteTrajectoryPm, {
-                    pending: `Deleting trajectory "${data?.part1_general?.name}"`,
-                    success: `Successfully deleted trajectory "${data?.part1_general?.name}"`,
-                    error: `Could not delete trajectory "${data?.part1_general?.name}"`,
+                    const handleDelete = () => {
+                      if (window.confirm(`Es-tu sûr de vouloir détruire la trajectoire "${data?.part1_general?.name}"`)) {
+                        const deleteTrajectoryPm = new Promise((resolve, reject) => {
+                          deleteTrajectory(data?.id, password)
+                            .then(refreshTrajectories)
+                            .then(resolve)
+                            .catch(reject)
+                        })
+                        toast.promise(deleteTrajectoryPm, {
+                          pending: `Deleting trajectory "${data?.part1_general?.name}"`,
+                          success: `Successfully deleted trajectory "${data?.part1_general?.name}"`,
+                          error: `Could not delete trajectory "${data?.part1_general?.name}"`,
+                        })
+                      }
+                    }
+
+                    const handleChangePassword = () => {
+                      const newPassword = prompt("Please enter a new password", "");
+                      if (isPasswordValid(newPassword)) {
+                        const changePasswordPm = new Promise((resolve, reject) => {
+                          updateTrajectoryPassword(data?.id, newPassword, password)
+                            .then(refreshTrajectories)
+                            .then(resolve)
+                            .catch(reject)
+                        })
+                        toast.promise(changePasswordPm, {
+                          pending: `Changing password for trajectory "${data?.part1_general?.name}"`,
+                          success: `Successfully changed password for trajectory "${data?.part1_general?.name}"`,
+                          error: `Could not change password for trajectory "${data?.part1_general?.name}"`,
+                        })
+                      }
+                    }
+                    return (
+                      <TrajectoryCard 
+                        key={_id} 
+                        data={data} 
+                        onDelete={handleDelete}
+                        onChangePassword={handleChangePassword}
+                      />
+                    )
                   })
                 }
-              }
+              </ul>
+            </main>
 
-              const handleChangePassword = () => {
-                const newPassword = prompt("Please enter a new password", "");
-                if (isPasswordValid(newPassword)) {
-                  const changePasswordPm = new Promise((resolve, reject) => {
-                    updateTrajectoryPassword(data?.id, newPassword, password)
-                    .then(refreshTrajectories)
-                    .then(resolve)
-                    .catch(reject)
-                  })
-                  toast.promise(changePasswordPm, {
-                    pending: `Changing password for trajectory "${data?.part1_general?.name}"`,
-                    success: `Successfully changed password for trajectory "${data?.part1_general?.name}"`,
-                    error: `Could not change password for trajectory "${data?.part1_general?.name}"`,
-                  })
-                }
-              }
-              return (
-                <li key={_id}>
-                  <h4>
-                    {data?.part1_general?.name}
-                  </h4>
-                  <div>
-                    <NavLink
-                      to={`/trajectories/${data?.id}`}
-                    >
-                      Edit trajectory form
-                    </NavLink>
-                  </div>
-                  <pre>
-                    <code>
-                      {JSON.stringify(data)}
-                    </code>
-                  </pre>
-
-                  <ul>
-                    <li>
-                      <button onClick={handleChangePassword}>
-                        Change password
-                      </button>
-                    </li>
-                    <li>
-                      <button onClick={handleDelete}>
-                        Delete trajectory
-                      </button>
-                    </li>
-                  </ul>
-                </li>
-              )
-            })
-          }
-        </ul>
-        <button onClick={handlePromptNewTrajectory}>
-          Create new trajectory
-        </button>
-        </>
-        : null
+            <footer>
+              <button onClick={handlePromptNewTrajectory}>
+                Créer une nouvelle trajectoire
+              </button>
+            </footer>
+          </>
+          : null
       }
       {
         newTrajectoryPrompted ?
-        <NewTrajectoryForm
-          onSubmit={handleCreateNewTrajectory}
-          onCancel={() => setNewTrajectoryPrompted(false)}
-        />
-        :
-        null
+        <div onClick={() => setNewTrajectoryPrompted(false)} className="new-trajectory-form-container">
+          <NewTrajectoryForm
+            onSubmit={handleCreateNewTrajectory}
+            onCancel={() => setNewTrajectoryPrompted(false)}
+          />
+          </div>
+          :
+          null
       }
     </div>
   )

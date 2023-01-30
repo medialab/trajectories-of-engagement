@@ -11,6 +11,8 @@ export default function TrajectoryView() {
   const { id } = useParams();
   const {password} = useAuth();
 
+  console.log('in trajectory view', id);
+
   const [trajectory, setTrajectory] = useState(null);
   const [loadingStatus, setLoadingStatus] = useState('pending');
   const { register, handleSubmit, watch, formState: { errors }, reset } = useForm();

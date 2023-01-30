@@ -1,0 +1,248 @@
+.AdminView {
+  position: fixed;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: stretch;
+  
+  /** components **/
+  button,
+  .button {
+    font-size: inherit;
+    background: none;
+    box-sizing: border-box;
+    border: 3px solid black;
+    border-radius: 0;
+    font-family: inherit;
+    transition: 0.5s ease all;
+    color: black;
+    padding: 0.25rem;
+    cursor: pointer;
+    font-weight: 800;
+    &:hover {
+      background: red;
+      border-color: red;
+      color: white;
+    }
+    &.link {
+      text-decoration: none;
+      min-height: 2.2em;
+      display: inline-block;
+    }
+  }
+
+  .TrajectoryCard {
+    background: rgba(0, 0, 0, 0.1);
+    padding: 1rem;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: stretch;
+    align-items: flex-start;
+    max-width: 1000px;
+    .main-container {
+      flex: 1;
+    }
+
+    &:not(:last-of-type) {
+      margin-bottom: 1rem;
+    }
+
+    .trajectory-title {
+      font-size: 2rem;
+      margin: 0;
+      a {
+        color: inherit;
+      }
+    }
+
+    .info-container {
+      list-style: none;
+      padding: 0;
+      margin: 1rem 0;
+      li:not(:last-of-type) {
+        margin-bottom: 0.25rem;
+      }
+    }
+
+    .actions-container {
+      list-style: none;
+      padding: 0;
+      display: flex;
+      flex-flow: row nowrap;
+      align-items: center;
+      justify-content: stretch;
+      padding-top: 1rem;
+      li:not(:first-of-type) {
+        // margin-bottom: .5rem;
+        margin-left: 0.5rem;
+      }
+    }
+  }
+
+  /**
+  layout */
+  header {
+    z-index: 2;
+    width: 100%;
+    box-sizing: border-box;
+    background: white;
+    border-bottom: 2px dashed red;
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem;
+    h2,
+    p {
+      margin: 0;
+    }
+    button {
+      margin-left: 1rem;
+    }
+
+    a {
+      color: inherit;
+    }
+  }
+
+  .tools-row {
+    
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    .tools-container {
+      list-style: none;
+      padding: 0;
+      min-width: 1000px;
+      max-width: 1000px;
+
+      .search-container {
+        display: flex;
+        flex-flow: row nowrap;
+        align-items: center;
+        flex: 1;
+        input {
+          font-size: inherit;
+          border: 1px solid black;
+          margin-left: 1rem;
+          flex: 1;
+        }
+      }
+    }
+  }
+
+  main {
+    flex: 1;
+    overflow-y: auto;
+    overflow-x: hidden;
+    box-sizing: border-box;
+    .cards-container {
+      list-style: none;
+      padding: 0 1rem;
+      display: flex;
+      flex-flow: column nowrap;
+      align-items: center;
+    }
+  }
+  footer {
+    background: white;
+    border-top: 2px dashed red;
+    padding: 1rem;
+    width: 100%;
+    button {
+      font-size: 1.5rem;
+      padding: 0.5rem;
+    }
+  }
+
+  .error-container,
+  .loading-container {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+  }
+
+  .new-trajectory-form-container {
+    background: rgba(0,0,0,0.5);
+    cursor: pointer;
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: center;
+    position : fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    .NewTrajectoryForm {
+      background: white;
+      padding: 1rem;
+      cursor: default;
+      h2 {
+        margin: 0;
+      }
+      .inputs-container {
+        padding: 0;
+        list-style-type: none;
+
+        li {
+          display: flex;
+          flex-flow: row nowrap;
+          justify-content: stretch;
+          box-sizing: border-box;
+
+          label {
+            width: 30%;
+            box-sizing: border-box;
+
+            padding-right: 1rem;
+             box-sizing: border-box;
+             padding-top: .5em;
+          }
+          > div {
+            flex: 1;
+            box-sizing: border-box;
+          }
+          input {
+            font-size: inherit;
+            font-family: inherit;
+            padding: .5em;
+            width: 100%;
+            color: black;
+            box-sizing: border-box;
+
+          }
+          
+
+          &:not(:last-of-type) {
+            margin-bottom: .5rem;
+          }
+        }
+      }
+      .actions-container {
+        padding: 0;
+        list-style-type: none;
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: stretch;
+        width: 100%;
+        margin-bottom: 0;
+        li {
+          &:not(:last-of-type) {
+            margin-right: .5rem;
+            flex: 1;
+            button {
+              width: 100%;
+            }
+          }
+        }
+      }
+    }
+  }
+}
