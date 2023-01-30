@@ -39,11 +39,10 @@ The purpose of this research project is to engage in a critical and collective r
 
 *Do you cope with these questions in your research? Have you ever built a trajectory of engagement? Or are you just intrigued by this approach?*
 
-You can join this project in three ways:
+You can join this project in several ways:
 
 1. Contact us and we can organize an interview to fill the questionnaire together.
-1. (coming soon) You can directly fill the questionnaire online
-1. You can also contact us to obtain more information about the project and be involved even if you don’t have a project to share.
+2. You can also contact us to obtain more information about the project and be involved even if you don’t have a project to share.
 
 All participants who fill out the questionnaire or participate in an interview will have the opportunity to make a video summarizing their trajectory. The results of the query and the video will be published in the observatory. All participants will also be invited to a final event in Paris the 15 September 2023 to present their trajectories and share their experiences. After the event, a collective book will be produced to present the identified trajectories.
 

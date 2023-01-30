@@ -2,7 +2,7 @@ body {
   --fontsizebase: 25px;
 }
 .Landing {
-  font-family: "Sk-Modernist", sans-serif;
+  font-family: "Sk-Modernist", "Helvetica", sans-serif;
   // width: 50%;
   position: relative;
   margin: calc(var(--fontsizebase) * 2);
@@ -35,7 +35,8 @@ body {
     width: 50%;
   }
   > p,
-  > ul {
+  > ul,
+  > ol {
     font-size: var(--fontsizebase);
     box-sizing: border-box;
     padding-left: 0;

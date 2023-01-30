@@ -39,23 +39,22 @@ Le but de ce projet de recherche est de s'engager dans une réflexion critique e
 
 *Est-ce que vous faites face à ces questions dans votre recherche? Avez-vous déjà construit une trajectoire d'implication? Ou êtes-vous simplement intrigué·e par cette approche?*
 
-Vous pouvez rejoindre ce projet de trois manières :
+Vous pouvez rejoindre ce projet de plusieurs manières :
 
-* Contactez-nous et nous pourrons organiser un entretien pour remplir le questionnaire ensemble. 
-* (Bientôt) Vous pouvez directement remplir le questionnaire en ligne.
+* Contactez-nous et nous pourrons organiser un entretien pour remplir le questionnaire ensemble.
 * Vous pouvez également nous contacter pour obtenir plus d'informations sur le projet et être impliqué·e même si vous n'avez pas de démarches à partager.
 
 Tous·tes les participant·e·s qui remplissent le questionnaire ou qui participent à un entretien auront l'occasion de faire une vidéo résumant leur trajectoire. Les résultats de l'enquête et les vidéos seront publiés dans l'observatoire. Tous·tes les participant·e·s seront également invité·e·s à un événement final à Paris le 15 septembre 2023 pour présenter leurs trajectoires et partager leurs expériences. Après l'événement, un livre collectif sera produit pour présenter les trajectoires identifiées.
 
 ### Équipe de recherche 
 
-Robin De Mourat, médialab, Sciences Po 
+Robin De Mourat, médialab, Sciences Po
 
-Alex Pellier, Dicen-IdF, Université Paris Nanterre 
+Alex Pellier, Dicen-IdF, Université Paris Nanterre
 
-Donato Ricci, médialab, Sciences Po 
+Donato Ricci, médialab, Sciences Po
 
-Marta Severo, Dicen-IdF, Université Paris Nanterre
+Marta Severo, Dicen-IdF, Université Paris Nanterre msevero@parisnanterre.fr
 
 ### Financement
 
