@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "homepage": "https://trajectories.sciencespo.fr",
   "scripts": {
     "dev": "nodemon ./api/server.js",
     "mongo": "docker pull mongo:4.2 && docker run -p 27117:27017 -e MONGO_INITDB_DATABASE=admin -e MONGO_INITDB_ROOT_USERNAME=admin -e MONGO_INITDB_ROOT_PASSWORD=password -v mongo-data:/data/db mongo --auth",
@@ -14,12 +15,11 @@
     "type": "git",
     "url": "git+https://github.com/medialab/trajectories-of-engagement.git"
   },
-  "author": "yomguithereal <kropotkinepiotr@gmail.com>",
-  "license": "MIT",
+  "author": "robin de mourat",
+  "license": "AGPL-3.0",
   "bugs": {
     "url": "https://github.com/medialab/trajectories-of-engagement/issues"
   },
-  "homepage": "https://github.com/medialab/trajectories-of-engagement#readme",
   "dependencies": {
     "ajv": "^6.12.1",
     "async": "^3.2.0",
