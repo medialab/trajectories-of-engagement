@@ -6,7 +6,7 @@ import {
   NavLink,
 } from "react-router-dom";
 
-import { BrowserRouter } from "react-router-dom";
+import { HashRouter } from "react-router-dom";
 
 import AuthProvider from "./components/AuthProvider";
 import Layout from "./components/Layout";
@@ -67,8 +67,8 @@ function App() {
 
 export default function Main() {
   return (
-    <BrowserRouter>
+    <HashRouter>
       <App />
-    </BrowserRouter>
+    </HashRouter>
   )
 }
