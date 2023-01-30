@@ -5,7 +5,7 @@
   "main": "index.js",
   "homepage": "https://trajectories.sciencespo.fr",
   "scripts": {
-    "dev": "nodemon ./api/server.js",
+    "dev": "docker info && concurrently \"npm run mongo\" \"nodemon ./api/server.js\" \"cd client && npm run start\" \"open localhost:3000\"",
     "mongo": "docker pull mongo:4.2 && docker run -p 27117:27017 -e MONGO_INITDB_DATABASE=admin -e MONGO_INITDB_ROOT_USERNAME=admin -e MONGO_INITDB_ROOT_PASSWORD=password -v mongo-data:/data/db mongo --auth",
     "prettier": "prettier 'api/*.js' --write",
     "start": "node ./api/server.js",
@@ -42,6 +42,7 @@
   },
   "devDependencies": {
     "@yomguithereal/prettier-config": "^1.1.0",
+    "concurrently": "^7.6.0",
     "nodemon": "^2.0.3",
     "prettier": "^2.0.4"
   },

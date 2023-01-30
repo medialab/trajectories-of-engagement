@@ -4,11 +4,22 @@ WIP ...
 
 ## Installation
 
-- API:
-
 ```
 npm install
+cd client && npm install
 ```
+
+## Development
+
+### Short way
+
+It assumes you have docker running.
+
+```
+npm run dev
+```
+
+### Long way
 
 Start a MongoDB (at least 4.0) on the port 27117, either already installed, or you can do so via Docker using:
 ```
@@ -20,21 +31,23 @@ In another shell, run the API server with:
 npm run start
 ```
 
+
+- Client:
+
+In another shell run:
+
+```
+cd client
+npm run start
+```
+
+It will open automatically the website in your browser on `http://localhost:3000`
+
 You can test the API is properly working by calling:
 ```
 curl -H "Content-Type: application/json" -d '{"data": {"TEST": "OK"}}' localhost:4000/answer
 curl 'admin:password@localhost:4000/data?json'
 ```
-
-- Client:
-
-```
-cd client
-npm install
-npm run start
-```
-
-It will open automatically the website in your browser on `http://localhost:3000`
 
 
 ## Prod deployment with Docker
