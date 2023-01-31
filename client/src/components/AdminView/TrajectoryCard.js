@@ -2,6 +2,7 @@
 import {
   NavLink
 } from "react-router-dom";
+import copy from "copy-to-clipboard";
 
 export default function TrajectoryCard({
   data,
@@ -10,6 +11,11 @@ export default function TrajectoryCard({
 }) {
   const handleGlobalClick = e => {
     e.stopPropagation();
+  }
+  const handleCopyURL = () => {
+    const URL = (process.env.PUBLIC_URL || 'localhost:3000') + '/trajectories/' + data.id;
+    copy(URL);
+    alert('Copié dans le presse-papier');
   }
   return (
     <li className="TrajectoryCard" onClick={handleGlobalClick}>
@@ -38,6 +44,8 @@ export default function TrajectoryCard({
           <NavLink
             to={`/trajectories/${data?.id}`}
             className="button link"
+            target="blank"
+
           >
             ✎ Éditer la trajectoire
           </NavLink>
@@ -45,6 +53,11 @@ export default function TrajectoryCard({
         <li>
           <button onClick={onChangePassword}>
             🔒 Changer le mot de passe
+          </button>
+        </li>
+        <li>
+          <button onClick={handleCopyURL}>
+          📋 copier l'URL
           </button>
         </li>
         <li>

@@ -45,6 +45,8 @@
     max-width: 1000px;
     .main-container {
       flex: 1;
+      min-width: 50%;
+      padding-right: 1rem;
     }
 
     &:not(:last-of-type) {
@@ -72,13 +74,18 @@
       list-style: none;
       padding: 0;
       display: flex;
-      flex-flow: row nowrap;
-      align-items: center;
+      flex-flow: column nowrap;
+      align-items: left;
       justify-content: stretch;
       padding-top: 1rem;
-      li:not(:first-of-type) {
+      li {
         // margin-bottom: .5rem;
-        margin-left: 0.5rem;
+        margin-bottom: 0.5rem;
+        button,
+        .button {
+          width: 100%;
+          text-align: left;
+        }
       }
     }
   }
@@ -171,6 +178,7 @@
   .new-trajectory-form-container {
     background: rgba(0,0,0,0.5);
     cursor: pointer;
+    z-index: 2;
     display: flex;
     flex-flow: row nowrap;
     align-items: center;

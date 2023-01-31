@@ -76,15 +76,25 @@ export default function AdminView({ lang }) {
   const handleCreateNewTrajectory = trajectory => {
     setNewTrajectoryPrompted(false);
     setLoadingStatus('pending');
+    const id = genId();
     const createTrajectoryPm = new Promise((resolve, reject) => {
       createTrajectory({
         ...trajectory,
         // lang: 'fr',
         date_created: new Date(),
         date_edited: new Date(),
-        id: genId()
+        id
       }, password)
-        .then(refreshTrajectories)
+        .then(tr => {
+          const URL = (process.env.PUBLIC_URL || 'localhost:3000') + '/trajectories/' + id;
+          
+          const wantsToGo = window.confirm(`Trajectoire créée.\n\nURL:\n\n${URL}\n\n\nMot de passe (notez-le bien ! il ne sera plus accessible ensuite) : \n\n${trajectory.password}\n\n\nSouhaitez-vous passer à l'édition de cette trajectoire ?`);
+          if (wantsToGo) {
+            return navigate(`/trajectories/${id}`)
+          } else {
+            return refreshTrajectories();
+          }
+        })
         .then(resolve)
         .catch(reject)
     })
@@ -134,7 +144,7 @@ export default function AdminView({ lang }) {
                   .map(({ _id, data }) => {
 
                     const handleDelete = () => {
-                      if (window.confirm(`Es-tu sûr de vouloir détruire la trajectoire "${data?.part1_general?.name}"`)) {
+                      if (window.confirm(`Es-tu sûr de vouloir détruire la trajectoire "${data?.part1_general?.name}" ?`)) {
                         const deleteTrajectoryPm = new Promise((resolve, reject) => {
                           deleteTrajectory(data?.id, password)
                             .then(refreshTrajectories)
