@@ -77,7 +77,8 @@
       padding-left:calc(var(--fontsizebase) * 1);;
       position : fixed;
       background: white;
-      height: calc(var(--fontsizebase) * .5);;
+      height: calc(var(--fontsizebase) * .5);
+      padding-top: 0;
     }
   }
 

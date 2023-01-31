@@ -281,8 +281,8 @@ export default function Landing({
               }
             }
 
-            let realX = x * width;
-            let realY = y * height;
+            let realX = x * width - width * .04;
+            let realY = y * height - width * .015;
 
             if (hoveredTitleCharIndex !== undefined) {
               const refPos = letters[hoveredTitleCharIndex];
