@@ -159,7 +159,10 @@ export default function Landing({
   }, [letters, width, content, heightIsSetup, lettersAreMoving]); /* eslint react-hooks/exhaustive-deps : 0 */
 
   useEffect(() => {
-    const curveFn = d3.line().x(d => d.x).y(d => d.y).curve(d3.curveBasisOpen);
+    const curveFn = d3.line()
+    .x(d => d.x + width * .04)
+    .y(d => d.y + width * .015)
+    .curve(d3.curveBasisOpen);
     let newCurve = curveFn(shapePoints);
     // console.log('width : ', width, 'shape points : ', shapePoints[2], 'curve : ', newCurve && newCurve.substring(0, 100));
     setCurve(newCurve);
@@ -281,8 +284,8 @@ export default function Landing({
               }
             }
 
-            let realX = x * width - width * .04;
-            let realY = y * height - width * .015;
+            let realX = x * width;
+            let realY = y * height;
 
             if (hoveredTitleCharIndex !== undefined) {
               const refPos = letters[hoveredTitleCharIndex];
