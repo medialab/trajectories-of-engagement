@@ -8,7 +8,7 @@ Les trajectoires d’implication décrivent des moments dans le processus de rec
 
 Ce projet de recherche vise à explorer et à décrire les différentes formes que les trajectoires d'implication peuvent prendre dans les sciences humaines et sociales, les interactions entre les acteur·ice·s internes et externes qu'elles peuvent générer et la matérialité des choix socio-techniques impliqués. Les résultats attendus sont le développement d’un observatoire et d’un réseau de chercheur·e·s intéressé·e·s par l'étude de ces trajectoires ainsi que l'écriture d’un livre pour présenter les trajectoires identifiées. 
 
-Vous pouvez participer au projet en nous contactant pour planifier un entretien ou en remplissant le questionnaire vous-même. Tous·tes les participant·e·s seront invité·e·s à l'événement final le 15 septembre 2023 à Paris et pourront être inclu·e·s dans le livre collectif sur les trajectoires identifiées. 
+Vous pouvez participer au projet en nous contactant pour planifier un entretien. Tous·tes les participant·e·s seront invité·e·s à l'événement final le 15 septembre 2023 à Paris et pourront être inclu·e·s dans le livre collectif sur les trajectoires identifiées. 
 
 ### Contexte
 
@@ -41,10 +41,10 @@ Le but de ce projet de recherche est de s'engager dans une réflexion critique e
 
 Vous pouvez rejoindre ce projet de plusieurs manières :
 
-* Contactez-nous et nous pourrons organiser un entretien pour remplir le questionnaire ensemble.
+* [Contactez-nous](mailto:msevero@parisnanterre.fr) et nous pourrons organiser un entretien ensemble. E-mail : msevero@parisnanterre.fr
 * Vous pouvez également nous contacter pour obtenir plus d'informations sur le projet et être impliqué·e même si vous n'avez pas de démarches à partager.
 
-Tous·tes les participant·e·s qui remplissent le questionnaire ou qui participent à un entretien auront l'occasion de faire une vidéo résumant leur trajectoire. Les résultats de l'enquête et les vidéos seront publiés dans l'observatoire. Tous·tes les participant·e·s seront également invité·e·s à un événement final à Paris le 15 septembre 2023 pour présenter leurs trajectoires et partager leurs expériences. Après l'événement, un livre collectif sera produit pour présenter les trajectoires identifiées.
+Tous·tes les participant·e·s auront l'occasion de faire une vidéo résumant leur trajectoire. Les résultats de l'enquête et les vidéos seront publiés dans l'observatoire. Tous·tes les participant·e·s seront également invité·e·s à un événement final à Paris le 15 septembre 2023 pour présenter leurs trajectoires et partager leurs expériences. Après l'événement, un livre collectif sera produit pour présenter les trajectoires identifiées.
 
 ### Équipe de recherche 
 
@@ -54,15 +54,15 @@ Alex Pellier, Dicen-IdF, Université Paris Nanterre
 
 Donato Ricci, médialab, Sciences Po
 
-Marta Severo, Dicen-IdF, Université Paris Nanterre msevero@parisnanterre.fr
+Marta Severo, Dicen-IdF, Université Paris Nanterre
 
 ### Financement
 
-Ce projet est financé par l'Institut Universitaire de France (Marta Severo, membre junior), 
+Ce projet est financé par l'[Institut Universitaire de France](https://www.iufrance.fr/) (Marta Severo, membre junior). 
 
 ### Participant·e·s (jusqu'à présent)
 
-* Muriel Amar - À l’ombre des bibliothèques - Enssib
-* Valentine Crosset - Gouverner la parole en ligne - médialab Sciences Po
-* Pauline Gourlet - Shaping AI - médialab Sciences Po
-* Thomas Tari - Zone Critique - Controverses en action - médialab Sciences Po
+* Muriel Amar - [À l’ombre des bibliothèques](https://books.openedition.org/pressesenssib/16389?lang=fr)
+* Valentine Crosset - [Gouverner la parole en ligne](https://medialab.sciencespo.fr/activites/gouverner-la-parole-en-ligne/)
+* Pauline Gourlet - [Shaping AI](https://www.shapingai.org/)
+* Thomas Tari - [Zone Critique / Controverses en action](https://medialab.sciencespo.fr/activites/zone-critique-controverses-en-action/)
