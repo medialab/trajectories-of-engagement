@@ -1,52 +1,52 @@
-## Public Participation, Material Production and Digital Environments in the Humanities and Social Sciences 
+## Participation publique, productions matérielles et environnements numériques dans les sciences humaines et sociales 
 
-Join our network and share your experience on the forms and trajectories of public participation in your research process !
+Rejoignez notre réseau et partagez votre expérience sur les formes et les trajectoires de la participation publique dans vos démarches de recherche ! 
 
-### Abstract
+### Résumé
 
-Trajectories of engagement refer to moments in the research process where external actors are involved and co-construct knowledge with the research team. These research paths involving an outside can take various forms of material production based on physical and/or digital environments . Often used in digital data-grounded labs or citizen science projects, trajectories of engagement are shaped in research which aims to address social concerns or public issues. 
+Les trajectoires d’implication décrivent des moments dans le processus de recherche où des acteur·ice·s externes sont impliqué·e·s et co-construisent des savoirs avec l'équipe de recherche. Ces trajectoires de recherche impliquant un extérieur peuvent prendre des formes diverses de production matérielle basées sur des environnements physiques et/ou numériques. Souvent utilisées dans des datalabs ou des projets de science citoyenne, les trajectoires d'implication se développent dans les démarches de recherche visant à aborder des préoccupations sociales ou des questions publiques. 
 
-This research project aims to explore and describe the different forms that trajectories of engagement can take in the humanities and social sciences, the interactions between internal and external actors that they can generate, and the materiality of the socio-technical choices involved. The expected outputs are to build an observatory and a network of researchers interested in studying these trajectories and a book will be written to present the identified trajectories.
+Ce projet de recherche vise à explorer et à décrire les différentes formes que les trajectoires d'implication peuvent prendre dans les sciences humaines et sociales, les interactions entre les acteur·ice·s internes et externes qu'elles peuvent générer et la matérialité des choix socio-techniques impliqués. Les résultats attendus sont le développement d’un observatoire et d’un réseau de chercheur·e·s intéressé·e·s par l'étude de ces trajectoires ainsi que l'écriture d’un livre pour présenter les trajectoires identifiées. 
 
-You  can participate in the project by contacting us to schedule an interview or filling out the questionnaire on their own. All participants will be invited to the final event, the 15 september 2023 in Paris and may be included in a collective book on the identified trajectories.
+Vous pouvez participer au projet en nous [contactant](mailto:msevero@parisnanterre.fr) pour planifier un entretien. Tous·tes les participant·e·s seront invité·e·s à l'événement final le 15 septembre 2023 à Paris et pourront être inclu·e·s dans le livre collectif sur les trajectoires identifiées. 
 
-### Context
+### Contexte
 
-Research in humanities and social sciences is often driven by a desire to address social concerns or public issues. In these contexts, the researcher is often pushed to build a trajectory of engagement.
+La recherche dans les sciences humaines et sociales est souvent motivée par le désir de répondre à des préoccupations sociales ou à des questions publiques. Dans ces contextes, le·la chercheur·e est souvent amené·e à construire une trajectoire d'implication. 
 
-What do we mean by trajectory of engagement? Simply put, it’s a research trajectory where the research team (the “inside”) engages and builds relationships with external actors (the “outside”). This outside could be other researchers, institutions, associations, companies, students, or even the general public. This engagement from the “outside” can take different forms such as providing or interpreting data or even co-creating the research protocol.
+Que voulons-nous dire par “trajectoire d'implication” ? Il s'agit d'une trajectoire de recherche où l'équipe de recherche (“l'intérieur”) s'engage et développe des relations avec des acteur·ice·s externes (“l'extérieur”). Cet extérieur peut être constitué d'autres chercheur·e·s, d’institutions, d’associations, d’entreprises, d’étudiant·e·s… Cette implication de l'extérieur peut prendre des formes différentes, telles que la production ou l'interprétation de données ou même la co-création du protocole de recherche. 
 
-So, trajectories of engagement are research paths that articulate moments where only the inside is involved with other moments where inside and outside are both implicated.
+Ainsi, les trajectoires d'implication sont des chemins de recherche qui articulent des moments où seul l'intérieur est impliqué avec d'autres moments où l'intérieur et l'extérieur sont tous deux engagés. 
 
-These trajectories share three key properties:
+Ces trajectoires partagent trois propriétés principales : 
 
-* They respond to a public issue or social concern (such as climate change, AI, disinformation, etc.)
-* They aim to actively engage external actors in the research process, rather than just consulting them at the end.
-* They might be  supported by the traceability of social interactions made possible by digital devices.
+* Elles répondent à un enjeu public ou à une préoccupation sociale (comme le changement climatique, l'IA, la désinformation, etc.).
+* Elles visent à impliquer activement des acteur·ice·s externes dans le processus de recherche, plutôt que de les consulter à la fin. 
+* Elles peuvent s’appuyer sur les traces des interactions sociales rendues possibles par les dispositifs numériques.
 
-Involvement of external actors can take various forms, such as interfaces (artistic installations), experimental protocols (publication protocols), devices (participatory platforms), and events (hackathons). The involvement of the outside in research trajectories can go both ways. The research team can incorporate external actors or strategies from the outside into the research process (such as reproducing models from third places or using play practices). Alternatively, external actors can contribute to the research trajectories in various ways, such as by providing data, tasks, or ideas. In short trajectories of engagement are moments of knowledge production in which the outside co-constructs with the inside.
+L'implication des acteur·ice·s externes peut prendre des formes diverses, telles que des interfaces (installations artistiques), des protocoles expérimentaux (protocoles de publication), des dispositifs (plateformes participatives) et des événements (hackathons). L'implication de l'extérieur dans les trajectoires de recherche peut se faire dans les deux sens. L'équipe de recherche peut inclure des acteur·ice·s externes ou des stratégies de l'extérieur dans le processus de recherche (tels que la reproduction de modèles de tiers-lieux ou l'utilisation de pratiques ludiques). Ou bien, les acteur·ice·s externes peuvent contribuer aux trajectoires de recherche de différentes manières, comme en produisant des données ou des idées. En bref, les trajectoires d'implication sont des moments de production de connaissances dans lesquels l'extérieur co-construit avec l'intérieur. 
 
-### Goals & Purposes
+### Objectifs
 
-The purpose of this research project is to engage in a critical and collective reflection  on trajectories of engagement in the humanities and social sciences. The goals of the project include building an observatory and network of researchers interested in investigation the materiality of these trajectories and exploring the following research questions:
+Le but de ce projet de recherche est de s'engager dans une réflexion critique et collective sur les trajectoires d'implication dans les sciences humaines et sociales. Les objectifs du projet incluent le développement d'un observatoire et d'un réseau de chercheur·e·s intéressé·e·s par approfondir les enjeux de la matérialité de ces trajectoires et l'exploration des questions de recherche suivantes : 
 
-* What are the different forms that trajectories of engagement can take in the humanities and social sciences?
-* How do internal and external actors interact in trajectories of engagement, and what are the implications of these interactions for knowledge production?
-* What is the role of the material infrastructure in trajectories of engagement, and how does it shape the involvement of external actors? What are material configurations that foster involvement in different contexts ? 
-* What are the material and socio-technical choices involved in the use of trajectories of engagement, and how do these choices impact the research process and outcomes?
+* Quelles sont les différentes formes que les trajectoires d'implication peuvent prendre dans les sciences humaines et sociales ? 
+* Comment les acteur·ice·s internes et externes interagissent-iels dans les trajectoires d'implication, et quelles sont les conséquences de ces interactions pour la production de connaissances ?
+* Quel est le rôle de l’infrastructure matérielle dans les trajectoires d’implication, et comment cela affecte l’engagement des acteur·ice·s externes ? Quelles sont les configurations matérielles qui encouragent l'implication dans des contextes différents ? 
+* Quels sont les choix matériels et socio-techniques impliqués dans les trajectoires d’implication, et comment ces choix affectent le processus de recherche et ses résultats ? 
 
 ### Participation
 
-*Do you cope with these questions in your research? Have you ever built a trajectory of engagement? Or are you just intrigued by this approach?*
+*Est-ce que vous faites face à ces questions dans votre recherche? Avez-vous déjà construit une trajectoire d'implication? Ou êtes-vous simplement intrigué·e par cette approche?*
 
-You can join this project in several ways:
+Vous pouvez rejoindre ce projet de plusieurs manières :
 
-1. Contact us and we can organize an interview to fill the questionnaire together.
-2. You can also contact us to obtain more information about the project and be involved even if you don’t have a project to share.
+* [Contactez-nous](mailto:msevero@parisnanterre.fr) et nous pourrons organiser ensemble. E-mail : msevero@parisnanterre.fr
+* Vous pouvez également nous contacter pour obtenir plus d'informations sur le projet et être impliqué·e même si vous n'avez pas de démarches à partager.
 
-All participants who fill out the questionnaire or participate in an interview will have the opportunity to make a video summarizing their trajectory. The results of the query and the video will be published in the observatory. All participants will also be invited to a final event in Paris the 15 September 2023 to present their trajectories and share their experiences. After the event, a collective book will be produced to present the identified trajectories.
+Tous·tes les participant·e·s auront l'occasion de faire une vidéo résumant leur trajectoire. Les résultats de l'enquête et les vidéos seront publiés dans l'observatoire. Tous·tes les participant·e·s seront également invité·e·s à un événement final à Paris le 15 septembre 2023 pour présenter leurs trajectoires et partager leurs expériences. Après l'événement, un livre collectif sera produit pour présenter les trajectoires identifiées.
 
-### Research Team
+### Équipe de recherche 
 
 Robin De Mourat, médialab, Sciences Po
 
@@ -54,15 +54,15 @@ Alex Pellier, Dicen-IdF, Université Paris Nanterre
 
 Donato Ricci, médialab, Sciences Po
 
-Marta Severo, Dicen-IdF, Université Paris Nanterre, msevero@parisnanterre.fr
+Marta Severo, Dicen-IdF, Université Paris Nanterre
 
-### Funding
+### Financement
 
-This project is funded by the Institut Universitaire de France (Marta Severo, junior grant)
+Ce projet est financé par l'[Institut Universitaire de France](https://www.iufrance.fr/) (Marta Severo, membre junior).
 
-### Participants (so far)
+### Participant·e·s (jusqu'à présent)
 
-* Muriel Amar - À l’ombre des bibliothèques - Enssib
-* Valentine Crosset - Gouverner la parole en ligne - médialab Sciences Po
-* Pauline Gourlet - Shaping AI - médialab Sciences Po
-* Thomas Tari - Zone Critique - Controverses en action - médialab Sciences Po
+* Muriel Amar - [À l’ombre des bibliothèques](https://books.openedition.org/pressesenssib/16389?lang=fr)
+* Valentine Crosset - [Gouverner la parole en ligne](https://medialab.sciencespo.fr/activites/gouverner-la-parole-en-ligne/)
+* Pauline Gourlet - [Shaping AI](https://www.shapingai.org/)
+* Thomas Tari - [Zone Critique / Controverses en action](https://medialab.sciencespo.fr/activites/zone-critique-controverses-en-action/)
