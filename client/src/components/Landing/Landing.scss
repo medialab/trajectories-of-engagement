@@ -37,6 +37,10 @@
     font-size: var(--fontsizebase);
     box-sizing: border-box;
     padding-left: 0;
+
+    a {
+      color: inherit;
+    }
   }
   > p:last-of-type {
     margin-bottom: 20vh;
