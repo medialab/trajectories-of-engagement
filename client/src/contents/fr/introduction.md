@@ -8,7 +8,7 @@ Les trajectoires d’implication décrivent des moments dans le processus de rec
 
 Ce projet de recherche vise à explorer et à décrire les différentes formes que les trajectoires d'implication peuvent prendre dans les sciences humaines et sociales, les interactions entre les acteur·ice·s internes et externes qu'elles peuvent générer et la matérialité des choix socio-techniques impliqués. Les résultats attendus sont le développement d’un observatoire et d’un réseau de chercheur·e·s intéressé·e·s par l'étude de ces trajectoires ainsi que l'écriture d’un livre pour présenter les trajectoires identifiées. 
 
-Vous pouvez participer au projet en nous contactant pour planifier un entretien. Tous·tes les participant·e·s seront invité·e·s à l'événement final le 15 septembre 2023 à Paris et pourront être inclu·e·s dans le livre collectif sur les trajectoires identifiées. 
+Vous pouvez participer au projet en [nous contactant](trajectories@liste.parisnanterre.fr) pour planifier un entretien. Tous·tes les participant·e·s seront invité·e·s à l'événement final le 15 septembre 2023 à Paris et pourront être inclu·e·s dans le livre collectif sur les trajectoires identifiées. 
 
 ### Contexte
 
@@ -41,7 +41,7 @@ Le but de ce projet de recherche est de s'engager dans une réflexion critique e
 
 Vous pouvez rejoindre ce projet de plusieurs manières :
 
-* [Contactez-nous](mailto:msevero@parisnanterre.fr) et nous pourrons organiser un entretien ensemble. E-mail : msevero@parisnanterre.fr
+* [Contactez-nous](mailto:trajectories@liste.parisnanterre.fr) et nous pourrons organiser un entretien ensemble. E-mail : trajectories@liste.parisnanterre.fr
 * Vous pouvez également nous contacter pour obtenir plus d'informations sur le projet et être impliqué·e même si vous n'avez pas de démarches à partager.
 
 Tous·tes les participant·e·s auront l'occasion de faire une vidéo résumant leur trajectoire. Les résultats de l'enquête et les vidéos seront publiés dans l'observatoire. Tous·tes les participant·e·s seront également invité·e·s à un événement final à Paris le 15 septembre 2023 pour présenter leurs trajectoires et partager leurs expériences. Après l'événement, un livre collectif sera produit pour présenter les trajectoires identifiées.

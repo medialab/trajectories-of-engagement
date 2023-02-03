@@ -41,7 +41,7 @@ The purpose of this research project is to engage in a critical and collective r
 
 You can join this project in several ways:
 
-1. {Contact us}(mailto:trajectories@liste.parisnanterre.fr) and we can organize an interview together. E-mail : trajectories@liste.parisnanterre.fr
+1. [Contact us](mailto:trajectories@liste.parisnanterre.fr) and we can organize an interview together. E-mail : trajectories@liste.parisnanterre.fr
 2. You can also contact us to obtain more information about the project and be involved even if you don’t have a project to share.
 
 All participants will have the opportunity to make a video summarizing their trajectory. The results of the query and the video will be published in the observatory. All participants will also be invited to a final event in Paris the 15 September 2023 to present their trajectories and share their experiences. After the event, a collective book will be produced to present the identified trajectories.
