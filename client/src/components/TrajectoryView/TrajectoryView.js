@@ -4,15 +4,24 @@ import { useEffect, useState } from 'react';
 import { useForm } from "react-hook-form";
 import { toast } from 'react-toastify';
 
-import { getTrajectory, updateTrajectory } from "../client";
-import { useAuth } from "../utils";
+import { getTrajectory, updateTrajectory } from "../../client";
+import { useAuth } from "../../utils";
+import GeneralInformation from "./GeneralInformation";
 
 export default function TrajectoryView() {
   const { id } = useParams();
   const {password} = useAuth();
   const [trajectory, setTrajectory] = useState(null);
   const [loadingStatus, setLoadingStatus] = useState('pending');
-  const { register, handleSubmit, watch, formState: { errors }, reset } = useForm();
+  const { 
+    register, 
+    handleSubmit, 
+    watch, 
+    control,
+    getValues,
+    setValue,
+    formState: { errors }, reset 
+  } = useForm();
  
   const refreshTrajectory = () => {
     setLoadingStatus('pending');
@@ -21,6 +30,11 @@ export default function TrajectoryView() {
       .then(res => {
         setLoadingStatus('success');
         setTrajectory(res?.data);
+        // @todo this is ugly but working, refacto someday
+        const newData = res?.data || {};
+        for (let key in newData) {
+          setValue(key, newData[key])
+        }
       })
       .catch(err => {
         console.error(err);
@@ -43,6 +57,7 @@ export default function TrajectoryView() {
         ...data,
         date_updated: new Date()
       }
+      // console.log('updatedTrajectory', updatedTrajectory);
       setLoadingStatus('pending');
       updateTrajectory(updatedTrajectory, password)
       .then(refreshTrajectory)
@@ -73,7 +88,7 @@ export default function TrajectoryView() {
   }
 
   return (
-    <div>
+    <div className="TrajectoryView">
       This is a trajectory form for id <code>{id}</code>
       {
         loadingStatus === 'pending' ?
@@ -86,7 +101,15 @@ export default function TrajectoryView() {
       {
         loadingStatus === 'success' ?
           <form onSubmit={handleSubmit(onSubmit)}>
-            <input defaultValue={trajectory.part1_general.name} {...register("part1_general.name")} />
+            <GeneralInformation
+              {...{
+                trajectory,
+                register,
+                control,
+                getValues,
+                setValue,
+              }}
+            />
             {
               errors.length ?
                 <pre>
