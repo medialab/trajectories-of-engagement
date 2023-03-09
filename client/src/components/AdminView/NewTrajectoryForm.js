@@ -22,7 +22,7 @@ export default function NewTrajectoryForm({
         <li>
           <label>Titre de la trajectoire</label>
           <div ref={firstInputRef}>
-            <input placeholder="titre de la trajectoire" {...register("part1_general.name", { required: true })} />
+            <input placeholder="titre de la trajectoire" {...register("trajectory_name", { required: true })} />
           </div>
         </li>
         <li>

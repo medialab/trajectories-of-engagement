@@ -25,7 +25,7 @@ export default function LoginPage() {
     if (inputRef.current) {
       inputRef.current.focus();
     }
-  }, [inputRef.current])
+  }, [inputRef.current]) /* eslint react-hooks/exhaustive-deps : 0 */
 
   function handleSubmit(event) {
     event.preventDefault();
