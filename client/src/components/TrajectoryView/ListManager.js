@@ -1,12 +1,12 @@
 import { arrayMoveImmutable as move } from 'array-move';
-import FlipMove from 'react-flip-move';
+// import FlipMove from 'react-flip-move';
 import { DragDropContext, Droppable, Draggable } from "react-beautiful-dnd";
 import { useState } from 'react';
 
 const grid = 5;
 
 const getListStyle = isDraggingOver => ({
-  background: isDraggingOver ? "lightblue" : "lightgrey",
+  background: isDraggingOver ? "lightgrey" : "inherit",
   padding: grid,
   width: 250
 });
@@ -18,7 +18,9 @@ const getItemStyle = (isDragging, draggableStyle) => ({
   margin: `0 0 ${grid}px 0`,
 
   // change background colour if dragging
-  background: isDragging ? "lightgreen" : "grey",
+  background: isDragging ? "white" : "inherit",
+  // color: isDragging ? 'white': 'inherit',
+  border: isDragging ? '1px dashed red' : '1px solid black',
 
   // styles we need to apply on draggables
   ...draggableStyle
@@ -30,6 +32,7 @@ export default function ListManager({
   onUpdateItems,
   items,
   reordable = true,
+  messageAddItem,
 }) {
   const [disableFlipMove, setDisableFlipMove] = useState(false);
   const handleAddItem = (e) => {
@@ -64,10 +67,10 @@ export default function ListManager({
             style={getListStyle(snapshot.isDraggingOver)}
           >
             <ul style={{position: 'relative'}}>
-              <FlipMove
+              {/* <FlipMove
                 typeName={null}
                 disableAllAnimations={disableFlipMove}
-              >
+              > */}
                 {
                   items.map((itemData, itemIndex) => {
                     const handleUp = (e) => {
@@ -97,6 +100,7 @@ export default function ListManager({
                                 snapshot.isDragging,
                                 provided.draggableProps.style
                               )}
+                              className="list-item"
                             >
                               <div className="item-form-container">
                                 {renderItem(itemData, itemIndex)}
@@ -126,9 +130,9 @@ export default function ListManager({
                   })
                 }
                 {provided.placeholder}
-              </FlipMove>
+              {/* </FlipMove> */}
             </ul>
-            <button onClick={handleAddItem}>Add item</button>
+            <button onClick={handleAddItem}>{messageAddItem || 'add item'}</button>
           </div>
         )}
       </Droppable>

@@ -2,5 +2,29 @@ project_name_question:
   en: What is the name of the project?
   fr: Quel est le nom du projet de recherche dont est issue la trajectoire d'implication ?
 project_urls_question:
-  fr: Quels sont les URLs du projet en question ?
-  en: What are the URLs of the project?
+  fr: Quels sont les liens URLs du projet en question ?
+  en: What are the URLs links of the project?
+social_concern_question:
+  fr: Quel est le concernement social ou le problème public auquel la trajectoire d'implication entend répondre ?
+  en: What is the social concern or the public problem that the engagement trajectory tries to address ?
+contact_email_question:
+  fr: Pourriez-vous nous donner une adresse email de contact pour éventuellement revenir vers vous à la suite de votre réponse ?
+  en: Could you give us an email address to possibly come back to you relatively to your answer?
+unknown_trajectory:
+  fr: trajectoire sans nom
+  en: unnamed trajectory
+you_are_editing:
+  fr: "Vous éditez actuellement la trajectoire :"
+  en: "You are currently editing the trajectory:"
+loading:
+  fr: chargement
+  en: loading
+save_changes:
+  fr: sauvegarder les changements
+  en: save changes
+discard_changes:
+  fr: annuler les changements
+  en: discard changes
+add_url_button:
+  fr: ajouter un lien
+  en: add a link

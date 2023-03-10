@@ -7,7 +7,7 @@ export default function QuestionGroup ({
 }) {
   return (
     <div className="QuestionGroup">
-      <h4>{question}</h4>
+      <h4 className="question">{question}</h4>
       {
         indications ?
         <div className="indications">

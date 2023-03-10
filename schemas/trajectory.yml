@@ -16,6 +16,8 @@ properties:
     labels:
       en: What is the name of the project?
       fr: Quel est le nom du projet
+  contact_email:
+    type: string
   trajectory_URLs:
     type: array
     items:

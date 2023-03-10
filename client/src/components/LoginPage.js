@@ -49,7 +49,7 @@ export default function LoginPage() {
 
         <form onSubmit={handleSubmit}>
           <label>
-            Password {isAdmin ? '(admin)' : <span>(for this trajectory <code>{id}</code>)</span>}:
+            Password {isAdmin ? '(admin)' : <span>(for this specific trajectory)</span>}:
             <input ref={inputRef} name="password" id="password" type="password" />
           </label>{" "}
           <button type="submit">Login</button>

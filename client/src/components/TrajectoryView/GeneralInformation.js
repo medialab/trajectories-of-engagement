@@ -1,4 +1,5 @@
 import {v4 as genId} from 'uuid';
+import Textarea from 'react-textarea-autosize';
 
 import ListManager from "./ListManager";
 import QuestionGroup from "./QuestionGroup";
@@ -26,6 +27,7 @@ export default function GeneralInformation({
         <ListManager
           // fieldName="trajectory_URLs"
           items={getValues("trajectory_URLs") || []}
+          messageAddItem={translate('add_url_button', lang)}
           onNewItem={() => {
             const newItem = {
               id: genId(),
@@ -42,19 +44,21 @@ export default function GeneralInformation({
           renderItem={(item, index) => {
             return (
               <div key={item.id} className="item">
-                <div className="subgroup">
+                <div className="input-group">
                   <label>
                     URL
                   </label>
                   <input
+                    placeholder="URL"
                     {...register(`trajectory_URLs.${index}.URL`)} 
                   />
                 </div>
-                <div className="subgroup">
+                <div className="input-group">
                   <label>
                     description
                   </label>
                   <input
+                    placeholder="description"
                     {...register(`trajectory_URLs.${index}.description`)} 
                   />
                 </div>
@@ -65,9 +69,14 @@ export default function GeneralInformation({
         />
       </QuestionGroup>
       <QuestionGroup
-        question="Quel est le concernement social ou le problème public auquel la trajectoire d'implication entend répondre ?"
+        question={translate('social_concern_question', lang)}
       >
-        <input defaultValue={trajectory.concern} {...register("concern")} />
+        <Textarea defaultValue={trajectory.concern} {...register("concern")} />
+      </QuestionGroup>
+      <QuestionGroup
+        question={translate('social_concern_question', lang)}
+      >
+        <Textarea defaultValue={trajectory.contact_email} {...register("contact_email")} />
       </QuestionGroup>
     </div>
   )

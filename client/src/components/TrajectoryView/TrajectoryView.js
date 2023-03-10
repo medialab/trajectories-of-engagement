@@ -1,12 +1,16 @@
 import { useParams, useSearchParams } from "react-router-dom"
 import { useEffect, useState, useMemo } from 'react';
+// import cx from 'classnames';
 // https://react-hook-form.com/get-started
 import { useForm } from "react-hook-form";
 import { toast } from 'react-toastify';
 
+import { translate } from "../../utils";
 import { getTrajectory, updateTrajectory } from "../../client";
 import { useAuth } from "../../utils";
 import GeneralInformation from "./GeneralInformation";
+
+import './TrajectoryView.scss';
 
 export default function TrajectoryView() {
   const { id } = useParams();
@@ -95,17 +99,24 @@ export default function TrajectoryView() {
 
   return (
     <div className="TrajectoryView">
-      This is a trajectory form for id <code>{id}</code>
+      <header>
+        <h1>
+        {translate('you_are_editing', lang)}
+        {' '}
+        {getValues('trajectory_name') || translate('unknown_trajectory', lang)}
+        </h1>
+      </header>
       {
         loadingStatus === 'pending' ?
-          <div>Loading</div> : null
+          <div className="temp"><div>{translate('loading', lang)}</div></div> : null
       }
       {
         loadingStatus === 'error' ?
-          <div>Error</div> : null
+          <div className="temp"><div>Error, reload</div></div> : null
       }
       {
         loadingStatus === 'success' ?
+        <main>
           <form onSubmit={handleSubmit(onSubmit)}>
             <GeneralInformation
               {...{
@@ -127,10 +138,24 @@ export default function TrajectoryView() {
                 : null
             }
             <footer>
-              <button disabled={!isChanged} type="submit">Save changes</button>
-              <button onClick={handleDiscardChanges} disabled={!isChanged}>Discard changes</button>
+              <div className="left-group">
+                <button disabled={!isChanged} type="submit">
+                  {translate('save_changes', lang)}
+                </button>
+                <button 
+                  onClick={handleDiscardChanges} 
+                  disabled={!isChanged}
+                >
+                  {translate('discard_changes', lang)}
+                </button>
+              </div>
+              <div className="right-group">
+                <button disabled={lang === 'fr'} onClick={() => setSearchParams({lang: 'fr'})}>fr</button>
+                <button disabled={lang === 'en'} onClick={() => setSearchParams({lang: 'en'})}>en</button>
+              </div>
             </footer>
           </form>
+          </main>
           : null
       }
 
