@@ -1,6 +1,8 @@
+import {v4 as genId} from 'uuid';
+
 import ListManager from "./ListManager";
 import QuestionGroup from "./QuestionGroup";
-import {v4 as genId} from 'uuid';
+import { translate } from '../../utils';
 
 
 export default function GeneralInformation({
@@ -14,12 +16,12 @@ export default function GeneralInformation({
   return (
     <div className="GeneralInformation">
       <QuestionGroup
-        question="Quel est le nom du projet de recherche dont est issue la trajectoire d'implication ?"
+        question={translate('project_name_question', lang)}
       >
         <input defaultValue={trajectory.trajectory_name} {...register("trajectory_name")} />
       </QuestionGroup>
       <QuestionGroup
-        question="Quels sont les URLs du projet  en question ?"
+        question={translate('project_urls_question', lang)}
       >
         <ListManager
           // fieldName="trajectory_URLs"

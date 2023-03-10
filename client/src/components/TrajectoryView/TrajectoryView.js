@@ -1,5 +1,5 @@
-import { useParams } from "react-router-dom"
-import { useEffect, useState } from 'react';
+import { useParams, useSearchParams } from "react-router-dom"
+import { useEffect, useState, useMemo } from 'react';
 // https://react-hook-form.com/get-started
 import { useForm } from "react-hook-form";
 import { toast } from 'react-toastify';
@@ -10,9 +10,15 @@ import GeneralInformation from "./GeneralInformation";
 
 export default function TrajectoryView() {
   const { id } = useParams();
+  const [searchParams, setSearchParams] = useSearchParams();
   const {password} = useAuth();
   const [trajectory, setTrajectory] = useState(null);
   const [loadingStatus, setLoadingStatus] = useState('pending');
+  let lang = useMemo(() => {
+    return searchParams && searchParams.get('lang');
+  }, [searchParams]);
+  lang = lang || 'en';
+  
   const { 
     register, 
     handleSubmit, 
@@ -108,6 +114,7 @@ export default function TrajectoryView() {
                 control,
                 getValues,
                 setValue,
+                lang,
               }}
             />
             {
