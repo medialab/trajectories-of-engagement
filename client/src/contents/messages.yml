@@ -1,3 +1,5 @@
+# questionnaire questions
+# starting questions
 project_name_question:
   en: What is the name of the project?
   fr: Quel est le nom du projet de recherche dont est issue la trajectoire d'implication ?
@@ -5,11 +7,120 @@ project_urls_question:
   fr: Quels sont les liens URLs du projet en question ?
   en: What are the URLs links of the project?
 social_concern_question:
-  fr: Quel est le concernement social ou le problème public auquel la trajectoire d'implication entend répondre ?
+  fr: Quel est la préoccupation sociale ou le problème public auquel la trajectoire d'implication entend répondre ?
   en: What is the social concern or the public problem that the engagement trajectory tries to address ?
 contact_email_question:
   fr: Pourriez-vous nous donner une adresse email de contact pour éventuellement revenir vers vous à la suite de votre réponse ?
   en: Could you give us an email address to possibly come back to you relatively to your answer?
+# actors
+actors_question:
+  fr: Qui sont les acteurs impliqués dans le projet ?
+  en: Who are the actors involved in the project ?
+actors_note:
+  fr: Notes
+  en: Notes
+actors_typology_individual:
+  fr: individu
+  en: individual
+actors_typology_laboratory:
+  fr: laboratoire
+  en: laboratory
+actors_typology_company:
+  fr: entreprise
+  en: company
+actors_typology_ngo:
+  fr: organisation à but non-lucratif
+  en: not-for-profit organization
+actors_typology_other:
+  fr: autre
+  en: other
+external_actors_question:
+  fr: Lesquels définiriez-vous comme "extérieurs" à "l'intérieur" universitaire de la trajectoire ?
+  en: Which ones would you define as “exterior” to the academic “inside” of the trajectory ?
+outside_definition_question:
+  en: What would be the definition of the “outside” of the trajectory resulting from your choices ?
+  fr: Quelle serait la définition de "l'extérieur" de la trajectoire résultant de vos choix ?
+
+# phases
+research_phase_intro_question:
+  fr: Lister les phases de la trajectoire de recherche
+  en: List the phases of the research trajectory
+research_phase_name_question:
+  fr: Comment nommeriez-vous cette phase de recherche ?
+  en: How would you name this research phase ?
+research_phase_type_question:
+  fr: "Comment définiriez-vous cette phase selon la typologie suivante :"
+  en: "How would you define this phase according to the following typology:"
+research_phase_typology_problematization:
+  fr: Identification d'enjeux / Problématisation
+  en: Identification of issues / problematization
+research_phase_typology_hypotheses:
+  fr: Formulation d'hypothèses
+  en: Formulation of hypotheses
+research_phase_typology_data_collection:
+  fr: Collecte de données
+  en: Data collection
+research_phase_typology_contact:
+  fr: Recherche de partenaires et prise de contact
+  en: Partners seeking and getting in touch
+research_phase_typology_fieldwork:
+  fr: Enquête de terrain
+  en: Fieldwork
+research_phase_typology_materials:
+  fr: Gestion des matériaux
+  en: Handling of materials
+research_phase_typology_data_analysis:
+  fr: Analyse de données
+  en: Data analysis
+research_phase_typology_data_interpretation:
+  fr: Interprétation de données
+  en: Data interpretation
+research_phase_typology_dissemination:
+  fr: Dissémination des résultats
+  en: Dissemination of results
+research_phase_externals_question:
+  fr: Des acteurs externes sont-ils impliqués dans cette phase ?
+  en: Are external actors involved in this phase?
+research_phase_externals_detail_question:
+  fr: Quels sont les acteurs externes impliqués dans cette phase ?
+  en: Who are the external actors involved in this phase ?
+research_phase_externals_agency_question:
+  fr: Pourriez-vous décrire sous quelle forme et de quelle manière les acteurs externes ont la possibilité d'influencer, diriger et/ou contrôler les activités menées pendant cette phase ?
+  en: Could you describe in what form and in what way the external actors have the possibility to influence, direct and/or control the activities carried out during this phase?
+research_phase_digital_question:
+  fr: Les dispositifs numériques jouent-ils un rôle dans la relation intérieur/extérieur pendant cette phase ? Si oui, quel rôle ?
+  en: Do digital tools play a role in the inside/outside relationship during this phase? If yes, which role?
+research_phase_devices_traces_question:
+  en: Did devices (digital or not) play a role in producing materials (documents, logs, traces, images, videos, etc.) tracing the relationship between inside and outside? If yes which ones?
+  fr: Des appareils (numériques ou non) jouent-ils un rôle dans la production de matériaux (documents, journaux, traces, images, vidéos, etc.) pour le traçage de la relation entre l'intérieur et l'extérieur ? Si oui lesquels ?
+research_phase_materials_list_question:
+  en: List the materials produced during this phase, specifying by who and for who they are produced
+  fr: Lister les matériaux produits durant cette phase, en spécifiant par qui et pour qui ils sont produits
+research_phase_resources_question:
+  en: On what kind of resources (human, financial) does this phase rely on ?
+  fr: Sur quelles ressources (humaines, financières) cette phase repose-t-elle ?
+research_phase_extra_materials_question:
+  en: Do you have extra materials (images, videos) allowing to document the phase ?
+  fr: Avez-vous des matériaux supplémentaires (images, vidéos) permettant de documenter la phase ?
+
+# reflective end part
+effects_on_externals_question:
+  fr: Dans le projet, comment les acteurs externes ont-ils été affectés par les contributions internes ?
+  en: In the project, how were external actors affected by external contributions ?
+effects_on_internals_question:
+  fr: Dans le projet, comment les acteurs externes ont-ils été affectés par les contributions internes ?
+  en: In the project, how were external actors affected by internal contributions ?
+perspectives_question:
+  fr: Quelles sont les perspectives de cette trajectoire ? Des développements futurs sont-ils prévus, et étaient-ils prévus au début de la trajectoire ?
+  en: What are the perspectives of this trajectory? Are future developments planned, and were they planned at the start of the trajectory?
+accepts_interview_question:
+  fr: Seriez-vous intéressé pour faire un entretien (éventuellement en vidéo) sur la trajectoire que vous avez décrite dans ce questionnaire ?
+  en: Would you be interested in doing an interview (possibly in video) about the trajectory you described in this questionnaire?
+
+# questionnaire actions and ui details
+other_specify:
+  fr: autre (spécifier)
+  en: other (specify)
 unknown_trajectory:
   fr: trajectoire sans nom
   en: unnamed trajectory
