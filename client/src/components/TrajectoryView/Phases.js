@@ -8,7 +8,7 @@ import YesNoRadio from './YesNoRadio';
 import { useMemo } from 'react';
 import Select from 'react-select';
 
-const PHASES_TYPES = [
+export const PHASES_TYPES = [
   'problematization', 
   'hypotheses', 
   'data_collection', 
@@ -87,6 +87,9 @@ export default function Phases({
   getValues,
   setValue,
   isMinified,
+  isSelectable,
+  selectedItemId,
+  onSelectItem
 }) {
   const phases = getValues('phases');
 
@@ -98,18 +101,22 @@ export default function Phases({
   , [lang]);
   return (
     <div className={`Phases ${isMinified ? 'is-minified': ''}`}>
-      <h2 className="part-title">
-        {translate('trajectory_phases_title', lang)}
-      </h2>
+      {
+        !isMinified &&
+        <h2 className="part-title">
+          {translate('trajectory_phases_title', lang)}
+        </h2>
+      }
+      
       <QuestionGroup
-        question={translate('research_phase_intro_question', lang)}
+        question={isMinified ? translate('research_phases_minified_title', lang) : translate('research_phase_intro_question', lang)}
       >
         <ListManager
           items={getValues("phases") || []}
           messageAddItem={translate('add_phase_button', lang)}
           isMinified={isMinified}
           lang={lang}
-          renderMinifiedHeader={(phase) => <span>{phase.name} ({phase.type ? translate(`research_phase_typology_${phase.type}`) : ''})</span>}
+          renderMinifiedHeader={(phase, index) => <span>{index + 1}. {phase.name} {phase.type ? `(${translate(`research_phase_typology_${phase.type}`)})` : ''}</span>}
           onNewItem={() => {
             const newItem = {
               id: genId(),
@@ -145,6 +152,9 @@ export default function Phases({
             )
             
           }}
+          isSelectable={isSelectable}
+          selectedItemId={selectedItemId}
+          onSelectItem={onSelectItem}
         />
       </QuestionGroup>
     </div>

@@ -73,6 +73,9 @@ trajectory_phases_title:
 research_phase_intro_question:
   fr: Lister les phases de la trajectoire de recherche
   en: List the phases of the research trajectory
+research_phases_minified_title:
+  fr: Phases de la recherche
+  en: Research phases
 add_phase_button:
   fr: ajouter une phase
   en: add a phase
@@ -112,9 +115,15 @@ research_phase_typology_dissemination:
 research_phase_externals_question:
   fr: Des acteurs externes sont-ils impliqués dans cette phase ?
   en: Are external actors involved in this phase?
+research_phase_details_none_selected:
+  fr: Aucune phase n'est sélectionnée
+  en: No phase selected
 research_phase_externals_detail_question:
   fr: Quels sont les acteurs externes impliqués dans cette phase ?
   en: Who are the external actors involved in this phase ?
+research_phase_externals_detail_click_prompt:
+  fr: Cliquer sur les acteurs impliqués
+  en: Click on involved actors
 research_phase_externals_agency_question:
   fr: Pourriez-vous décrire sous quelle forme et de quelle manière les acteurs externes ont la possibilité d'influencer, diriger et/ou contrôler les activités menées pendant cette phase ?
   en: Could you describe in what form and in what way the external actors have the possibility to influence, direct and/or control the activities carried out during this phase?
@@ -130,9 +139,9 @@ research_phase_materials_list_question:
 research_phase_resources_question:
   en: On what kind of resources (human, financial) does this phase rely on ?
   fr: Sur quelles ressources (humaines, financières) cette phase repose-t-elle ?
-research_phase_extra_materials_question:
-  en: Do you have extra materials (images, videos) allowing to document the phase ?
-  fr: Avez-vous des matériaux supplémentaires (images, vidéos) permettant de documenter la phase ?
+# research_phase_extra_materials_question:
+#   en: Do you have extra materials (images, videos) allowing to document the phase ?
+#   fr: Avez-vous des matériaux supplémentaires (images, vidéos) permettant de documenter la phase ?
 
 # reflective end part
 conclusion_and_reflection_title:

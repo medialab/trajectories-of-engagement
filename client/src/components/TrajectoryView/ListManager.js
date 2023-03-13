@@ -37,7 +37,10 @@ const ListItem = ({
   onDown,
   onDelete,
   items,
-  isMinified
+  isMinified,
+  isSelectable,
+  isSelected,
+  onSelect
 }) => {
 
   const [isEdited, setIsEdited] = useState(false);
@@ -45,27 +48,35 @@ const ListItem = ({
     setIsEdited(false);
   }, [isMinified]);
 
+  const handleClick = () => {
+    if (isSelectable) {
+      onSelect(itemData, itemIndex);
+    }
+  }
+
   if (isMinified && !isEdited) {
     return (
       <Draggable key={itemData.id} draggableId={itemData.id} index={itemIndex}>
       {(provided, snapshot) => (
-         <div 
-         ref={provided.innerRef}
+         <div
+          onClick={handleClick} 
+          ref={provided.innerRef}
              {...provided.draggableProps}
              {...provided.dragHandleProps}
              style={getItemStyle(
                snapshot.isDragging,
                provided.draggableProps.style
              )}
-         className="list-item minified">
+         className={`list-item minified ${isSelected ? 'is-selected': ''}`}>
            <div>
-             {renderMinifiedHeader(itemData)}
+             {renderMinifiedHeader(itemData, itemIndex)}
            </div>
-           <div>
-             <button onClick={() => setIsEdited(!isEdited)}>
-               {'✎'}
-             </button>
-           </div>
+           
+            <div className="edit-btn-container">
+              <button onClick={() => setIsEdited(!isEdited)}>
+                {'✎'}
+              </button>
+            </div>
          </div>
       )}
       </Draggable>
@@ -122,7 +133,11 @@ export default function ListManager({
   items,
   messageAddItem,
   isMinified,
-  lang
+  lang,
+  isSelectable,
+  selectedItemId,
+  selectedItemsIds,
+  onSelectItem,
 }) {
   // const [disableFlipMove, setDisableFlipMove] = useState(false);
   const handleAddItem = (e) => {
@@ -192,6 +207,9 @@ export default function ListManager({
                         items,
                         isMinified,
                         lang,
+                        isSelectable,
+                        isSelected: itemData.id === selectedItemId || (selectedItemsIds || []).includes(itemData.id),
+                        onSelect: () => onSelectItem(itemData.id, itemIndex),
                       }}
                     />
                   )

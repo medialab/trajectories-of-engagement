@@ -108,6 +108,15 @@
         &:hover {
           background: rgba(0, 0, 0, 0.05);
         }
+        
+      }
+      &.is-selected {
+        background: black!important;
+        color: white;
+        button {
+          border-color: white;
+          color: white;
+        }
       }
     }
     input {
@@ -181,5 +190,25 @@
     box-sizing: border-box;
     max-width: 800px;
     overflow-x: hidden;
+  }
+
+  .PhasesEditor {
+    position: relative;
+    display: flex;
+    flex-flow: row nowrap;
+    .Phases {
+      max-width: 400px;
+      .edit-btn-container {
+        display: none;
+      }
+    }
+    .phase-detail {
+      padding-left: 1rem;
+    }
+    .PhaseEditor {
+      h2 {
+        margin-top: 0;
+      }
+    }
   }
 }

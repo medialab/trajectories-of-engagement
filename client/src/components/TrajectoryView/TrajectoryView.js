@@ -14,6 +14,7 @@ import './TrajectoryView.scss';
 import ConclusionAndReflection from "./ConclusionAndReflection";
 import Actors from "./Actors";
 import Phases from "./Phases";
+import PhasesEditor from "./PhasesEditor";
 
 export default function TrajectoryView() {
   const { id } = useParams();
@@ -143,6 +144,16 @@ export default function TrajectoryView() {
                 }}
               />
               <Phases
+                {...{
+                  trajectory: currentValues,
+                  register,
+                  control,
+                  getValues,
+                  setValue,
+                  lang,
+                }}
+              />
+              <PhasesEditor
                 {...{
                   trajectory: currentValues,
                   register,

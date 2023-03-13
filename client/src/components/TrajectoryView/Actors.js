@@ -1,4 +1,4 @@
-import {v4 as genId} from 'uuid';
+import { v4 as genId } from 'uuid';
 import Textarea from 'react-textarea-autosize';
 
 import ListManager from "./ListManager";
@@ -16,63 +16,64 @@ const ActorItem = ({
   register,
   actorTypesOptions,
   index,
-  setValue
+  setValue,
 }) => {
+
   return (
-      <div className="item">
-        <div className="input-group">
-          <label>
-            {translate('actor_name', lang)}
-          </label>
-          <input
-            placeholder="name"
-            {...register(`actors.${index}.name`)}
-          />
-        </div>
-        <div className="input-group">
-          <label>
-            {translate('actor_type', lang)}
-          </label>
-          <Select
-            className="basic-single"
-            classNamePrefix="select"
-            defaultValue={actorTypesOptions[0]}
-            value={actor.type ? actorTypesOptions.find(a => a.type === actor.type) : undefined}
-            onChange={({value}) => setValue(`actors.${index}.type`, value)}
-            placeholder={translate('select', lang)}
-            isClearable={false}
-            isSearchable={false}
-            name="actor-type"
-            options={actorTypesOptions}
-          />
-          {/* <input
+    <div className={`item`}>
+      <div className="input-group">
+        <label>
+          {translate('actor_name', lang)}
+        </label>
+        <input
+          placeholder="name"
+          {...register(`actors.${index}.name`)}
+        />
+      </div>
+      <div className="input-group">
+        <label>
+          {translate('actor_type', lang)}
+        </label>
+        <Select
+          className="basic-single"
+          classNamePrefix="select"
+          defaultValue={actorTypesOptions[0]}
+          value={actor.type ? actorTypesOptions.find(a => a.type === actor.type) : undefined}
+          onChange={({ value }) => setValue(`actors.${index}.type`, value)}
+          placeholder={translate('select', lang)}
+          isClearable={false}
+          isSearchable={false}
+          name="actor-type"
+          options={actorTypesOptions}
+        />
+        {/* <input
             placeholder="type"
             {...register(`actors.${index}.type`)}
           /> */}
-        </div>
-        <div className="input-group">
-          <label>
-            {translate('actor_notes', lang)}
-          </label>
-          <input
-            placeholder={translate('actor_notes', lang)}
-            {...register(`actors.${index}.notes`)}
-          />
-        </div>
-        <div className="input-group">
-          <label>
-            {translate('actor_external', lang)}
-          </label>
-          <YesNoRadio
-            {...{
-              lang,
-              value: actor.external,
-              onChange: val => setValue(`actors.${index}.external`, val)
-            }}
-          />
-        </div>
       </div>
-    )
+      <div className="input-group">
+        <label>
+          {translate('actor_notes', lang)}
+        </label>
+        <input
+          placeholder={translate('actor_notes', lang)}
+          {...register(`actors.${index}.notes`)}
+        />
+      </div>
+      <div className="input-group">
+        <label>
+          {translate('actor_external', lang)}
+        </label>
+        <YesNoRadio
+          {...{
+            lang,
+            value: actor.external,
+            onChange: val => setValue(`actors.${index}.external`, val)
+          }}
+        />
+      </div>
+    </div>
+  )
 }
 export default function Actors({
   lang,
@@ -81,29 +82,44 @@ export default function Actors({
   getValues,
   setValue,
   isMinified,
+  isSelectable,
+  selectedIds,
+  onSelectionChange,
 }) {
   const actors = getValues('actors');
 
-  const actorTypesOptions = useMemo(() => 
+  const actorTypesOptions = useMemo(() =>
     ACTOR_TYPES.map(id => ({
       value: id,
       label: translate(`actors_typology_${id}`, lang)
     }))
-  , [lang]);
+    , [lang]);
   return (
-    <div className={`Actors ${isMinified ? 'is-minified': ''}`}>
-      <h2 className="part-title">
-        {translate('trajectory_actors_title', lang)}
-      </h2>
+    <div className={`Actors ${isMinified ? 'is-minified' : ''}`}>
+      {
+        !isSelectable &&
+        <h2 className="part-title">
+          {translate('trajectory_actors_title', lang)}
+        </h2>
+      }
       <QuestionGroup
-        question={translate('actors_question', lang)}
+        question={isSelectable ? '' : translate('actors_question', lang)}
       >
+        {
+          isSelectable ?
+            <p>
+              <i>
+                {translate('research_phase_externals_detail_click_prompt', lang)}
+              </i>
+            </p>
+            : null
+        }
         <ListManager
           items={getValues("actors") || []}
           messageAddItem={translate('add_actor_button', lang)}
           isMinified={isMinified}
           lang={lang}
-          renderMinifiedHeader={(actor) => <span>{actor.name} ({actor.type ? translate(`actors_typology_${actor.type}`) : ''})</span>}
+          renderMinifiedHeader={(actor) => <span>{actor.name} {actor.type ? ` (${translate(`actors_typology_${actor.type}`, lang)})` : ''}</span>}
           onNewItem={() => {
             const newItem = {
               id: genId(),
@@ -131,18 +147,42 @@ export default function Actors({
                   actorTypesOptions,
                   index,
                   setValue,
+                  
                 }}
               />
             )
-            
+
           }}
+          {
+            ...{
+              isSelectable,
+              selectedItemsIds: selectedIds || [],
+              onSelectItem: (itemId, index) => {
+                if ((selectedIds || []).includes(itemId)) {
+                  onSelectionChange(
+                    (selectedIds || [])
+                    .filter(id => id !== itemId)
+                  );
+                } else {
+                  onSelectionChange([
+                    ...(selectedIds || []),
+                    itemId,
+                  ]);
+                }
+              }
+            }
+          }
         />
       </QuestionGroup>
-      <QuestionGroup
-        question={translate('outside_definition_question', lang)}
-      >
-        <Textarea defaultValue={trajectory.outside_definition} {...register("outside_definition")} />
-      </QuestionGroup>
+      {
+        !isSelectable &&
+        <QuestionGroup
+          question={translate('outside_definition_question', lang)}
+        >
+          <Textarea defaultValue={trajectory.outside_definition} {...register("outside_definition")} />
+        </QuestionGroup>
+      }
+
     </div>
   )
 }
