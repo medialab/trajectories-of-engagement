@@ -1,7 +1,4 @@
-
-
 .TrajectoryView {
-
   /**
    * Components
    */
@@ -21,7 +18,7 @@
   input,
   textarea {
     font-family: inherit;
-    padding: .25rem;
+    padding: 0.25rem;
   }
   textarea {
     width: 100%;
@@ -34,7 +31,7 @@
   .QuestionGroup {
     .question {
       margin: 0;
-      margin-bottom: .5rem;
+      margin-bottom: 0.5rem;
       font-size: 1.3rem;
     }
     margin-bottom: 3rem;
@@ -45,7 +42,7 @@
     flex-flow: column nowrap;
     label {
       font-style: italic;
-      margin-bottom: .2rem;
+      margin-bottom: 0.2rem;
     }
 
     .radio-container {
@@ -55,14 +52,14 @@
       }
     }
 
-    margin-bottom: .5rem;
+    margin-bottom: 0.5rem;
   }
 
   .radio-container {
-    margin-top: 1rem;
+    // margin-top: 1rem;
     label {
       border: 1px solid black;
-      padding: .5rem;
+      padding: 0.5rem;
       box-sizing: border-box;
       cursor: pointer;
       input {
@@ -81,23 +78,21 @@
       list-style: none;
       padding: 0;
     }
+
     .list-item {
       border: 1px solid black;
       box-sizing: border-box;
-      .item-form-container {
-        .item {
-          &.minified{
-            display: flex;
-            flex-flow: row nowrap;
-            justify-content: space-between;
-            &:hover {
-              background: rgba(0,0,0,0.05);
-            }
-          }
+
+      .item {
+        display: flex;
+        flex-flow: row wrap;
+        .input-group {
+          padding: .5rem;
+          box-sizing: border-box;
         }
       }
       .item-actions-container {
-        margin-top: .5rem;
+        margin-top: 0.5rem;
         display: flex;
         flex-flow: row nowrap;
         align-items: center;
@@ -105,8 +100,14 @@
           min-height: 2rem;
           min-width: 2rem;
         }
-
-        
+      }
+      &.minified {
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: space-between;
+        &:hover {
+          background: rgba(0, 0, 0, 0.05);
+        }
       }
     }
     input {
@@ -114,7 +115,7 @@
       box-sizing: border-box;
     }
     .add-item-btn {
-      padding: .5rem 1rem;
+      padding: 0.5rem 1rem;
     }
   }
 
@@ -126,9 +127,7 @@
   display: flex;
   flex-direction: column nowrap;
   justify-content: center;
-    overflow-x: hidden;
-
-
+  overflow-x: hidden;
 
   .temp {
     width: 100%;
@@ -153,8 +152,16 @@
       margin: 0;
       padding: 0;
     }
+    h2 {
+      margin: 0;
+    }
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: flex-end;
+    justify-content: space-between;
     border-bottom: 1px solid black;
     z-index: 1;
+    box-sizing: border-box;
   }
   footer {
     box-sizing: border-box;

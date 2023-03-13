@@ -16,6 +16,9 @@ export default function ConclusionAndReflection({
 }) {
   return (
     <div className="ConclusionAndReflection">
+      <h2 className="part-title">
+        {translate('conclusion_and_reflection_title', lang)}
+      </h2>
       <QuestionGroup
         question={translate('effects_on_externals_question', lang)}
       >

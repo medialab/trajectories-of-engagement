@@ -15,6 +15,9 @@ export default function GeneralInformation({
 }) {
   return (
     <div className="GeneralInformation">
+      <h2 className="part-title">
+        {translate('general_questions_title', lang)}
+      </h2>
       <QuestionGroup
         question={translate('project_name_question', lang)}
       >
@@ -26,6 +29,7 @@ export default function GeneralInformation({
         <ListManager
           // fieldName="trajectory_URLs"
           items={getValues("trajectory_URLs") || []}
+          lang={lang}
           messageAddItem={translate('add_url_button', lang)}
           onNewItem={() => {
             const newItem = {

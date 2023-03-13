@@ -13,6 +13,7 @@ import GeneralInformation from "./GeneralInformation";
 import './TrajectoryView.scss';
 import ConclusionAndReflection from "./ConclusionAndReflection";
 import Actors from "./Actors";
+import Phases from "./Phases";
 
 export default function TrajectoryView() {
   const { id } = useParams();
@@ -107,6 +108,7 @@ export default function TrajectoryView() {
           {' '}
           {getValues('trajectory_name') || translate('unknown_trajectory', lang)}
         </h1>
+        <h2>{translate('site_title', lang)}</h2>
       </header>
       {
         loadingStatus === 'pending' ?
@@ -131,6 +133,16 @@ export default function TrajectoryView() {
                 }}
               />
               <Actors
+                {...{
+                  trajectory: currentValues,
+                  register,
+                  control,
+                  getValues,
+                  setValue,
+                  lang,
+                }}
+              />
+              <Phases
                 {...{
                   trajectory: currentValues,
                   register,

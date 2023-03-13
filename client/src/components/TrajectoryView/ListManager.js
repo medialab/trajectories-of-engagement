@@ -1,14 +1,15 @@
 import { arrayMoveImmutable as move } from 'array-move';
 // import FlipMove from 'react-flip-move';
 import { DragDropContext, Droppable, Draggable } from "react-beautiful-dnd";
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import { translate } from '../../utils';
 
 const grid = 5;
 
 const getListStyle = isDraggingOver => ({
   background: isDraggingOver ? "lightgrey" : "inherit",
   padding: 0,//grid,
-  width: 250
+  // width: 250
 });
 
 const getItemStyle = (isDragging, draggableStyle) => ({
@@ -26,15 +27,104 @@ const getItemStyle = (isDragging, draggableStyle) => ({
   ...draggableStyle
 });
 
+const ListItem = ({
+  lang,
+  itemData,
+  itemIndex,
+  renderItem,
+  renderMinifiedHeader,
+  onUp,
+  onDown,
+  onDelete,
+  items,
+  isMinified
+}) => {
+
+  const [isEdited, setIsEdited] = useState(false);
+  useEffect(() => {
+    setIsEdited(false);
+  }, [isMinified]);
+
+  if (isMinified && !isEdited) {
+    return (
+      <Draggable key={itemData.id} draggableId={itemData.id} index={itemIndex}>
+      {(provided, snapshot) => (
+         <div 
+         ref={provided.innerRef}
+             {...provided.draggableProps}
+             {...provided.dragHandleProps}
+             style={getItemStyle(
+               snapshot.isDragging,
+               provided.draggableProps.style
+             )}
+         className="list-item minified">
+           <div>
+             {renderMinifiedHeader(itemData)}
+           </div>
+           <div>
+             <button onClick={() => setIsEdited(!isEdited)}>
+               {'✎'}
+             </button>
+           </div>
+         </div>
+      )}
+      </Draggable>
+     
+    )
+  }
+  return (
+    <Draggable key={itemData.id} draggableId={itemData.id} index={itemIndex}>
+      {(provided, snapshot) => (
+        <li
+          ref={provided.innerRef}
+          {...provided.draggableProps}
+          {...provided.dragHandleProps}
+          style={getItemStyle(
+            snapshot.isDragging,
+            provided.draggableProps.style
+          )}
+          className="list-item"
+        >
+          <div className="item-form-container">
+            {renderItem(itemData, itemIndex)}
+          </div>
+          
+          <div className="item-actions-container">
+            {
+            isMinified && isEdited ?
+              <button onClick={() => setIsEdited(false)}>
+                {translate('fold', lang)}
+              </button>
+              : null
+            }
+            {
+              !isMinified || isEdited ?
+              <>
+                <button onClick={onUp} disabled={itemIndex === 0 || items.length === 1}>↑</button>
+                <button onClick={onDown} disabled={itemIndex > items.length - 2 || items.length === 1}>↓</button>
+                <button onClick={onDelete}>🗑</button>
+              </>
+              : null
+            }
+            
+          </div>
+        </li>
+      )}
+    </Draggable>
+  )
+}
+
 export default function ListManager({
   renderItem,
   onNewItem,
   onUpdateItems,
+  renderMinifiedHeader,
   items,
-  reordable = true,
   messageAddItem,
+  isMinified,
+  lang
 }) {
-  const [disableFlipMove, setDisableFlipMove] = useState(false);
+  // const [disableFlipMove, setDisableFlipMove] = useState(false);
   const handleAddItem = (e) => {
     e.stopPropagation();
     e.preventDefault();
@@ -51,8 +141,8 @@ export default function ListManager({
       result.source.index,
       result.destination.index
     );
-    setDisableFlipMove(true);
-    setTimeout(() => setDisableFlipMove(false), 100)
+    // setDisableFlipMove(true);
+    // setTimeout(() => setDisableFlipMove(false), 100)
     onUpdateItems(newItems);
   }
 
@@ -66,73 +156,52 @@ export default function ListManager({
             className="ListManager"
             style={getListStyle(snapshot.isDraggingOver)}
           >
-            <ul style={{position: 'relative'}}>
+            <ul style={{ position: 'relative' }}>
               {/* <FlipMove
                 typeName={null}
                 disableAllAnimations={disableFlipMove}
               > */}
-                {
-                  items.map((itemData, itemIndex) => {
-                    const handleUp = (e) => {
-                      e.stopPropagation();
-                      e.preventDefault();
-                      onUpdateItems(move(items, itemIndex, itemIndex - 1));
-                    }
-                    const handleDown = (e) => {
-                      e.stopPropagation();
-                      e.preventDefault();
-                      onUpdateItems(move(items, itemIndex, itemIndex + 1));
-                    }
-                    const handleDelete = (e) => {
-                      e.stopPropagation();
-                      e.preventDefault();
-                      onUpdateItems(items.filter((_i, i) => i !== itemIndex));
-                    }
-                    if (reordable) {
-                      return (
-                        <Draggable key={itemData.id} draggableId={itemData.id} index={itemIndex}>
-                          {(provided, snapshot) => (
-                            <li
-                              ref={provided.innerRef}
-                              {...provided.draggableProps}
-                              {...provided.dragHandleProps}
-                              style={getItemStyle(
-                                snapshot.isDragging,
-                                provided.draggableProps.style
-                              )}
-                              className="list-item"
-                            >
-                              <div className="item-form-container">
-                                {renderItem(itemData, itemIndex)}
-                              </div>
-                              <div className="item-actions-container">
-                                <button onClick={handleUp} disabled={itemIndex === 0 || items.length === 1}>↑</button>
-                                <button onClick={handleDown} disabled={itemIndex > items.length - 2 || items.length === 1}>↓</button>
-                                <button onClick={handleDelete}>🗑</button>
-                              </div>
-                            </li>
-                          )}
-                        </Draggable>
-                      )
-                    }
-                    return (
-                      <li key={itemData.id || itemIndex}>
-                        <div className="item-form-container">
-                          {renderItem(itemData, itemIndex)}
-                        </div>
-                        <div className="item-actions-container">
-                          {/* <button onClick={handleUp} disabled={itemIndex === 0}>↑</button> */}
-                          {/* <button onClick={handleDown} disabled={itemIndex > items.length - 2}>↓</button> */}
-                          <button onClick={handleDelete}>🗑</button>
-                        </div>
-                      </li>
-                    )
-                  })
-                }
-                {provided.placeholder}
+              {
+                items.map((itemData, itemIndex) => {
+                  const handleUp = (e) => {
+                    e.stopPropagation();
+                    e.preventDefault();
+                    onUpdateItems(move(items, itemIndex, itemIndex - 1));
+                  }
+                  const handleDown = (e) => {
+                    e.stopPropagation();
+                    e.preventDefault();
+                    onUpdateItems(move(items, itemIndex, itemIndex + 1));
+                  }
+                  const handleDelete = (e) => {
+                    e.stopPropagation();
+                    e.preventDefault();
+                    onUpdateItems(items.filter((_i, i) => i !== itemIndex));
+                  }
+                  return (
+                    <ListItem
+                      key={itemData.id}
+                      {...{
+                        itemData,
+                        itemIndex,
+                        renderItem,
+                        renderMinifiedHeader,
+                        onUp: handleUp,
+                        onDown: handleDown,
+                        onDelete: handleDelete,
+                        items,
+                        isMinified,
+                        lang,
+                      }}
+                    />
+                  )
+
+                })
+              }
+              {provided.placeholder}
               {/* </FlipMove> */}
             </ul>
-            <button 
+            <button
               onClick={handleAddItem}
               className="add-item-btn"
             >

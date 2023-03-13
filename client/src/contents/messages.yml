@@ -1,5 +1,11 @@
+site_title:
+  fr: Trajectoires d'implication
+  en: Trajectories of engagement
 # questionnaire questions
 # starting questions
+general_questions_title:
+  en: General information questions
+  fr: Questions d'information générale
 project_name_question:
   en: What is the name of the project?
   fr: Quel est le nom du projet de recherche dont est issue la trajectoire d'implication ?
@@ -12,7 +18,11 @@ social_concern_question:
 contact_email_question:
   fr: Pourriez-vous nous donner une adresse email de contact pour éventuellement revenir vers vous à la suite de votre réponse ?
   en: Could you give us an email address to possibly come back to you relatively to your answer?
+
 # actors
+trajectory_actors_title:
+  fr: Acteurs de la trajectoire d'implication
+  en: Actors of the trajectory of engagement
 actors_question:
   fr: Qui sont les acteurs impliqués dans le projet ?
   en: Who are the actors involved in the project ?
@@ -57,9 +67,15 @@ outside_definition_question:
   fr: Quelle serait la définition de "l'extérieur" de la trajectoire résultant de vos choix ?
 
 # phases
+trajectory_phases_title:
+  fr: Phases de la trajectoire d'implication
+  en: Phases of the trajectory of engagement
 research_phase_intro_question:
   fr: Lister les phases de la trajectoire de recherche
   en: List the phases of the research trajectory
+add_phase_button:
+  fr: ajouter une phase
+  en: add a phase
 research_phase_name_question:
   fr: Comment nommeriez-vous cette phase de recherche ?
   en: How would you name this research phase ?
@@ -119,6 +135,9 @@ research_phase_extra_materials_question:
   fr: Avez-vous des matériaux supplémentaires (images, vidéos) permettant de documenter la phase ?
 
 # reflective end part
+conclusion_and_reflection_title:
+  fr: Conclusion et réflexion
+  en: Conclusive reflection
 effects_on_externals_question:
   fr: Dans le projet, comment les acteurs externes ont-ils été affectés par les contributions internes ?
   en: In the project, how were external actors affected by external contributions ?

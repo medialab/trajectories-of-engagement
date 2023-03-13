@@ -12,31 +12,12 @@ const ACTOR_TYPES = ['individual', 'laboratory', 'company', 'ngo', 'other'];
 
 const ActorItem = ({
   actor,
-  isMinified = true,
   lang,
   register,
   actorTypesOptions,
   index,
   setValue
 }) => {
-  const [isEdited, setIsEdited] = useState(false);
-  useEffect(() => {
-    setIsEdited(false);
-  }, [isMinified]);
-  if (isMinified && !isEdited) {
-    return (
-      <div className="item minified">
-        <div>
-          {actor.name} ({actor.type ? translate(`actors_typology_${actor.type}`) : ''})
-        </div>
-        <div>
-          <button onClick={() => setIsEdited(!isEdited)}>
-            {'✎'}
-          </button>
-        </div>
-      </div>
-    )
-  }
   return (
       <div className="item">
         <div className="input-group">
@@ -90,13 +71,6 @@ const ActorItem = ({
             }}
           />
         </div>
-        {
-        isMinified ?
-          <button onClick={() => setIsEdited(false)}>
-            {translate('fold', lang)}
-          </button>
-          : null
-        }
       </div>
     )
 }
@@ -118,13 +92,18 @@ export default function Actors({
   , [lang]);
   return (
     <div className={`Actors ${isMinified ? 'is-minified': ''}`}>
+      <h2 className="part-title">
+        {translate('trajectory_actors_title', lang)}
+      </h2>
       <QuestionGroup
         question={translate('actors_question', lang)}
       >
         <ListManager
-          // fieldName="trajectory_URLs"
           items={getValues("actors") || []}
           messageAddItem={translate('add_actor_button', lang)}
+          isMinified={isMinified}
+          lang={lang}
+          renderMinifiedHeader={(actor) => <span>{actor.name} ({actor.type ? translate(`actors_typology_${actor.type}`) : ''})</span>}
           onNewItem={() => {
             const newItem = {
               id: genId(),
