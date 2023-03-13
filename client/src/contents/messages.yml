@@ -16,6 +16,18 @@ contact_email_question:
 actors_question:
   fr: Qui sont les acteurs impliqués dans le projet ?
   en: Who are the actors involved in the project ?
+actor_name:
+  fr: Nom de l'acteur
+  en: Name of the actor
+actor_external:
+  fr: Extérieur à la trajectoire
+  en: External to the trajectory
+actor_notes:
+  fr: Notes
+  en: Notes
+actor_type: 
+  fr: Type d'acteur
+  en: Type of actor
 actors_note:
   fr: Notes
   en: Notes
@@ -34,6 +46,9 @@ actors_typology_ngo:
 actors_typology_other:
   fr: autre
   en: other
+add_actor_button:
+  fr: ajouter un acteur
+  en: add an actor
 external_actors_question:
   fr: Lesquels définiriez-vous comme "extérieurs" à "l'intérieur" universitaire de la trajectoire ?
   en: Which ones would you define as “exterior” to the academic “inside” of the trajectory ?
@@ -145,3 +160,27 @@ yes:
 no:
   fr: non
   en: no
+select:
+  fr: sélectionner
+  en: select
+invalid_password:
+  fr: Mot de passe non valide
+  en: Invalid password
+valid_password:
+  fr: Mot de passe valide !
+  en: Valid password
+login:
+  fr: Se connecter
+  en: Login
+password:
+  fr: Mot de passe
+  en: Password
+for_this_specific_trajectory:
+  fr: pour cette trajectoire spécifique
+  en: for this specific trajectory
+must_login:
+  fr: Vous devez vous authentifier pour voir la page
+  en: You must login to see the page at
+fold:
+  fr: replier
+  en: fold

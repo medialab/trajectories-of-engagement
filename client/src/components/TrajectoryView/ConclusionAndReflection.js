@@ -4,6 +4,7 @@ import Textarea from 'react-textarea-autosize';
 // import ListManager from "./ListManager";
 import QuestionGroup from "./QuestionGroup";
 import { translate } from '../../utils';
+import YesNoRadio from './YesNoRadio';
 
 
 export default function ConclusionAndReflection({
@@ -33,28 +34,13 @@ export default function ConclusionAndReflection({
       <QuestionGroup
         question={translate('accepts_interview_question', lang)}
       >
-        <div className="radio-container">
-          <label className={`${trajectory.interested_for_interview ? 'is-active': ''}`} htmlFor="field-yes">
-            <input
-              {...register("interested_for_interview")}
-              type="radio"
-              value={true}
-              checked={trajectory.interested_for_interview}
-              id="field-yes"
-            />
-            {translate('yes', lang)}
-          </label>
-          <label className={`${!trajectory.interested_for_interview ? 'is-active': ''}`} htmlFor="field-no">
-            <input
-              {...register("interested_for_interview")}
-              type="radio"
-              value={false}
-              checked={!trajectory.interested_for_interview}
-              id="field-no"
-            />
-             {translate('no', lang)}
-          </label>
-        </div>
+        <YesNoRadio
+          {...{
+            lang,
+            value: trajectory.interested_for_interview,
+            onChange: val => setValue('interested_for_interview', val)
+          }}
+        />
       </QuestionGroup>
       {/* <QuestionGroup
         question={translate('project_urls_question', lang)}

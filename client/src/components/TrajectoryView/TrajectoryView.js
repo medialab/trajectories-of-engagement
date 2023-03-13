@@ -12,6 +12,7 @@ import GeneralInformation from "./GeneralInformation";
 
 import './TrajectoryView.scss';
 import ConclusionAndReflection from "./ConclusionAndReflection";
+import Actors from "./Actors";
 
 export default function TrajectoryView() {
   const { id } = useParams();
@@ -121,7 +122,17 @@ export default function TrajectoryView() {
             <form onSubmit={handleSubmit(onSubmit)}>
               <GeneralInformation
                 {...{
-                  trajectory,
+                  trajectory: currentValues,
+                  register,
+                  control,
+                  getValues,
+                  setValue,
+                  lang,
+                }}
+              />
+              <Actors
+                {...{
+                  trajectory: currentValues,
                   register,
                   control,
                   getValues,
@@ -131,7 +142,7 @@ export default function TrajectoryView() {
               />
               <ConclusionAndReflection
                 {...{
-                  trajectory,
+                  trajectory: currentValues,
                   register,
                   control,
                   getValues,

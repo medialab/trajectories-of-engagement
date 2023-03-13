@@ -2,16 +2,20 @@ import {useRef,useEffect} from "react";
 import {
   useNavigate,
   useLocation,
+  useSearchParams,
 } from "react-router-dom";
 
 import { toast } from 'react-toastify';
 
 
-import { useAuth } from "../utils";
+import { translate, useAuth } from "../utils";
 
 export default function LoginPage() {
   let navigate = useNavigate();
   let location = useLocation();
+  const [searchParams] = useSearchParams();
+  const lang = searchParams.get('lang') || 'en'
+
   let auth = useAuth();
 
   let from = location.state?.from?.pathname || "/";
@@ -34,25 +38,26 @@ export default function LoginPage() {
     let password = formData.get("password");
     auth.signin(password, id)
       .then(() => {
-        toast.success('Valid password !');
-        navigate(from, { replace: true });
+        toast.success(translate('valid_password', lang));
+        const finalFrom = from.includes('?lang=') ? from : from + '?lang=' + lang
+        navigate(finalFrom, { replace: true });
       })
       .catch(() => {
-        toast.error('Invalid password');
+        toast.error(translate('invalid_password', lang));
       })
   }
 
   return (
     <div className="LoginPage">
       <div>
-        <p>You must log in to view the page at {from}</p>
+        <p>{translate('must_login', lang)}{' '}<code>{from}</code></p>
 
         <form onSubmit={handleSubmit}>
           <label>
-            Password {isAdmin ? '(admin)' : <span>(for this specific trajectory)</span>}:
+            {translate('password', lang)} {isAdmin ? '(admin)' : <span>({translate('for_this_specific_trajectory', lang)})</span>}:
             <input ref={inputRef} name="password" id="password" type="password" />
           </label>{" "}
-          <button type="submit">Login</button>
+          <button type="submit">{translate('login', lang)}</button>
         </form>
       </div>
     </div>

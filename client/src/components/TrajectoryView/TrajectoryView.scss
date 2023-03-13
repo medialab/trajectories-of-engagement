@@ -11,9 +11,11 @@
     background: none;
     font-size: 1em;
     font-family: inherit;
-    cursor: pointer;
-    &:hover {
-      background: lightgrey;
+    &:not(:disabled) {
+      cursor: pointer;
+      &:hover {
+        background: lightgrey;
+      }
     }
   }
   input,
@@ -24,6 +26,9 @@
   textarea {
     width: 100%;
     resize: none;
+  }
+  input {
+    box-sizing: border-box;
   }
 
   .QuestionGroup {
@@ -40,6 +45,14 @@
     flex-flow: column nowrap;
     label {
       font-style: italic;
+      margin-bottom: .2rem;
+    }
+
+    .radio-container {
+      display: flex;
+      label {
+        display: flex;
+      }
     }
 
     margin-bottom: .5rem;
@@ -54,6 +67,7 @@
       cursor: pointer;
       input {
         // opacity: 0;
+        cursor: pointer;
       }
       &.is-active {
         background: black;
@@ -70,13 +84,37 @@
     .list-item {
       border: 1px solid black;
       box-sizing: border-box;
+      .item-form-container {
+        .item {
+          &.minified{
+            display: flex;
+            flex-flow: row nowrap;
+            justify-content: space-between;
+            &:hover {
+              background: rgba(0,0,0,0.05);
+            }
+          }
+        }
+      }
       .item-actions-container {
         margin-top: .5rem;
+        display: flex;
+        flex-flow: row nowrap;
+        align-items: center;
+        button {
+          min-height: 2rem;
+          min-width: 2rem;
+        }
+
+        
       }
     }
     input {
       width: 100%;
       box-sizing: border-box;
+    }
+    .add-item-btn {
+      padding: .5rem 1rem;
     }
   }
 

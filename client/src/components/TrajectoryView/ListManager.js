@@ -7,7 +7,7 @@ const grid = 5;
 
 const getListStyle = isDraggingOver => ({
   background: isDraggingOver ? "lightgrey" : "inherit",
-  padding: grid,
+  padding: 0,//grid,
   width: 250
 });
 
@@ -106,8 +106,8 @@ export default function ListManager({
                                 {renderItem(itemData, itemIndex)}
                               </div>
                               <div className="item-actions-container">
-                                <button onClick={handleUp} disabled={itemIndex === 0}>↑</button>
-                                <button onClick={handleDown} disabled={itemIndex > items.length - 2}>↓</button>
+                                <button onClick={handleUp} disabled={itemIndex === 0 || items.length === 1}>↑</button>
+                                <button onClick={handleDown} disabled={itemIndex > items.length - 2 || items.length === 1}>↓</button>
                                 <button onClick={handleDelete}>🗑</button>
                               </div>
                             </li>
@@ -132,7 +132,12 @@ export default function ListManager({
                 {provided.placeholder}
               {/* </FlipMove> */}
             </ul>
-            <button onClick={handleAddItem}>{messageAddItem || 'add item'}</button>
+            <button 
+              onClick={handleAddItem}
+              className="add-item-btn"
+            >
+              {messageAddItem || 'add item'}
+            </button>
           </div>
         )}
       </Droppable>
