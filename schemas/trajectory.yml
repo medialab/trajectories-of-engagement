@@ -37,8 +37,14 @@ properties:
           type: string
         name:
           type: string
-        exterior:
+        type:
+          type: string
+        external:
           type: boolean
+        notes:
+          type: string
+  outside_definition: 
+    type: string
   # part 2 phases
   phases:
       type: array
@@ -49,7 +55,7 @@ properties:
             type: string
           name:
             type: string
-          classification:
+          type:
             type: string
             # commenting to stay flexible for now
             # enum: [
@@ -65,7 +71,7 @@ properties:
             # ]
           external_involved:
             type: boolean
-          external_ids:
+          actors_ids:
             type: array
             items:
               type: string
