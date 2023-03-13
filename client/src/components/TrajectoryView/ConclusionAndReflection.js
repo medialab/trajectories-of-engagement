@@ -1,12 +1,12 @@
-import {v4 as genId} from 'uuid';
+// import {v4 as genId} from 'uuid';
 import Textarea from 'react-textarea-autosize';
 
-import ListManager from "./ListManager";
+// import ListManager from "./ListManager";
 import QuestionGroup from "./QuestionGroup";
 import { translate } from '../../utils';
 
 
-export default function GeneralInformation({
+export default function ConclusionAndReflection({
   lang,
   trajectory,
   register,
@@ -14,13 +14,49 @@ export default function GeneralInformation({
   setValue,
 }) {
   return (
-    <div className="GeneralInformation">
+    <div className="ConclusionAndReflection">
       <QuestionGroup
-        question={translate('project_name_question', lang)}
+        question={translate('effects_on_externals_question', lang)}
       >
-        <input defaultValue={trajectory.trajectory_name} {...register("trajectory_name")} />
+        <Textarea defaultValue={trajectory.transformation_external} {...register("transformation_external")} />
       </QuestionGroup>
       <QuestionGroup
+        question={translate('effects_on_internals_question', lang)}
+      >
+        <Textarea defaultValue={trajectory.transformation_internal} {...register("transformation_internal")} />
+      </QuestionGroup>
+      <QuestionGroup
+        question={translate('perspectives_question', lang)}
+      >
+        <Textarea defaultValue={trajectory.perspectives} {...register("perspectives")} />
+      </QuestionGroup>
+      <QuestionGroup
+        question={translate('accepts_interview_question', lang)}
+      >
+        <div className="radio-container">
+          <label className={`${trajectory.interested_for_interview ? 'is-active': ''}`} htmlFor="field-yes">
+            <input
+              {...register("interested_for_interview")}
+              type="radio"
+              value={true}
+              checked={trajectory.interested_for_interview}
+              id="field-yes"
+            />
+            {translate('yes', lang)}
+          </label>
+          <label className={`${!trajectory.interested_for_interview ? 'is-active': ''}`} htmlFor="field-no">
+            <input
+              {...register("interested_for_interview")}
+              type="radio"
+              value={false}
+              checked={!trajectory.interested_for_interview}
+              id="field-no"
+            />
+             {translate('no', lang)}
+          </label>
+        </div>
+      </QuestionGroup>
+      {/* <QuestionGroup
         question={translate('project_urls_question', lang)}
       >
         <ListManager
@@ -66,17 +102,7 @@ export default function GeneralInformation({
             )
           }}
         />
-      </QuestionGroup>
-      <QuestionGroup
-        question={translate('social_concern_question', lang)}
-      >
-        <Textarea defaultValue={trajectory.concern} {...register("concern")} />
-      </QuestionGroup>
-      <QuestionGroup
-        question={translate('social_concern_question', lang)}
-      >
-        <Textarea defaultValue={trajectory.contact_email} {...register("contact_email")} />
-      </QuestionGroup>
+      </QuestionGroup> */}
     </div>
   )
 }

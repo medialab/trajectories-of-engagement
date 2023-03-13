@@ -139,3 +139,9 @@ discard_changes:
 add_url_button:
   fr: ajouter un lien
   en: add a link
+yes:
+  fr: oui
+  en: yes
+no:
+  fr: non
+  en: no

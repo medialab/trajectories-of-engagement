@@ -11,47 +11,48 @@ import { useAuth } from "../../utils";
 import GeneralInformation from "./GeneralInformation";
 
 import './TrajectoryView.scss';
+import ConclusionAndReflection from "./ConclusionAndReflection";
 
 export default function TrajectoryView() {
   const { id } = useParams();
   const [searchParams, setSearchParams] = useSearchParams();
-  const {password} = useAuth();
+  const { password } = useAuth();
   const [trajectory, setTrajectory] = useState(null);
   const [loadingStatus, setLoadingStatus] = useState('pending');
   let lang = useMemo(() => {
     return searchParams && searchParams.get('lang');
   }, [searchParams]);
   lang = lang || 'en';
-  
-  const { 
-    register, 
-    handleSubmit, 
-    watch, 
+
+  const {
+    register,
+    handleSubmit,
+    watch,
     control,
     getValues,
     setValue,
-    formState: { errors }, reset 
+    formState: { errors }, reset
   } = useForm();
- 
+
   const refreshTrajectory = () => {
     setLoadingStatus('pending');
     const pm = new Promise((resolve, reject) => {
       getTrajectory(id, password)
-      .then(res => {
-        setLoadingStatus('success');
-        setTrajectory(res?.data);
-        // @todo this is ugly but working, refacto someday
-        const newData = res?.data || {};
-        for (let key in newData) {
-          setValue(key, newData[key])
-        }
-      })
-      .catch(err => {
-        console.error(err);
-        setLoadingStatus('error');
-        reject();
-      })
-      .then(resolve);
+        .then(res => {
+          setLoadingStatus('success');
+          setTrajectory(res?.data);
+          // @todo this is ugly but working, refacto someday
+          const newData = res?.data || {};
+          for (let key in newData) {
+            setValue(key, newData[key])
+          }
+        })
+        .catch(err => {
+          console.error(err);
+          setLoadingStatus('error');
+          reject();
+        })
+        .then(resolve);
     })
     toast.promise(pm, {
       pending: 'Refreshing trajectory',
@@ -59,7 +60,7 @@ export default function TrajectoryView() {
       error: 'Error during trajectory refresh'
     })
   }
-  
+
   const onSubmit = data => {
     const pm = new Promise((resolve, reject) => {
       const updatedTrajectory = {
@@ -70,13 +71,13 @@ export default function TrajectoryView() {
       // console.log('updatedTrajectory', updatedTrajectory);
       setLoadingStatus('pending');
       updateTrajectory(updatedTrajectory, password)
-      .then(refreshTrajectory)
-      .then(resolve)
-      .catch((err) => {
-        console.error(err);
-        reject();
-        return refreshTrajectory();
-      })
+        .then(refreshTrajectory)
+        .then(resolve)
+        .catch((err) => {
+          console.error(err);
+          reject();
+          return refreshTrajectory();
+        })
     })
     toast.promise(pm, {
       pending: 'Updating trajectory',
@@ -86,7 +87,7 @@ export default function TrajectoryView() {
   }
 
   const currentValues = watch();
-  const isChanged = JSON.stringify({...trajectory, ...currentValues}) !== JSON.stringify(trajectory)
+  const isChanged = JSON.stringify({ ...trajectory, ...currentValues }) !== JSON.stringify(trajectory)
 
   useEffect(refreshTrajectory, [id, password]);
 
@@ -101,9 +102,9 @@ export default function TrajectoryView() {
     <div className="TrajectoryView">
       <header>
         <h1>
-        {translate('you_are_editing', lang)}
-        {' '}
-        {getValues('trajectory_name') || translate('unknown_trajectory', lang)}
+          {translate('you_are_editing', lang)}
+          {' '}
+          {getValues('trajectory_name') || translate('unknown_trajectory', lang)}
         </h1>
       </header>
       {
@@ -116,45 +117,55 @@ export default function TrajectoryView() {
       }
       {
         loadingStatus === 'success' ?
-        <main>
-          <form onSubmit={handleSubmit(onSubmit)}>
-            <GeneralInformation
-              {...{
-                trajectory,
-                register,
-                control,
-                getValues,
-                setValue,
-                lang,
-              }}
-            />
-            {
-              errors.length ?
-                <pre>
-                  <code>
-                    {JSON.stringify(errors)}
-                  </code>
-                </pre>
-                : null
-            }
-            <footer>
-              <div className="left-group">
-                <button disabled={!isChanged} type="submit">
-                  {translate('save_changes', lang)}
-                </button>
-                <button 
-                  onClick={handleDiscardChanges} 
-                  disabled={!isChanged}
-                >
-                  {translate('discard_changes', lang)}
-                </button>
-              </div>
-              <div className="right-group">
-                <button disabled={lang === 'fr'} onClick={() => setSearchParams({lang: 'fr'})}>fr</button>
-                <button disabled={lang === 'en'} onClick={() => setSearchParams({lang: 'en'})}>en</button>
-              </div>
-            </footer>
-          </form>
+          <main>
+            <form onSubmit={handleSubmit(onSubmit)}>
+              <GeneralInformation
+                {...{
+                  trajectory,
+                  register,
+                  control,
+                  getValues,
+                  setValue,
+                  lang,
+                }}
+              />
+              <ConclusionAndReflection
+                {...{
+                  trajectory,
+                  register,
+                  control,
+                  getValues,
+                  setValue,
+                  lang,
+                }}
+              />
+              {
+                errors.length ?
+                  <pre>
+                    <code>
+                      {JSON.stringify(errors)}
+                    </code>
+                  </pre>
+                  : null
+              }
+              <footer>
+                <div className="left-group">
+                  <button disabled={!isChanged} type="submit">
+                    {translate('save_changes', lang)}
+                  </button>
+                  <button
+                    onClick={handleDiscardChanges}
+                    disabled={!isChanged}
+                  >
+                    {translate('discard_changes', lang)}
+                  </button>
+                </div>
+                <div className="right-group">
+                  <button disabled={lang === 'fr'} onClick={() => setSearchParams({ lang: 'fr' })}>fr</button>
+                  <button disabled={lang === 'en'} onClick={() => setSearchParams({ lang: 'en' })}>en</button>
+                </div>
+              </footer>
+            </form>
           </main>
           : null
       }
