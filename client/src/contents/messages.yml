@@ -212,8 +212,8 @@ perspectives_question:
   fr: Quelles sont les perspectives de cette trajectoire ? Des développements futurs sont-ils prévus, et étaient-ils prévus au début de la trajectoire ?
   en: What are the perspectives of this trajectory? Are future developments planned, and were they planned at the start of the trajectory?
 accepts_interview_question:
-  fr: Seriez-vous intéressé pour faire un entretien (éventuellement en vidéo) sur la trajectoire que vous avez décrite dans ce questionnaire ?
-  en: Would you be interested in doing an interview (possibly in video) about the trajectory you described in this questionnaire?
+  fr: Merci d'avoir participé à la documentation de cette trajectoire de recherche ! Seriez-vous intéressé pour faire un entretien (éventuellement en vidéo) sur la trajectoire que vous avez décrite dans ce questionnaire ?
+  en: Thank you for your participation to the documentation of this trajectory of engagement! Would you be interested in doing an interview (possibly in video) about the trajectory you described in this questionnaire?
 
 # questionnaire actions and ui details
 other_specify:
