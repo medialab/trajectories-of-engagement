@@ -119,26 +119,81 @@ research_phase_details_none_selected:
   fr: Aucune phase n'est sélectionnée
   en: No phase selected
 research_phase_externals_detail_question:
-  fr: Quels sont les acteurs externes impliqués dans cette phase ?
+  fr: Quels sont les acteurs impliqués dans cette phase ?
   en: Who are the external actors involved in this phase ?
 research_phase_externals_detail_click_prompt:
-  fr: Cliquer sur les acteurs impliqués
-  en: Click on involved actors
+  fr: Sélectionner les acteurs impliqués
+  en: Select involved actors
 research_phase_externals_agency_question:
   fr: Pourriez-vous décrire sous quelle forme et de quelle manière les acteurs externes ont la possibilité d'influencer, diriger et/ou contrôler les activités menées pendant cette phase ?
   en: Could you describe in what form and in what way the external actors have the possibility to influence, direct and/or control the activities carried out during this phase?
 research_phase_digital_question:
   fr: Les dispositifs numériques jouent-ils un rôle dans la relation intérieur/extérieur pendant cette phase ? Si oui, quel rôle ?
   en: Do digital tools play a role in the inside/outside relationship during this phase? If yes, which role?
+
 research_phase_devices_traces_question:
   en: Did devices (digital or not) play a role in producing materials (documents, logs, traces, images, videos, etc.) tracing the relationship between inside and outside? If yes which ones?
   fr: Des appareils (numériques ou non) jouent-ils un rôle dans la production de matériaux (documents, journaux, traces, images, vidéos, etc.) pour le traçage de la relation entre l'intérieur et l'extérieur ? Si oui lesquels ?
-research_phase_materials_list_question:
+research_phase_add_device_btn:
+  en: add device
+  fr: ajouter un appareil
+research_phase_device_select_prompt:
+  en: Select existing devices from previous phases or document new ones
+  fr: Sélectionnez des appareils existants dans des phases précédentes ou documentez-en de nouveaux
+research_phase_device_name_prompt:
+  en: Tracing device name
+  fr: Nom de l'appareil de traçage
+research_phase_resource_unnamed_device:
+  en: Unnamed device
+  fr: Appareil sans nom
+
+research_phase_resources_question:
+  en: On what kind of resources (human, financial) does this phase rely on ? Can you briefly describe these resources and how they were acquired ?
+  fr: Sur quelles ressources (humaines, financières) cette phase repose-t-elle ? Pourriez-vous rapidement les décrire et expliquer comment elles furent acquises ?
+research_phase_add_resource_btn:
+  en: add resource
+  fr: ajouter une ressource
+research_phase_resource_select_prompt:
+  en: Select existing resources from previous phases or document new ones
+  fr: Sélectionnez des ressources existantes dans des phases précédentes ou documentez-en de nouvelles
+research_phase_resource_name_prompt:
+  en: How would you name that resource?
+  fr: Comment nommeriez-vous cette ressource ?
+research_phase_resource_acquisition_mode_prompt:
+  en: How was the resource acquired?
+  fr: Comment la ressource a-t-elle été acquise ?
+research_phase_resource_actors_prompt:
+  en: Who are the actors on which this resource relies?
+  fr: Qui sont les acteurs sur lesquels cette ressource repose ?
+research_phase_resource_unnamed_resource:
+  fr: Ressource sans nom
+  en: Unnamed resource
+
+
+research_phase_materials_question:
   en: List the materials produced during this phase, specifying by who and for who they are produced
   fr: Lister les matériaux produits durant cette phase, en spécifiant par qui et pour qui ils sont produits
-research_phase_resources_question:
-  en: On what kind of resources (human, financial) does this phase rely on ?
-  fr: Sur quelles ressources (humaines, financières) cette phase repose-t-elle ?
+research_phase_add_material_btn:
+  en: add material
+  fr: ajouter un matériau
+research_phase_material_name_prompt:
+  en: How would you name that material?
+  fr: Comment nommeriez-vous ce matériau ?
+research_phase_material_URL_prompt:
+  en: Is this material accessible on the web?
+  fr: Ce matériau est-il accessible à une URL sur le web ?
+research_phase_material_from_actors_question:
+  en: Which actors have produced this material?
+  fr: Quels acteurs ont produit ce matériau ?
+research_phase_material_for_actors_question:
+  en: For which actor was this material produced?
+  fr: Pour quels acteurs ce matériau a-t-il été produit ?
+research_phase_material_unnamed_material:
+  fr: Matériau sans nom
+  en: Unnamed material
+research_phase_material_comments_prompt:
+  fr: Commentaires
+  en: Comments
 # research_phase_extra_materials_question:
 #   en: Do you have extra materials (images, videos) allowing to document the phase ?
 #   fr: Avez-vous des matériaux supplémentaires (images, vidéos) permettant de documenter la phase ?

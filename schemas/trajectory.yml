@@ -43,54 +43,98 @@ properties:
           type: boolean
         notes:
           type: string
-  outside_definition: 
+  outside_definition:
     type: string
   # part 2 phases
   phases:
-      type: array
-      items:
-        type: object
-        properties:
-          id:
+    type: array
+    items:
+      type: object
+      properties:
+        id:
+          type: string
+        name:
+          type: string
+        type:
+          type: string
+          # commenting to stay flexible for now
+          # enum: [
+          #   'identification of issues / problematization',
+          #   'formulation of hypotheses',
+          #   'data collection',
+          #   'fieldwork (recordings, interviews)',
+          #   'handling of materials',
+          #   'data analysis',
+          #   'data interpretation',
+          #   'dissemination / exploitation of results',
+          #   'other (specify)',
+          # ]
+        external_involved:
+          type: boolean
+        actors_ids:
+          type: array
+          items:
             type: string
-          name:
+        external_actors_involvement:
+          type: string
+        external_actors_agency:
+          type: string
+        # digital_tools_involved:
+        #   type: boolean
+        digital_tools_details:
+          type: string
+        materials:
+          type: array
+          items:
+            type: object
+            properties:
+              id:
+                type: string
+              name:
+                type: string
+              URL:
+                type: string
+              from_actors_ids:
+                type: string
+              for_actors_ids:
+                type: string
+              comments:
+                type: string
+        resources_ids:
+          type: array
+          items:
             type: string
-          type:
+        tracing_devices_ids:
+          type: array
+          items:
             type: string
-            # commenting to stay flexible for now
-            # enum: [
-            #   'identification of issues / problematization',
-            #   'formulation of hypotheses',
-            #   'data collection',
-            #   'fieldwork (recordings, interviews)',
-            #   'handling of materials',
-            #   'data analysis',
-            #   'data interpretation',
-            #   'dissemination / exploitation of results',
-            #   'other (specify)',
-            # ]
-          external_involved:
-            type: boolean
-          actors_ids:
-            type: array
-            items:
-              type: string
-          external_actors_involvement:
+        # materials_exterior_for_interior:
+        #   type: string
+        # materials_interior_for_exterior:
+        #   type: string
+  tracing_devices:
+    type: array
+    items:
+      type: object
+      properties:
+        name:
+          type: string
+  resources:
+    type: array
+    items:
+      type: object
+      properties:
+        id:
+          type: string
+        name:
+          type: string
+        acquisition_mode:
+          type: string
+        from_actors_ids:
+          type: array
+          items:
             type: string
-          external_actors_agency:
-            type: string
-          digital_tools_involved:
-            type: boolean
-          digital_tools_details:
-            type: string
-          tracing_devices:
-            type: array
-            items:
-              type: string
-          materials_exterior_for_interior:
-            type: string
-          materials_interior_for_exterior:
-            type: string
+
   # part 3 reflection
   transformation_external:
     type: string
@@ -102,7 +146,7 @@ properties:
     type: string
   # other_public_contributions:
   #   type: string
-  
+
   # concluding part - doc and interview
   materials_links:
     type: array

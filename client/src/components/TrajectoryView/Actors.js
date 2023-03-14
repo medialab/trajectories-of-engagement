@@ -119,7 +119,7 @@ export default function Actors({
           messageAddItem={translate('add_actor_button', lang)}
           isMinified={isMinified}
           lang={lang}
-          renderMinifiedHeader={(actor) => <span>{actor.name} {actor.type ? ` (${translate(`actors_typology_${actor.type}`, lang)})` : ''}</span>}
+          renderMinifiedHeader={(actor) => <span>{actor.name} [{actor.external ? 'e': 'i'}] {actor.type ? ` (${translate(`actors_typology_${actor.type}`, lang)})` : ''}</span>}
           onNewItem={() => {
             const newItem = {
               id: genId(),

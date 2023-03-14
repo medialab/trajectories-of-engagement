@@ -116,7 +116,7 @@ export default function Phases({
           messageAddItem={translate('add_phase_button', lang)}
           isMinified={isMinified}
           lang={lang}
-          renderMinifiedHeader={(phase, index) => <span>{index + 1}. {phase.name} {phase.type ? `(${translate(`research_phase_typology_${phase.type}`)})` : ''}</span>}
+          renderMinifiedHeader={(phase, index) => <span>{index + 1}. {phase.name} {phase.type ? <i>{`(${translate(`research_phase_typology_${phase.type}`, lang)})`}</i> : ''}</span>}
           onNewItem={() => {
             const newItem = {
               id: genId(),

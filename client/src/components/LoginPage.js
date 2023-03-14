@@ -46,7 +46,6 @@ export default function LoginPage() {
         toast.error(translate('invalid_password', lang));
       })
   }
-
   return (
     <div className="LoginPage">
       <div>
