@@ -11,7 +11,9 @@
     &:not(:disabled) {
       cursor: pointer;
       &:hover {
-        background: lightgrey;
+        background: red;
+        border-color: red;
+        color: white;
       }
     }
   }
@@ -173,6 +175,10 @@
     h1 {
       margin: 0;
       padding: 0;
+      font-size: 1.5rem;
+      span {
+        padding: 0 1rem;
+      }
     }
     h2 {
       margin: 0;
@@ -181,9 +187,12 @@
     flex-flow: row nowrap;
     align-items: flex-end;
     justify-content: space-between;
-    border-bottom: 1px solid black;
+    border-bottom: 2px dashed red;
     z-index: 1;
     box-sizing: border-box;
+    a{
+      color: inherit;
+    }
     @media print {
       flex-direction: column-reverse;
       position: relative;
@@ -199,10 +208,21 @@
     display: flex;
     flex-flow: row nowrap;
     justify-content: space-between;
-    border-top: 1px solid black;
+    border-top: 2px dashed red;
     button {
       font-size: 1.2rem;
       padding: 1rem;
+      border: 3px solid black;
+      font-weight: 800;
+      + button {
+        border-left: none;
+      }
+    }
+    .lang-btns-container {
+      button:disabled {
+        background: black;
+        color: white;
+      }
     }
     @media print {
       display: none!important;

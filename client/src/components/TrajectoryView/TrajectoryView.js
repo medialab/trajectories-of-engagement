@@ -1,4 +1,4 @@
-import { useParams, useSearchParams } from "react-router-dom"
+import { Link, useParams, useSearchParams } from "react-router-dom"
 import { useEffect, useState, useMemo } from 'react';
 // import cx from 'classnames';
 // https://react-hook-form.com/get-started
@@ -105,11 +105,15 @@ export default function TrajectoryView() {
     <div className="TrajectoryView">
       <header>
         <h1>
-          <span className="hide-in-print">{translate('you_are_editing', lang)}</span>
-          {' '}
+          <Link to="/">
+            {translate('site_title', lang)}
+          </Link>
+          <span>{'/'}</span>
+          {/* <span className="hide-in-print">{translate('you_are_editing', lang)}</span> */}
+          {/* {' '} */}
           {getValues('trajectory_name') || translate('unknown_trajectory', lang)}
         </h1>
-        <h2>{translate('site_title', lang)}</h2>
+        {/* <h2>{translate('site_title', lang)}</h2> */}
       </header>
       {
         loadingStatus === 'pending' ?
@@ -194,7 +198,7 @@ export default function TrajectoryView() {
                     {translate('discard_changes', lang)}
                   </button>
                 </div>
-                <div className="right-group">
+                <div className="right-group lang-btns-container">
                   <button disabled={lang === 'fr'} onClick={() => setSearchParams({ lang: 'fr' })}>fr</button>
                   <button disabled={lang === 'en'} onClick={() => setSearchParams({ lang: 'en' })}>en</button>
                 </div>
