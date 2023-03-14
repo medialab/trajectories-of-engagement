@@ -105,7 +105,7 @@ export default function TrajectoryView() {
     <div className="TrajectoryView">
       <header>
         <h1>
-          {translate('you_are_editing', lang)}
+          <span className="hide-in-print">{translate('you_are_editing', lang)}</span>
           {' '}
           {getValues('trajectory_name') || translate('unknown_trajectory', lang)}
         </h1>

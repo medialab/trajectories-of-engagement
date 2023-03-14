@@ -19,6 +19,9 @@
   textarea {
     font-family: inherit;
     padding: 0.25rem;
+    @media print {
+      border: none;
+    }
   }
   textarea {
     width: 100%;
@@ -100,6 +103,9 @@
           min-height: 2rem;
           min-width: 2rem;
         }
+        @media print {
+          display: none;
+        }
       }
       &.minified {
         display: flex;
@@ -125,6 +131,9 @@
     }
     .add-item-btn {
       padding: 0.5rem 1rem;
+      @media print {
+        display: none;
+      }
     }
   }
 
@@ -137,6 +146,9 @@
   flex-direction: column nowrap;
   justify-content: center;
   overflow-x: hidden;
+  @media print {
+    display: block;
+  }
 
   .temp {
     width: 100%;
@@ -154,6 +166,7 @@
     width: 100%;
     background: white;
     padding: 1rem;
+    
   }
   header {
     top: 0;
@@ -171,6 +184,14 @@
     border-bottom: 1px solid black;
     z-index: 1;
     box-sizing: border-box;
+    @media print {
+      flex-direction: column-reverse;
+      position: relative;
+      align-items: flex-start;
+      .hide-in-print {
+        display: none;
+      }
+    }
   }
   footer {
     box-sizing: border-box;
@@ -183,6 +204,9 @@
       font-size: 1.2rem;
       padding: 1rem;
     }
+    @media print {
+      display: none!important;
+    }
   }
 
   main {
@@ -190,6 +214,11 @@
     box-sizing: border-box;
     max-width: 1000px;
     overflow-x: hidden;
+    @media print {
+      max-width: unset;
+      padding-top: 0;
+      padding-bottom: 0;
+    }
   }
 
   .PhasesEditor {
@@ -201,6 +230,9 @@
       .edit-btn-container {
         display: none;
       }
+      @media print {
+        display: none;
+      }
     }
     .phase-detail {
       padding-left: 1rem;
@@ -209,6 +241,12 @@
       h2 {
         margin-top: 0;
       }
+      @media screen {
+        &:not(.is-visible) {
+          display: none;
+        }  
+      }
+      
     }
   }
 }

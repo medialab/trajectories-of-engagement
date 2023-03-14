@@ -19,6 +19,7 @@ const PhaseEditor = ({
   control,
   setValue,
   phaseIndex,
+  isVisible,
 }) => {
   const phaseTypesOptions = useMemo(() =>
     PHASES_TYPES.map(id => ({
@@ -27,7 +28,7 @@ const PhaseEditor = ({
     }))
     , [lang]);
   return (
-    <div className="PhaseEditor">
+    <div className={`PhaseEditor ${isVisible ? 'is-visible': ''}`}>
       <h2>
         {phaseIndex + 1}. {phase.name}
       </h2>
@@ -399,12 +400,33 @@ export default function PhasesEditor({
       />
       <div className="phase-detail">
         {
+          phases.map((phase, phaseIndex) => {
+            return (
+              <PhaseEditor
+                key={phaseIndex}
+                {...{
+                  lang,
+                  trajectory,
+                  phase: phase,
+                  isVisible: activePhaseId === phase.id,
+                  register,
+                  getValues,
+                  control,
+                  setValue,
+                  phaseIndex,
+                }}
+              />
+            )
+          })
+        }
+        {/* {
           activePhaseId ?
             <PhaseEditor
               {...{
                 lang,
                 trajectory,
-                phase: phases[activePhaseIndex],
+                phase: phase,
+                isVisible: activePhaseId === phase.id,
                 register,
                 getValues,
                 control,
@@ -413,7 +435,7 @@ export default function PhasesEditor({
               }}
             />
             : <span>{translate('research_phase_details_none_selected', lang)}</span>
-        }
+        } */}
       </div>
     </div>
   )
