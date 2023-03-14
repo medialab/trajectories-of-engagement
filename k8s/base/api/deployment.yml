@@ -22,8 +22,8 @@ spec:
               value: '27017'
             - name: API_PORT
               value: '4000'
-            - name: SECRET_PATH
-              value: '/etc/trajectories-of-engagement/..data/'
+            # - name: SECRET_PATH
+            #   value: '/etc/trajectories-of-engagement/../data/'
           imagePullPolicy: Always
           volumeMounts:
             - name: mongodb-secrets
