@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import downloadAsFile from 'download-as-file';
 
 import NewTrajectoryForm from './NewTrajectoryForm';
 
@@ -73,6 +74,13 @@ export default function AdminView({ lang }) {
   const handlePromptNewTrajectory = () => {
     setNewTrajectoryPrompted(true);
   }
+  const handleDownloadFullDump = () => {
+    const cleanTrajectories = trajectories.map(t => t.data);
+    downloadAsFile({
+      data: JSON.stringify(cleanTrajectories, null, 2),
+      filename: 'trajectories.json'
+    })
+  }
   const handleCreateNewTrajectory = trajectory => {
     setNewTrajectoryPrompted(false);
     setLoadingStatus('pending');
@@ -87,8 +95,7 @@ export default function AdminView({ lang }) {
       }, password)
         .then(tr => {
           const URL = (process.env.PUBLIC_URL || 'localhost:3000') + '/trajectories/' + id;
-          
-          const wantsToGo = window.confirm(`Trajectoire créée.\n\nURL:\n\n${URL}\n\n\nMot de passe (notez-le bien ! il ne sera plus accessible ensuite) : \n\n${trajectory.password}\n\n\nSouhaitez-vous passer à l'édition de cette trajectoire ?`);
+          const wantsToGo = window.confirm(`Trajectoire créée.\nURL:\n${URL}\n\nMot de passe (notez-le bien ! il ne sera plus accessible ensuite) : \n\n${trajectory.password}\n\nSouhaitez-vous passer à l'édition de cette trajectoire ?`);
           if (wantsToGo) {
             return navigate(`/trajectories/${id}`)
           } else {
@@ -142,7 +149,6 @@ export default function AdminView({ lang }) {
                   trajectories
                   .filter(({data}) => searchStr.length ? JSON.stringify(data).toLowerCase().includes(searchStr.toLowerCase()) : true)
                   .map(({ _id, data }) => {
-
                     const handleDelete = () => {
                       if (window.confirm(`Es-tu sûr de vouloir détruire la trajectoire "${data?.part1_general?.name}" ?`)) {
                         const deleteTrajectoryPm = new Promise((resolve, reject) => {
@@ -191,6 +197,9 @@ export default function AdminView({ lang }) {
             <footer>
               <button onClick={handlePromptNewTrajectory}>
                 Créer une nouvelle trajectoire
+              </button>
+              <button onClick={handleDownloadFullDump}>
+                Tout télécharger au format JSON
               </button>
             </footer>
           </>

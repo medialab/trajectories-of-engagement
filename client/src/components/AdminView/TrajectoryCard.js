@@ -24,7 +24,7 @@ export default function TrajectoryCard({
           <NavLink
             to={`/trajectories/${data?.id}`}
           >
-            {data?.part1_general?.name}
+            {data?.trajectory_name}
           </NavLink>
         </h4>
 

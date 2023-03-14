@@ -164,6 +164,9 @@
     border-top: 2px dashed red;
     padding: 1rem;
     width: 100%;
+    display: flex;
+    justify-content: space-between;
+    box-sizing: border-box;;
     button {
       font-size: 1.5rem;
       padding: 0.5rem;
