@@ -267,3 +267,12 @@ must_login:
 fold:
   fr: replier
   en: fold
+trajectory_refresh_success:
+  fr: trajectoire à jour
+  en: trajectory up to date
+trajectory_refresh_error:
+  en: error during trajectory refresh
+  fr: erreur durant le rafraîchissement de la trajectoire
+trajectory_refresh_pending:
+  fr: rafraîchissement de la trajectoire
+  en: refreshing trajectory

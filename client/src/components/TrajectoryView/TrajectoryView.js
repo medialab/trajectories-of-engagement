@@ -58,9 +58,9 @@ export default function TrajectoryView() {
         .then(resolve);
     })
     toast.promise(pm, {
-      pending: 'Refreshing trajectory',
-      success: 'Trajectory up to date',
-      error: 'Error during trajectory refresh'
+      pending: translate('trajectory_refresh_pending', lang),
+      success: translate('trajectory_refresh_success', lang),
+      error: translate('trajectory_refresh_error', lang),
     })
   }
 
