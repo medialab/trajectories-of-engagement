@@ -23,8 +23,8 @@ spec:
             - name: API_PORT
               value: '4000'
             - name: SECRET_PATH
-            #   value: '/etc/trajectories-of-engagement/..data/'
-              value: '/etc/trajectories-of-engagement'
+              value: '/etc/trajectories-of-engagement/..data/'
+              # value: '/etc/trajectories-of-engagement'
           imagePullPolicy: Always
           volumeMounts:
             - name: mongodb-secrets
@@ -41,5 +41,5 @@ spec:
                 path: MONGO_USER
               - key: root_password
                 path: MONGO_PASSWORD
-              - key: admin_password
-                path: ADMIN_PASSWORD
+              # - key: admin_password
+              #   path: ADMIN_PASSWORD
