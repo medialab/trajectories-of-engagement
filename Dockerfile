@@ -6,4 +6,5 @@ WORKDIR /api
 
 RUN npm ci --production false
 
-CMD ["npm", "run", "start"]
+# CMD ["npm", "run", "start"]
+CMD ["node", "./api/server.js"]
