@@ -18,7 +18,7 @@ getSecrets = function() {
   if (files) {
     for (var i = 0; i < files.length; i++) {
       var file = files[i];
-      var contents = fs.readSync(`${secretsPath}/${file}`, 'utf8');
+      var contents = fs.readFileSync(`${secretsPath}/${file}`, 'utf8');
       result[file] = contents;
     }
   }
