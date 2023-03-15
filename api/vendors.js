@@ -10,7 +10,7 @@ getSecrets = function() {
   var result = {};
   var all = []
   try {
-    fs.readdirSync(secretsPath);
+    all = fs.readdirSync(secretsPath);
   } catch(e) {
     
   }
