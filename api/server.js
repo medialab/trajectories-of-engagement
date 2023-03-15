@@ -9,7 +9,7 @@ const Fingerprint = require('express-fingerprint');
 const MongoClient = require('mongodb').MongoClient;
 const Ajv = require('ajv');
 const morgan = require('morgan');
-const config = require('config-secrets');
+const config = require('./vendors');
 const basicAuth = require('express-basic-auth');
 // const  chron = new require("chron")();
 
