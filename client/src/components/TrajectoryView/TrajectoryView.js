@@ -13,8 +13,22 @@ import GeneralInformation from "./GeneralInformation";
 import './TrajectoryView.scss';
 import ConclusionAndReflection from "./ConclusionAndReflection";
 import Actors from "./Actors";
-import Phases from "./Phases";
+// import Phases from "./Phases";
 import PhasesEditor from "./PhasesEditor";
+
+const cumulativeOffset = function(element) {
+  let top = 0, left = 0;
+  do {
+      top += element.offsetTop  || 0;
+      left += element.offsetLeft || 0;
+      element = element.offsetParent;
+  } while(element);
+
+  return {
+      top: top,
+      left: left
+  };
+};
 
 export default function TrajectoryView() {
   const { id } = useParams();
@@ -26,6 +40,29 @@ export default function TrajectoryView() {
     return searchParams && searchParams.get('lang');
   }, [searchParams]);
   lang = lang || 'en';
+
+  useEffect(() => {
+    const question = searchParams.get('question');
+    console.log('question', question);
+    if (loadingStatus === 'success' && question) {
+      let item;
+      console.log('get item id', question);
+      try {
+        item = document.getElementById(question);
+      } catch(e) {
+      }
+      if (item) {
+        const top = cumulativeOffset(item).top;
+        console.log('should scroll to ', item, item.scrollTop);
+        console.log('with cumulative offset : ', cumulativeOffset(item))
+        window.scrollTo({
+          top,
+          behavior: 'smooth'
+        });
+      }
+      searchParams.delete('question');
+    }
+  }, [searchParams, setSearchParams, loadingStatus])
 
   const {
     register,

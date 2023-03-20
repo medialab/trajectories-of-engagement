@@ -39,6 +39,7 @@ const PhaseEditor = ({
 
       <QuestionGroup
         question={translate('research_phase_name_question', lang)}
+        idPrefix={`phase-${phaseIndex + 1}-`}
       >
         <input
           placeholder={translate('research_phase_name_question', lang)}
@@ -47,6 +48,7 @@ const PhaseEditor = ({
       </QuestionGroup>
       <QuestionGroup
         question={translate('research_phase_description_question', lang)}
+        idPrefix={`phase-${phaseIndex + 1}-`}
       >
         <textarea
           placeholder={translate('research_phase_description_question', lang)}
@@ -55,6 +57,7 @@ const PhaseEditor = ({
       </QuestionGroup>
       <QuestionGroup
         question={translate('research_phase_type_question', lang)}
+        idPrefix={`phase-${phaseIndex + 1}-`}
       >
         <Select
           className="basic-single"
@@ -71,6 +74,7 @@ const PhaseEditor = ({
       </QuestionGroup>
       <QuestionGroup
         question={translate('research_phase_externals_detail_question', lang)}
+        idPrefix={`phase-${phaseIndex + 1}-`}
       >
         <Actors
           {...{
@@ -91,16 +95,19 @@ const PhaseEditor = ({
       </QuestionGroup>
       <QuestionGroup
         question={translate('research_phase_externals_agency_question', lang)}
+        idPrefix={`phase-${phaseIndex + 1}-`}
       >
         <Textarea defaultValue={trajectory.external_actors_agency} {...register(`phases.${phaseIndex}.external_actors_agency`)} />
       </QuestionGroup>
       <QuestionGroup
         question={translate('research_phase_digital_question', lang)}
+        idPrefix={`phase-${phaseIndex + 1}-`}
       >
         <Textarea defaultValue={trajectory.digital_tools_details} {...register(`phases.${phaseIndex}.digital_tools_details`)} />
       </QuestionGroup>
       <QuestionGroup
         question={translate('research_phase_devices_traces_question', lang)}
+        idPrefix={`phase-${phaseIndex + 1}-`}
       >
         <p>
           <i>
@@ -157,6 +164,7 @@ const PhaseEditor = ({
       </QuestionGroup>
       <QuestionGroup
         question={translate('research_phase_resources_question', lang)}
+        idPrefix={`phase-${phaseIndex + 1}-`}
       >
         <p>
           <i>
@@ -245,6 +253,7 @@ const PhaseEditor = ({
       </QuestionGroup>
       <QuestionGroup
         question={translate('research_phase_materials_question', lang)}
+        idPrefix={`phase-${phaseIndex + 1}-`}
       >
         <ListManager
           items={getValues(`phase.${phaseIndex}.materials`) || []}
