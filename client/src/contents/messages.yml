@@ -62,6 +62,16 @@ actors_typology_ngo:
 actors_typology_other:
   fr: autre
   en: other
+actors_typology_public_sector_institution:
+  fr: institution du secteur public
+  en: public sector institution
+actors_typology_collective:
+  fr: groupe / collectif
+  en: group / collective
+actors_typology_informal_group:
+  fr: groupe informel
+  en: informal group
+
 add_actor_button:
   fr: ajouter un acteur
   en: add an actor
@@ -218,10 +228,10 @@ conclusion_and_reflection_title:
   en: Conclusive reflection
 effects_on_externals_question:
   fr: Dans le projet, comment les acteurs externes ont-ils été affectés par les contributions internes ?
-  en: In the project, how were external actors affected by external contributions ?
-effects_on_internals_question:
-  fr: Dans le projet, comment les acteurs externes ont-ils été affectés par les contributions internes ?
   en: In the project, how were external actors affected by internal contributions ?
+effects_on_internals_question:
+  fr: Dans le projet, comment les acteurs internes ont-ils été affectés par les contributions externes ?
+  en: In the project, how were internal actors affected by external contributions ?
 perspectives_question:
   fr: Quelles sont les perspectives de cette trajectoire ? Des développements futurs sont-ils prévus, et étaient-ils prévus au début de la trajectoire ?
   en: What are the perspectives of this trajectory? Are future developments planned, and were they planned at the start of the trajectory?

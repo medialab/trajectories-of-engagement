@@ -8,7 +8,16 @@ import YesNoRadio from './YesNoRadio';
 import { useMemo, useState, useEffect } from 'react';
 import Select from 'react-select';
 
-const ACTOR_TYPES = ['individual', 'laboratory', 'company', 'ngo', 'other'];
+const ACTOR_TYPES = [
+  'individual', 
+  'laboratory', 
+  'company', 
+  'ngo', 
+  'public_sector_institution',
+  'collective',
+  'informal_group',
+  'other'
+];
 
 const ActorItem = ({
   actor,
