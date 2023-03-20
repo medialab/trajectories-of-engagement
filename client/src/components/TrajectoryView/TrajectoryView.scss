@@ -149,6 +149,17 @@
     }
   }
 
+  .material-actors-container {
+    flex: 1;
+    display: flex;
+    flex-flow: row nowrap;
+    width: 100%;
+    ul {
+      max-height: 30rem;
+      overflow-y: auto;
+    }
+  }
+
   /**
    * Containers
    */

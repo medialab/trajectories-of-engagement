@@ -118,14 +118,16 @@ export default function Phases({
           lang={lang}
           renderMinifiedHeader={(phase, index) => <span>{index + 1}. {phase.name} {phase.type ? <i>{`(${translate(`research_phase_typology_${phase.type}`, lang)})`}</i> : ''}</span>}
           onNewItem={() => {
+            const name = prompt(translate('research_phase_name_question', lang))
             const newItem = {
               id: genId(),
-              name: '',
+              name,
               type: undefined,
             }
             const existingPhases = getValues("phases") || [];
             const newPhases = [...existingPhases, newItem];
             setValue("phases", newPhases);
+            onSelectItem(newItem.id, newPhases.length - 1);
           }}
           onUpdateItems={(newPhases) => {
             setValue("phases", newPhases);

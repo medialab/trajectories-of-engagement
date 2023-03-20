@@ -32,9 +32,10 @@ export default function GeneralInformation({
           lang={lang}
           messageAddItem={translate('add_url_button', lang)}
           onNewItem={() => {
+            const URL = prompt(translate('project_urls_new_prompt', lang))
             const newItem = {
               id: genId(),
-              URL: '',
+              URL,
               description: ''
             }
             const existingURLs = getValues("trajectory_URLs") || [];

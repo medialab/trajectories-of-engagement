@@ -126,9 +126,10 @@ const PhaseEditor = ({
           }}
           messageAddItem={translate('research_phase_add_device_btn', lang)}
           onNewItem={() => {
+            const name = prompt(translate('research_phase_device_name_prompt', lang))
             const newItem = {
               id: genId(),
-              name: ''
+              name,
             }
             const existingItems = getValues(`tracing_devices`) || [];
             const newItems = [...existingItems, newItem];
@@ -181,9 +182,10 @@ const PhaseEditor = ({
           }}
           messageAddItem={translate('research_phase_add_resource_btn', lang)}
           onNewItem={() => {
+            const name = prompt(translate('research_phase_resource_name_prompt', lang))
             const newItem = {
               id: genId(),
-              name: '',
+              name,
               acquisition_mode: '',
               provenance_actors_ids: []
             }
@@ -263,9 +265,10 @@ const PhaseEditor = ({
           // }}
           messageAddItem={translate('research_phase_add_material_btn', lang)}
           onNewItem={() => {
+            const name = prompt(translate('research_phase_material_name_prompt', lang))
             const newItem = {
               id: genId(),
-              name: '',
+              name,
               from_actors_ids: [],
               for_actors_ids: []
             }
@@ -293,7 +296,7 @@ const PhaseEditor = ({
                     {translate('research_phase_material_URL_prompt', lang)}
                   </label>
                   <input
-                    placeholder={translate('research_phase_material_URL_prompt', lang)}
+                    placeholder={'URL'}
                     {...register(`phase.${phaseIndex}.materials.${itemIndex}.URL`)}
                   />
                 </div>
@@ -307,45 +310,48 @@ const PhaseEditor = ({
                   />
                 </div>
 
-                <div className="input-group">
-                  <label>
-                    {translate('research_phase_material_from_actors_question', lang)}
-                  </label>
-                  <Actors
-                    {...{
-                      lang,
-                      trajectory,
-                      register,
-                      getValues,
-                      setValue,
-                      isMinified: true,
-                      isSelectable: true,
-                      selectedIds: getValues(`phase.${phaseIndex}.materials.${itemIndex}.from_actors_ids`) || [],
-                      onSelectionChange: ids => {
-                        setValue(`phase.${phaseIndex}.materials.${itemIndex}.from_actors_ids`, ids)
-                      },
-                    }}
-                  />
-                </div>
-                <div className="input-group">
-                  <label>
-                    {translate('research_phase_material_for_actors_question', lang)}
-                  </label>
-                  <Actors
-                    {...{
-                      lang,
-                      trajectory,
-                      register,
-                      getValues,
-                      setValue,
-                      isMinified: true,
-                      isSelectable: true,
-                      selectedIds: getValues(`phase.${phaseIndex}.materials.${itemIndex}.for_actors_ids`) || [],
-                      onSelectionChange: ids => {
-                        setValue(`phase.${phaseIndex}.materials.${itemIndex}.for_actors_ids`, ids)
-                      },
-                    }}
-                  />
+                <div className="material-actors-container">
+
+                  <div className="input-group">
+                    <label>
+                      {translate('research_phase_material_from_actors_question', lang)}
+                    </label>
+                    <Actors
+                      {...{
+                        lang,
+                        trajectory,
+                        register,
+                        getValues,
+                        setValue,
+                        isMinified: true,
+                        isSelectable: true,
+                        selectedIds: getValues(`phase.${phaseIndex}.materials.${itemIndex}.from_actors_ids`) || [],
+                        onSelectionChange: ids => {
+                          setValue(`phase.${phaseIndex}.materials.${itemIndex}.from_actors_ids`, ids)
+                        },
+                      }}
+                    />
+                  </div>
+                  <div className="input-group">
+                    <label>
+                      {translate('research_phase_material_for_actors_question', lang)}
+                    </label>
+                    <Actors
+                      {...{
+                        lang,
+                        trajectory,
+                        register,
+                        getValues,
+                        setValue,
+                        isMinified: true,
+                        isSelectable: true,
+                        selectedIds: getValues(`phase.${phaseIndex}.materials.${itemIndex}.for_actors_ids`) || [],
+                        onSelectionChange: ids => {
+                          setValue(`phase.${phaseIndex}.materials.${itemIndex}.for_actors_ids`, ids)
+                        },
+                      }}
+                    />
+                  </div>
                 </div>
 
               </div>
@@ -402,7 +408,9 @@ export default function PhasesEditor({
 
   const onRemovePhasePrompt = phaseIndex => {
     const confirmed = window.confirm(translate('research_phase_remove_phase_confirmation', lang));
+    const phaseId = phases[phaseIndex].id;
     if (confirmed) {
+      // update select
       if (phaseIndex === activePhaseIndex) {
         if (phases.length > 1) {
           if (phaseIndex > 0) {
@@ -417,7 +425,9 @@ export default function PhasesEditor({
           setActivePhaseId();
         }
       }
-
+      // actually remove from data
+      const newPhases = phases.filter(p => p.id !== phaseId);
+      setValue(`phases`, newPhases)
     }
   }
   return (

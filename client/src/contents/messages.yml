@@ -15,6 +15,9 @@ project_urls_question:
 project_urls_description:
   fr: description du lien
   en: link description
+project_urls_new_prompt:
+  fr: Quel est l'URL du lien ?
+  en: What is the link URL ?
 social_concern_question:
   fr: Quel est la préoccupation sociale ou le problème public auquel la trajectoire d'implication entend répondre ?
   en: What is the social concern or the public problem that the engagement trajectory tries to address ?
@@ -128,8 +131,8 @@ research_phase_externals_detail_question:
   fr: Quels sont les acteurs externes impliqués dans cette phase ?
   en: Who are the external actors involved in this phase ?
 research_phase_externals_detail_click_prompt:
-  fr: Sélectionner les acteurs externes impliqués
-  en: Select involved external actors
+  fr: Sélectionner les acteurs impliqués
+  en: Select involved actors
 research_phase_externals_agency_question:
   fr: Pourriez-vous décrire sous quelle forme et de quelle manière les acteurs externes ont la possibilité d'influencer, diriger et/ou contrôler les activités menées pendant cette phase ?
   en: Could you describe in what form and in what way the external actors have the possibility to influence, direct and/or control the activities carried out during this phase?
@@ -195,7 +198,7 @@ research_phase_material_URL_prompt:
   fr: Ce matériau est-il accessible à une URL sur le web ?
 research_phase_material_from_actors_question:
   en: Which actors have produced this material?
-  fr: Quels acteurs ont produit ce matériau ?
+  fr: Par quels acteurs matériau a-t-il été produit ?
 research_phase_material_for_actors_question:
   en: For which actor was this material produced?
   fr: Pour quels acteurs ce matériau a-t-il été produit ?

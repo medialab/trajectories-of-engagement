@@ -126,9 +126,10 @@ export default function Actors({
             return <span className={`item-content-minified ${isDisabled ? 'is-disabled' : ''}`}>{actor.name} [{actor.external ? 'e' : 'i'}] {actor.type ? ` (${translate(`actors_typology_${actor.type}`, lang)})` : ''}</span>
           }}
           onNewItem={() => {
+            const name = prompt(translate('actor_name', lang))
             const newItem = {
               id: genId(),
-              name: '',
+              name,
               notes: '',
               external: false
             }
