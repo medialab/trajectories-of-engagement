@@ -129,7 +129,7 @@ export default function TrajectoryView() {
   const currentValues = watch();
   const isChanged = JSON.stringify({ ...trajectory, ...currentValues }) !== JSON.stringify(trajectory)
 
-  useEffect(refreshTrajectory, [id, password]);
+  useEffect(refreshTrajectory, [id, password]);/* eslint react-hooks/exhaustive-deps : 0 */
 
   const handleDiscardChanges = (e) => {
     e.preventDefault();

@@ -5,7 +5,7 @@ import ListManager from "./ListManager";
 import QuestionGroup from "./QuestionGroup";
 import { translate } from '../../utils';
 import YesNoRadio from './YesNoRadio';
-import { useMemo, useState, useEffect } from 'react';
+import { useMemo } from 'react';
 import Select from 'react-select';
 
 const ACTOR_TYPES = [

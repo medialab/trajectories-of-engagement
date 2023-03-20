@@ -392,7 +392,7 @@ export default function PhasesEditor({
     if (phases.length) {
       return phases[0].id;
     }
-  }, []);
+  }, [phases]);
 
   const [activePhaseId, setActivePhaseId] = useState(firstPhaseId);
   const [activePhaseIndex, setActivePhaseIndex] = useState(0);
@@ -413,7 +413,7 @@ export default function PhasesEditor({
         setActivePhaseIndex(phaseIndex);
       }
     }
-  }, [phases, activePhaseId]);
+  }, [phases, activePhaseId]); /* eslint react-hooks/exhaustive-deps : 0 */
 
   const onRemovePhasePrompt = phaseIndex => {
     const confirmed = window.confirm(translate('research_phase_remove_phase_confirmation', lang));
