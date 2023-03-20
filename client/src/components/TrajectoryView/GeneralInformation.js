@@ -58,7 +58,7 @@ export default function GeneralInformation({
                 </div>
                 <div className="input-group">
                   <label>
-                    description
+                    {translate('project_urls_description', lang)}
                   </label>
                   <input
                     placeholder="description"
@@ -79,7 +79,7 @@ export default function GeneralInformation({
       <QuestionGroup
         question={translate('social_concern_question', lang)}
       >
-        <Textarea defaultValue={trajectory.contact_email} {...register("contact_email")} />
+        <Textarea defaultValue={trajectory.contact_email_question} {...register("contact_email")} />
       </QuestionGroup>
     </div>
   )

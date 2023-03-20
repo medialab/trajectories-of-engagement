@@ -17,10 +17,11 @@ const ActorItem = ({
   actorTypesOptions,
   index,
   setValue,
+  isDisabled,
 }) => {
 
   return (
-    <div className={`item`}>
+    <div className={`item ${isDisabled ? 'is-disabled' : ''}`}>
       <div className="input-group">
         <label>
           {translate('actor_name', lang)}
@@ -85,6 +86,7 @@ export default function Actors({
   isSelectable,
   selectedIds,
   onSelectionChange,
+  actorIsDisabled,
 }) {
   const actors = getValues('actors');
 
@@ -119,7 +121,10 @@ export default function Actors({
           messageAddItem={translate('add_actor_button', lang)}
           isMinified={isMinified}
           lang={lang}
-          renderMinifiedHeader={(actor) => <span>{actor.name} [{actor.external ? 'e': 'i'}] {actor.type ? ` (${translate(`actors_typology_${actor.type}`, lang)})` : ''}</span>}
+          renderMinifiedHeader={(actor) => {
+            const isDisabled = typeof actorIsDisabled === 'function' ? actorIsDisabled(actor) : false;
+            return <span className={`item-content-minified ${isDisabled ? 'is-disabled' : ''}`}>{actor.name} [{actor.external ? 'e' : 'i'}] {actor.type ? ` (${translate(`actors_typology_${actor.type}`, lang)})` : ''}</span>
+          }}
           onNewItem={() => {
             const newItem = {
               id: genId(),
@@ -147,30 +152,35 @@ export default function Actors({
                   actorTypesOptions,
                   index,
                   setValue,
-                  
+                  isDisabled: typeof actorIsDisabled === 'function' ? actorIsDisabled(actor) : false,
                 }}
               />
             )
 
           }}
           {
-            ...{
-              isSelectable,
-              selectedItemsIds: selectedIds || [],
-              onSelectItem: (itemId, index) => {
-                if ((selectedIds || []).includes(itemId)) {
-                  onSelectionChange(
-                    (selectedIds || [])
+          ...{
+            isSelectable,
+            selectedItemsIds: selectedIds || [],
+            onSelectItem: (itemId, index) => {
+              const actor = actors[index];
+              const isDisabled = typeof actorIsDisabled === 'function' ? actorIsDisabled(actor) : false;
+              if (isDisabled) {
+                return;
+              }
+              if ((selectedIds || []).includes(itemId)) {
+                onSelectionChange(
+                  (selectedIds || [])
                     .filter(id => id !== itemId)
-                  );
-                } else {
-                  onSelectionChange([
-                    ...(selectedIds || []),
-                    itemId,
-                  ]);
-                }
+                );
+              } else {
+                onSelectionChange([
+                  ...(selectedIds || []),
+                  itemId,
+                ]);
               }
             }
+          }
           }
         />
       </QuestionGroup>

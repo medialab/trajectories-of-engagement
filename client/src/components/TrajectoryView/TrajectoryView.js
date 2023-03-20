@@ -147,7 +147,7 @@ export default function TrajectoryView() {
                   lang,
                 }}
               />
-              <Phases
+              {/* <Phases
                 {...{
                   trajectory: currentValues,
                   register,
@@ -156,7 +156,7 @@ export default function TrajectoryView() {
                   setValue,
                   lang,
                 }}
-              />
+              /> */}
               <PhasesEditor
                 {...{
                   trajectory: currentValues,

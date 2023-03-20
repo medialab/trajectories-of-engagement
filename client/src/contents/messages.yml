@@ -12,6 +12,9 @@ project_name_question:
 project_urls_question:
   fr: Quels sont les liens URLs du projet en question ?
   en: What are the URLs links of the project?
+project_urls_description:
+  fr: description du lien
+  en: link description
 social_concern_question:
   fr: Quel est la préoccupation sociale ou le problème public auquel la trajectoire d'implication entend répondre ?
   en: What is the social concern or the public problem that the engagement trajectory tries to address ?
@@ -82,6 +85,9 @@ add_phase_button:
 research_phase_name_question:
   fr: Comment nommeriez-vous cette phase de recherche ?
   en: How would you name this research phase ?
+research_phase_description_question:
+  fr: Veuillez présenter le but et les activités de cette phases en 2-3 lignes.
+  en: Please present the aim and activities of this phase in a couple of lines.
 research_phase_type_question:
   fr: "Comment définiriez-vous cette phase selon la typologie suivante :"
   en: "How would you define this phase according to the following typology:"
@@ -119,11 +125,11 @@ research_phase_details_none_selected:
   fr: Aucune phase n'est sélectionnée
   en: No phase selected
 research_phase_externals_detail_question:
-  fr: Quels sont les acteurs impliqués dans cette phase ?
+  fr: Quels sont les acteurs externes impliqués dans cette phase ?
   en: Who are the external actors involved in this phase ?
 research_phase_externals_detail_click_prompt:
-  fr: Sélectionner les acteurs impliqués
-  en: Select involved actors
+  fr: Sélectionner les acteurs externes impliqués
+  en: Select involved external actors
 research_phase_externals_agency_question:
   fr: Pourriez-vous décrire sous quelle forme et de quelle manière les acteurs externes ont la possibilité d'influencer, diriger et/ou contrôler les activités menées pendant cette phase ?
   en: Could you describe in what form and in what way the external actors have the possibility to influence, direct and/or control the activities carried out during this phase?
@@ -168,7 +174,12 @@ research_phase_resource_actors_prompt:
 research_phase_resource_unnamed_resource:
   fr: Ressource sans nom
   en: Unnamed resource
-
+research_phase_remove_phase_button:
+  fr: Supprimer la phase de recherche
+  en: Remove research phase
+research_phase_remove_phase_confirmation:
+  en: Are you sure you want to remove this research phase?
+  fr: Êtes-vous sûr.e de vouloir supprimer cette phase ?
 
 research_phase_materials_question:
   en: List the materials produced during this phase, specifying by who and for who they are produced

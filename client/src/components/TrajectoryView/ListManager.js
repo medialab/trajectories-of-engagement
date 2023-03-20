@@ -67,7 +67,7 @@ const ListItem = ({
                snapshot.isDragging,
                provided.draggableProps.style
              )}
-         className={`list-item minified ${isSelected ? 'is-selected': ''}`}>
+         className={`list-item is-minified ${isSelected ? 'is-selected': ''}`}>
            <div>
              {renderMinifiedHeader(itemData, itemIndex)}
            </div>

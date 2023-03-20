@@ -16,6 +16,11 @@
         color: white;
       }
     }
+
+    &.important {
+      width: 100%;
+      padding: 1rem;
+    }
   }
   input,
   textarea {
@@ -85,7 +90,12 @@
     }
 
     .list-item {
-      border: 1px solid black;
+        border: 1px solid black;
+
+      .item-content-minified.is-disabled {
+        opacity: .2;
+        cursor: not-allowed;
+      }
       box-sizing: border-box;
 
       .item {
@@ -109,7 +119,7 @@
           display: none;
         }
       }
-      &.minified {
+      &.is-minified {
         display: flex;
         flex-flow: row nowrap;
         justify-content: space-between;
@@ -245,8 +255,15 @@
     position: relative;
     display: flex;
     flex-flow: row nowrap;
+    max-height: calc(100vh - 5rem);
+    overflow-y: auto;
+    overflow-x: hidden;
     .Phases {
       max-width: 400px;
+      position: sticky;
+      top: 0rem;
+      height: calc(100vh - 5rem);
+
       .edit-btn-container {
         display: none;
       }
@@ -258,6 +275,7 @@
       padding-left: 1rem;
     }
     .PhaseEditor {
+      position: relative;
       h2 {
         margin-top: 0;
       }

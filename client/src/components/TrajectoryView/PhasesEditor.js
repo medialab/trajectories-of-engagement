@@ -20,6 +20,7 @@ const PhaseEditor = ({
   setValue,
   phaseIndex,
   isVisible,
+  onRemovePhasePrompt
 }) => {
   const phaseTypesOptions = useMemo(() =>
     PHASES_TYPES.map(id => ({
@@ -27,8 +28,11 @@ const PhaseEditor = ({
       label: translate(`research_phase_typology_${id}`, lang)
     }))
     , [lang]);
+  const handleRemovePhasePrompt = () => {
+    onRemovePhasePrompt(phaseIndex);
+  }
   return (
-    <div className={`PhaseEditor ${isVisible ? 'is-visible': ''}`}>
+    <div className={`PhaseEditor ${isVisible ? 'is-visible' : ''}`}>
       <h2>
         {phaseIndex + 1}. {phase.name}
       </h2>
@@ -39,6 +43,14 @@ const PhaseEditor = ({
         <input
           placeholder={translate('research_phase_name_question', lang)}
           {...register(`phases.${phaseIndex}.name`)}
+        />
+      </QuestionGroup>
+      <QuestionGroup
+        question={translate('research_phase_description_question', lang)}
+      >
+        <textarea
+          placeholder={translate('research_phase_description_question', lang)}
+          {...register(`phases.${phaseIndex}.description`)}
         />
       </QuestionGroup>
       <QuestionGroup
@@ -69,6 +81,7 @@ const PhaseEditor = ({
             setValue,
             isMinified: true,
             isSelectable: true,
+            actorIsDisabled: actor => !actor.external,
             selectedIds: phase.actors_ids || [],
             onSelectionChange: ids => {
               setValue(`phases.${phaseIndex}.actors_ids`, ids)
@@ -182,6 +195,7 @@ const PhaseEditor = ({
             setValue(`resources`, newItems);
           }}
           renderItem={(item, itemIndex) => {
+
             return (
               <div key={item.id} className="item">
                 <div className="input-group">
@@ -292,7 +306,7 @@ const PhaseEditor = ({
                     {...register(`phase.${phaseIndex}.materials.${itemIndex}.comments`)}
                   />
                 </div>
-                
+
                 <div className="input-group">
                   <label>
                     {translate('research_phase_material_from_actors_question', lang)}
@@ -333,11 +347,17 @@ const PhaseEditor = ({
                     }}
                   />
                 </div>
+
               </div>
             )
           }}
         />
       </QuestionGroup>
+      <div>
+        <button className="btn important" onClick={handleRemovePhasePrompt}>
+          {translate('research_phase_remove_phase_button', lang)} "{phase.name}"
+        </button>
+      </div>
     </div>
   )
 }
@@ -379,6 +399,27 @@ export default function PhasesEditor({
       }
     }
   }, [phases, activePhaseId]);
+
+  const onRemovePhasePrompt = phaseIndex => {
+    const confirmed = window.confirm(translate('research_phase_remove_phase_confirmation', lang));
+    if (confirmed) {
+      if (phaseIndex === activePhaseIndex) {
+        if (phases.length > 1) {
+          if (phaseIndex > 0) {
+            setActivePhaseIndex(phaseIndex - 1);
+            setActivePhaseId(phases[phaseIndex - 1]);
+          } else {
+            setActivePhaseIndex(phaseIndex + 1);
+            setActivePhaseId(phases[phaseIndex + 1]);
+          }
+        } else {
+          setActivePhaseIndex();
+          setActivePhaseId();
+        }
+      }
+
+    }
+  }
   return (
     <div className="PhasesEditor">
       <Phases
@@ -414,6 +455,7 @@ export default function PhasesEditor({
                   control,
                   setValue,
                   phaseIndex,
+                  onRemovePhasePrompt,
                 }}
               />
             )
