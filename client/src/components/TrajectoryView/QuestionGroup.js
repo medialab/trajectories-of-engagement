@@ -22,7 +22,7 @@ export default function QuestionGroup ({
   }
   return (
     <div className="QuestionGroup" id={actualId}>
-      <h4 className="question">{question} {showAnchor ? <span style={{cursor: 'pointer'}} onClick={onCopyLink} title={'copy question URL'}>🔗</span> : null}</h4>
+      <h4 className="question">{question} {showAnchor ? <span className="question-anchor" onClick={onCopyLink} title={'copy question URL'}>🔗</span> : null}</h4>
       {
         indications ?
         <div className="indications">

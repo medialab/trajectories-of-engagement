@@ -300,3 +300,14 @@ trajectory_refresh_error:
 trajectory_refresh_pending:
   fr: rafraîchissement de la trajectoire
   en: refreshing trajectory
+
+
+trajectory_update_success:
+  fr: trajectoire à jour, tous les changements sont sauvegardés sur le serveur
+  en: trajectory up to date, all changes are saved on the server
+trajectory_update_error:
+  en: error during trajectory saving, reload
+  fr: erreur durant la sauvegarde de la trajectoire, recharger
+trajectory_update_pending:
+  fr: sauvegarde
+  en: saving

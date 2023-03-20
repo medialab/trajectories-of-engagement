@@ -5,7 +5,7 @@ import { useEffect, useState, useMemo } from 'react';
 import { useForm } from "react-hook-form";
 import { toast } from 'react-toastify';
 
-import { translate } from "../../utils";
+import { translate, useDebounce, cumulativeOffset } from "../../utils";
 import { getTrajectory, updateTrajectory } from "../../client";
 import { useAuth } from "../../utils";
 import GeneralInformation from "./GeneralInformation";
@@ -16,25 +16,14 @@ import Actors from "./Actors";
 // import Phases from "./Phases";
 import PhasesEditor from "./PhasesEditor";
 
-const cumulativeOffset = function(element) {
-  let top = 0, left = 0;
-  do {
-      top += element.offsetTop  || 0;
-      left += element.offsetLeft || 0;
-      element = element.offsetParent;
-  } while(element);
 
-  return {
-      top: top,
-      left: left
-  };
-};
 
 export default function TrajectoryView() {
   const { id } = useParams();
   const [searchParams, setSearchParams] = useSearchParams();
   const { password } = useAuth();
   const [trajectory, setTrajectory] = useState(null);
+  const [savingStatus, setSavingStatus] = useState(null);
   const [loadingStatus, setLoadingStatus] = useState('pending');
   let lang = useMemo(() => {
     return searchParams && searchParams.get('lang');
@@ -43,7 +32,6 @@ export default function TrajectoryView() {
 
   useEffect(() => {
     const question = searchParams.get('question');
-    console.log('question', question);
     if (loadingStatus === 'success' && question) {
       let item;
       console.log('get item id', question);
@@ -53,8 +41,6 @@ export default function TrajectoryView() {
       }
       if (item) {
         const top = cumulativeOffset(item).top;
-        console.log('should scroll to ', item, item.scrollTop);
-        console.log('with cumulative offset : ', cumulativeOffset(item))
         window.scrollTo({
           top,
           behavior: 'smooth'
@@ -102,28 +88,47 @@ export default function TrajectoryView() {
   }
 
   const onSubmit = data => {
-    const pm = new Promise((resolve, reject) => {
-      const updatedTrajectory = {
-        ...trajectory,
-        ...data,
-        date_updated: new Date()
-      }
-      // console.log('updatedTrajectory', updatedTrajectory);
-      setLoadingStatus('pending');
-      updateTrajectory(updatedTrajectory, password)
-        .then(refreshTrajectory)
-        .then(resolve)
-        .catch((err) => {
-          console.error(err);
-          reject();
-          return refreshTrajectory();
-        })
+    setSavingStatus('pending');
+    const updatedTrajectory = {
+      ...trajectory,
+      ...data,
+      date_updated: new Date()
+    }
+    // console.log('updatedTrajectory', updatedTrajectory);
+    // setLoadingStatus('pending');
+    updateTrajectory(updatedTrajectory, password)
+    .then(() => {
+      setSavingStatus('success');
+      refreshTrajectory();
     })
-    toast.promise(pm, {
-      pending: 'Updating trajectory',
-      success: 'Success updating trajectory',
-      error: 'Error updating trajectory'
-    })
+      .catch((err) => {
+        console.error(err);
+        // reject();
+        setSavingStatus('error')
+        return refreshTrajectory();
+      })
+    // const pm = new Promise((resolve, reject) => {
+    //   const updatedTrajectory = {
+    //     ...trajectory,
+    //     ...data,
+    //     date_updated: new Date()
+    //   }
+    //   // console.log('updatedTrajectory', updatedTrajectory);
+    //   setLoadingStatus('pending');
+    //   updateTrajectory(updatedTrajectory, password)
+    //     .then(refreshTrajectory)
+    //     .then(resolve)
+    //     .catch((err) => {
+    //       console.error(err);
+    //       reject();
+    //       return refreshTrajectory();
+    //     })
+    // })
+    // toast.promise(pm, {
+    //   pending: translate('trajectory_update_pending', lang),
+    //   success: translate('trajectory_update_success', lang),
+    //   error: translate('trajectory_update_error', lang)
+    // })
   }
 
   const currentValues = watch();
@@ -131,12 +136,22 @@ export default function TrajectoryView() {
 
   useEffect(refreshTrajectory, [id, password]);/* eslint react-hooks/exhaustive-deps : 0 */
 
-  const handleDiscardChanges = (e) => {
-    e.preventDefault();
-    e.stopPropagation();
-    reset();
-    toast.success('Form reset successfully !')
-  }
+  const debouncedTrajectory = useDebounce(currentValues, 1000);
+  useEffect(() => {
+    const isChangedBis = JSON.stringify({ ...trajectory, ...currentValues }) !== JSON.stringify(trajectory);
+    if (isChangedBis) {
+      onSubmit(currentValues);
+    }
+
+  }, [debouncedTrajectory])
+
+  // const handleDiscardChanges = (e) => {
+  //   e.preventDefault();
+  //   e.stopPropagation();
+  //   reset();
+  //   toast.success('Form reset successfully !')
+  // }
+  console.log(savingStatus);
 
   return (
     <div className="TrajectoryView">
@@ -153,7 +168,7 @@ export default function TrajectoryView() {
         {/* <h2>{translate('site_title', lang)}</h2> */}
       </header>
       {
-        loadingStatus === 'pending' ?
+        loadingStatus === 'pending' && !trajectory ?
           <div className="temp"><div>{translate('loading', lang)}</div></div> : null
       }
       {
@@ -161,7 +176,7 @@ export default function TrajectoryView() {
           <div className="temp"><div>Error, reload</div></div> : null
       }
       {
-        loadingStatus === 'success' ?
+        trajectory && loadingStatus !== 'error' ?
           <main>
             <form onSubmit={handleSubmit(onSubmit)}>
               <GeneralInformation
@@ -225,7 +240,27 @@ export default function TrajectoryView() {
               }
               <footer>
                 <div className="left-group">
-                  <button disabled={!isChanged} type="submit">
+                  <div className="save-status-info">
+                  {
+                    savingStatus === 'pending' ?
+                      translate('trajectory_update_pending', lang)
+                    :
+                    null
+                  }
+                  {
+                    savingStatus === 'success' ?
+                      translate('trajectory_update_success', lang)
+                    :
+                    null
+                  }
+                  {
+                    savingStatus === 'error' ?
+                      translate('trajectory_update_error', lang)
+                    :
+                    null
+                  }
+                  </div>
+                  {/* <button disabled={!isChanged} type="submit">
                     {translate('save_changes', lang)}
                   </button>
                   <button
@@ -233,7 +268,7 @@ export default function TrajectoryView() {
                     disabled={!isChanged}
                   >
                     {translate('discard_changes', lang)}
-                  </button>
+                  </button> */}
                 </div>
                 <div className="right-group lang-btns-container">
                   <button disabled={lang === 'fr'} onClick={() => setSearchParams({ lang: 'fr' })}>fr</button>

@@ -45,6 +45,13 @@
       font-size: 1.3rem;
     }
     margin-bottom: 3rem;
+    .question-anchor {
+      cursor: pointer;
+      @media print {
+        display: none;
+      }
+  }
+    
   }
 
   .input-group {
@@ -189,6 +196,17 @@
     width: 100%;
     background: white;
     padding: 1rem;
+
+    .left-group {
+      display: flex;
+      align-items: center;
+    }
+
+    .save-status-info {
+      font-size: 1rem;
+      color: grey;
+      font-style: italic;
+    }
     
   }
   header {
@@ -270,7 +288,8 @@
     overflow-y: auto;
     overflow-x: hidden;
     .Phases {
-      max-width: 400px;
+      max-width: 300px;
+      min-width: 300px;
       position: sticky;
       top: 0rem;
       height: calc(100vh - 5rem);
