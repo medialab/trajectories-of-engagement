@@ -56,9 +56,9 @@ function connect(callback) {
     MONGO_CONFIG.password
   )}`;
 
-  const url = `mongodb://${auth}@${MONGO_CONFIG.host}:${MONGO_CONFIG.port}/admin`;
+  const url = `mongodb://${auth}@${MONGO_CONFIG.host}:${MONGO_CONFIG.port}/admin?directConnection=true`;
 
-  const client = new MongoClient(url, { useUnifiedTopology: true });
+  const client = new MongoClient(url, { useUnifiedTopology: true, directConnection: true });
 
   return client.connect(err => {
     if (err) return callback(err);
