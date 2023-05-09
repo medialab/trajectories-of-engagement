@@ -63,6 +63,12 @@ Ce projet est financé par l'[Institut Universitaire de France](https://www.iufr
 ### Participant·e·s (jusqu'à présent)
 
 * Muriel Amar - [À l’ombre des bibliothèques](https://books.openedition.org/pressesenssib/16389?lang=fr)
+* Jessica de Bideran - [Patrimoine d’auteurs en Nouvelle-Aquitaine](https://hal.science/hal-03561530)
+* Baptiste Buob - [RePIT - (Re)play it again: reenactments et non-reconstituables ](https://lesc-cnrs.fr/fr/projets/480-RePit)
 * Valentine Crosset - [Gouverner la parole en ligne](https://medialab.sciencespo.fr/activites/gouverner-la-parole-en-ligne/)
 * Pauline Gourlet - [Shaping AI](https://www.shapingai.org/)
+* Monica Heintz - [CINEMAF - Images animées, mémoires controversées](http://passes-present.eu/fr/images-animees-memoires-controversees-44293)
+* Sarah Montero - [Cov'Culture](https://www.u-bordeaux-montaigne.fr/fr/actualites/recherche/essai-de-construction-et-de-transformation-collective.html)
+* Marie Preston & Delphine Sicard - [Levain](https://marie-preston.com/fr/Projets/Levain__2021-2022)
 * Thomas Tari - [Zone Critique / Controverses en action](https://medialab.sciencespo.fr/activites/zone-critique-controverses-en-action/)
+* Alessia Smaniotto - [COESO - Collaborative Engagement on Societal Issues](https://coeso.hypotheses.org/)
