@@ -72,3 +72,4 @@ Ce projet est financé par l'[Institut Universitaire de France](https://www.iufr
 * Marie Preston & Delphine Sicard - [Levain](https://marie-preston.com/fr/Projets/Levain__2021-2022)
 * Thomas Tari - [Zone Critique / Controverses en action](https://medialab.sciencespo.fr/activites/zone-critique-controverses-en-action/)
 * Alessia Smaniotto - [COESO - Collaborative Engagement on Societal Issues](https://coeso.hypotheses.org/)
+* James Holston - [dengue chat](https://www.jamesholston.com/denguechat)
