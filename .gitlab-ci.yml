@@ -63,5 +63,4 @@ deploy:
   tags:
     - proxy
   only:
-   - staging
    - prod
