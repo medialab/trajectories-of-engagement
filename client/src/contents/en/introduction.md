@@ -2,23 +2,23 @@
 
 Join our network and share your experience on the forms and trajectories of public participation in your research process !
 
-### Save the date: Friday 15 September 2023, University of Paris Nanterre, Max Weber Building
+### Save the date! Friday 15 September 2023, University of Paris Nanterre, Max Weber Building
 
 This meeting will gather academic and non-academic actors who have built trajectories of engagement in their HSS research. During the day, we will discuss the material conditions of these trajectories and how to represent them visually.
 
-**Programm**
+**Program**
 
-9am&nbsp; &nbsp; &nbsp; &nbsp;**Welcome coffee**
+9am&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;&nbsp;**Welcome coffee**
 
 9.30am&nbsp;&nbsp; **Presentation of the trajectories and group work**
 
 12.30pm **Lunch break**
 
-2pm&nbsp;&nbsp; &nbsp; &nbsp;     **Presentation of the trajectories and group work**
+2pm&nbsp;&nbsp; &nbsp; &nbsp;&nbsp;     **Presentation of the trajectories and group work**
 
-5pm &nbsp; &nbsp; &nbsp;&nbsp;**Final discussion**
+5pm &nbsp; &nbsp; &nbsp;&nbsp;&nbsp;**Final discussion**
 
-6pm &nbsp; &nbsp; &nbsp;&nbsp;**Cocktail**
+6pm &nbsp; &nbsp; &nbsp;&nbsp;&nbsp;**Cocktail**
 
 **Presented trajectories**
 
@@ -60,7 +60,7 @@ This meeting will gather academic and non-academic actors who have built traject
 
 **Registration**
 
-The morning session is open to the public, subject to availability. Please register at <trajectories@liste.parisnanterre.fr>
+The day session is open to the public, subject to availability. Please register at <trajectories@liste.parisnanterre.fr>
 
 ### Abstract
 

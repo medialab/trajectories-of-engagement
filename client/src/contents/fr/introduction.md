@@ -2,23 +2,23 @@
 
 Rejoignez notre réseau et partagez votre expérience sur les formes et les trajectoires de la participation publique dans vos démarches de recherche !
 
-### Save the date: Vendredi 15 septembre 2023, Université Paris Nanterre, Bâtiment Max Weber
+### Save the date! Vendredi 15 septembre 2023, Université Paris Nanterre, Bâtiment Max Weber
 
 Cette rencontre réunira des acteurs académiques et non académiques qui ont développé des trajectoires d'implication dans leur recherche en SHS. Lors de cette journée, nous échangerons à propos des conditions matérielles de ces trajectoires et de la manière de les représenter visuellement.
 
 **Programme**
 
-9h&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**Accueil café**
+9h&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**Accueil café**
 
 9h30&nbsp;&nbsp;&nbsp;**Présentation de trajectoires et travaux de groupe**
 
 12h30 **Déjeuner**
 
-14h&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**Présentation de trajectoires et travaux de groupe**
+14h&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**Présentation de trajectoires et travaux de groupe**
 
-17h&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**Restitution & bilan**
+17h&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**Restitution & bilan**
 
-18h&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**Cocktail**
+18h&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**Cocktail**
 
 **Trajectoires présentées**
 
@@ -60,7 +60,7 @@ Cette rencontre réunira des acteurs académiques et non académiques qui ont d�
 
 **Inscription**
 
-La matinée est ouverte au public dans la limite des places disponibles. Inscriptions à <trajectories@liste.parisnanterre.fr>
+La journée est ouverte au public dans la limite des places disponibles. Inscriptions à <trajectories@liste.parisnanterre.fr>
 
 ### Résumé
 
