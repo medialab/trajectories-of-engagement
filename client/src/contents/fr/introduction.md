@@ -1,6 +1,66 @@
 ## Participation publique, productions matérielles et environnements numériques dans les sciences humaines et sociales 
 
-Rejoignez notre réseau et partagez votre expérience sur les formes et les trajectoires de la participation publique dans vos démarches de recherche ! 
+Rejoignez notre réseau et partagez votre expérience sur les formes et les trajectoires de la participation publique dans vos démarches de recherche !
+
+### Save the date: Vendredi 15 septembre 2023, Université Paris Nanterre, Bâtiment Max Weber
+
+Cette rencontre réunira des acteurs académiques et non académiques qui ont développé des trajectoires d'implication dans leur recherche en SHS. Lors de cette journée, nous échangerons à propos des conditions matérielles de ces trajectoires et de la manière de les représenter visuellement.
+
+**Programme**
+
+9h&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**Accueil café**
+
+9h30&nbsp;&nbsp;&nbsp;**Présentation de trajectoires et travaux de groupe**
+
+12h30 **Déjeuner**
+
+14h&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**Présentation de trajectoires et travaux de groupe**
+
+17h&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**Restitution & bilan**
+
+18h&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**Cocktail**
+
+**Trajectoires présentées**
+
+*CINEMAF*, Monica Heintz (Université Paris Nanterre)
+
+*Encyclopédie Atikamekw*, Nathalie Casemajor (INRS, Canada) et Thérèse Ottawa (Wikimédia Canada)
+
+*Minga Multimedia de Arte y Tecnología -- mMAT*, Fredy Vallejos et Alexander Duque Garcia (Universidad de las artes, Équateur)
+
+*Ateliers de situations interculturelles*, Anthony Grégoire (Université de Montréal, Canada) et un représentant de la Ville de Québec
+
+*Cov'Culture*, Sarah Montero (Université Bordeaux Montaigne) et Aurélie Chêne (Université Jean Monnet Saint-Etienne)
+
+*Le sommet qui cache la montagne*, Simon Dumas Primbault (EPFL, Suisse)
+
+*Visual Generics in the News*, Giorgia Aiello (University of Bologna, Italie)
+
+*Drones in civic protests*, Anat Ben David (Open University, Israel)
+
+*Sevran - controverses en action*, Thomas Tari (Sciences Po)
+
+*RePiT --- (Re)play it again,* Baptiste Buob (Université Paris Nanterre), Jérémy Demesmaeker et Laurence Maillot (Dodescaden)
+
+*Captothèque*, Laurence Allard (Université de Lille)
+
+*A l'ombre des bibliothèques*, Clément Bert-Erboul (Université Sorbonne Nouvelle) et Muriel Amar (Université Paris Nanterre)
+
+*Devenez modérateur, devenez modératrice*, Valentine Crosset et Axel Meunier (Sciences Po)
+
+*COESO*, Alessia Smaniotto (EHESS)
+
+*Shaping AI*, Pauline Gourlet (Sciences Po)
+
+*Identités numériques post mortem*, Fanny Georges (Université Sorbonne Nouvelle)
+
+*Dengue Chat*, James Holston (UC Berkeley, US)
+
+*Infrastructuring care*, Sol Martinez Demarco (Universität Tübingen, Allemagne)
+
+**Inscription**
+
+La matinée est ouverte au public dans la limite des places disponibles. Inscriptions à <trajectories@liste.parisnanterre.fr>
 
 ### Résumé
 

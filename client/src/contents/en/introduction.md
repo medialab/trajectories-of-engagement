@@ -2,6 +2,66 @@
 
 Join our network and share your experience on the forms and trajectories of public participation in your research process !
 
+### Save the date: Friday 15 September 2023, University of Paris Nanterre, Max Weber Building
+
+This meeting will gather academic and non-academic actors who have built trajectories of engagement in their HSS research. During the day, we will discuss the material conditions of these trajectories and how to represent them visually.
+
+**Programm**
+
+9am&nbsp; &nbsp; &nbsp; &nbsp;**Welcome coffee**
+
+9.30am&nbsp;&nbsp; **Presentation of the trajectories and group work**
+
+12.30pm **Lunch break**
+
+2pm&nbsp;&nbsp; &nbsp; &nbsp;     **Presentation of the trajectories and group work**
+
+5pm &nbsp; &nbsp; &nbsp;&nbsp;**Final discussion**
+
+6pm &nbsp; &nbsp; &nbsp;&nbsp;**Cocktail**
+
+**Presented trajectories**
+
+*CINEMAF*, Monica Heintz (Université Paris Nanterre)
+
+*Encyclopédie Atikamekw*, Nathalie Casemajor (INRS, Canada) et Thérèse Ottawa (Wikimédia Canada)
+
+*Minga Multimedia de Arte y Tecnología -- mMAT*, Fredy Vallejos et Alexander Duque Garcia (Universidad de las artes, Équateur)
+
+*Ateliers de situations interculturelles*, Anthony Grégoire (Université de Montréal, Canada) et un représentant de la Ville de Québec
+
+*Cov'Culture*, Sarah Montero (Université Bordeaux Montaigne) et Aurélie Chêne (Université Jean Monnet Saint-Etienne)
+
+*Le sommet qui cache la montagne*, Simon Dumas Primbault (EPFL, Suisse)
+
+*Visual Generics in the News*, Giorgia Aiello (University of Bologna, Italie)
+
+*Drones in civic protests*, Anat Ben David (Open University, Israel)
+
+*Sevran - controverses en action*, Thomas Tari (Sciences Po)
+
+*RePiT --- (Re)play it again,* Baptiste Buob (Université Paris Nanterre), Jérémy Demesmaeker et Laurence Maillot (Dodescaden)
+
+*Captothèque*, Laurence Allard (Université de Lille)
+
+*A l'ombre des bibliothèques*, Clément Bert-Erboul (Université Sorbonne Nouvelle) et Muriel Amar (Université Paris Nanterre)
+
+*Devenez modérateur, devenez modératrice*, Valentine Crosset et Axel Meunier (Sciences Po)
+
+*COESO*, Alessia Smaniotto (EHESS)
+
+*Shaping AI*, Pauline Gourlet (Sciences Po)
+
+*Identités numériques post mortem*, Fanny Georges (Université Sorbonne Nouvelle)
+
+*Dengue Chat*, James Holston (UC Berkeley, US)
+
+*Infrastructuring care*, Sol Martinez Demarco (Universität Tübingen, Allemagne)
+
+**Registration**
+
+The morning session is open to the public, subject to availability. Please register at <trajectories@liste.parisnanterre.fr>
+
 ### Abstract
 
 Trajectories of engagement refer to moments in the research process where external actors are involved and co-construct knowledge with the research team. These research paths involving an outside can take various forms of material production based on physical and/or digital environments . Often used in digital data-grounded labs or citizen science projects, trajectories of engagement are shaped in research which aims to address social concerns or public issues. 
