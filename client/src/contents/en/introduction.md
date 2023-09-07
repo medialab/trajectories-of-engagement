@@ -10,57 +10,68 @@ This meeting will gather academic and non-academic actors who have built traject
 
 9am&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;&nbsp;**Welcome coffee**
 
-9.30am&nbsp;&nbsp; **Presentation of the trajectories and group work**
+9.30am&nbsp;&nbsp; **Presentation of the trajectories**
+&nbsp;&nbsp;CINEMAF, Monica Heintz (Université Paris Nanterre)
+&nbsp;&nbsp;Controverses en action, Thomas Tari
+&nbsp;&nbsp;Cov'Culture, Sarah Montero (Université Bordeaux Montaigne) et 
+&nbsp;&nbsp;Aurélie Chêne Giraux (Université Jean Monnet Saint-Etienne)
+&nbsp;&nbsp;RePiT — (Re)play it again, Baptiste Buob (Université Paris Nanterre),
+&nbsp;&nbsp;Jérémy Demesmaeker et Laurence Maillot (Dodescaden)
+&nbsp;&nbsp;Minga Multimedia de Arte y Tecnología – mMAT, Fredy Vallejos et
+&nbsp;&nbsp;Alexander Duque Garcia (Universidad de las artes, Équateur)
 
-12.30pm **Lunch break**
+10.45am&nbsp;&nbsp;**Annotation of the maps - Café**
 
-2pm&nbsp;&nbsp; &nbsp; &nbsp;&nbsp;     **Presentation of the trajectories and group work**
+11.15am&nbsp;&nbsp;**Presentation of the trajectories**
+&nbsp;&nbsp;Devenez modérateurs, devenez modératrices, Valentine Crosset
+&nbsp;&nbsp;(Sciences Po)
+&nbsp;&nbsp;Extreme Citizen Science, Fabien Moustard (UCL)
+&nbsp;&nbsp;Ateliers de situation interculturelle, Anthony Grégoire (Université de
+&nbsp;&nbsp;Montréal), Manon Deschenes (Ville de Québec)
+&nbsp;&nbsp;Shaping AI, Pauline Gourlet (Sciences Po)
+&nbsp;&nbsp;A l'ombre des bibliothèques, Clément Bert-Erboul (Université
+&nbsp;&nbsp;Sorbonne Nouvelle)
 
-5pm &nbsp; &nbsp; &nbsp;&nbsp;&nbsp;**Final discussion**
+12.30am&nbsp;&nbsp;**Annotation of the maps**
 
-6pm &nbsp; &nbsp; &nbsp;&nbsp;&nbsp;**Cocktail**
+1pm &nbsp;&nbsp; &nbsp; &nbsp;&nbsp;**Lunch break**
 
-**Presented trajectories**
+2.15pm&nbsp;&nbsp; &nbsp; &nbsp;&nbsp;     **Presentation of the trajectories**
+&nbsp;&nbsp;Encyclopédie Atikamekw, Nathalie Casemajor (INRS, Canada)
+&nbsp;&nbsp;et Thérèse Ottawa (Wikimédia Canada)
+&nbsp;&nbsp;Le sommet qui cache la montagne, Simon Dumas Primbault (EPFL)
+&nbsp;&nbsp;Generic visuals in the news, Giorgia Aiello (University of Leeds and
+&nbsp;&nbsp;University of Bologna)
+&nbsp;&nbsp;COESO, Alessia Smaniotto (EHESS)
+&nbsp;&nbsp;Captotheque, Laurence Allard (Université de Lille)
 
-*CINEMAF*, Monica Heintz (Université Paris Nanterre)
+3.30pm&nbsp;&nbsp;**Annotation of the maps - Café**
 
-*Encyclopédie Atikamekw*, Nathalie Casemajor (INRS, Canada) et Thérèse Ottawa (Wikimédia Canada)
+4pm&nbsp;&nbsp; &nbsp; &nbsp;&nbsp;     **Presentation of the trajectories**
+&nbsp;&nbsp;Experimental audience metrics with the Royal Danish Theatre,
+&nbsp;&nbsp;Anders Kristian Munk (Aalborg University)
+&nbsp;&nbsp;Sur les éternités et la mort numérique, Fanny Georges (Université
+&nbsp;&nbsp;Sorbonne Nouvelle)
+&nbsp;&nbsp;Neurodiversités, Lucas Fritz (Université Paris Nanterre)
+&nbsp;&nbsp;Infrastructuring care, Sol Martinez Demarco (Universität Tübingen)
 
-*Minga Multimedia de Arte y Tecnología -- mMAT*, Fredy Vallejos et Alexander Duque Garcia (Universidad de las artes, Équateur)
+5.15pm&nbsp;&nbsp;**Annotation of the maps**
 
-*Ateliers de situations interculturelles*, Anthony Grégoire (Université de Montréal, Canada) et un représentant de la Ville de Québec
+5.45pm &nbsp; &nbsp; &nbsp;&nbsp;&nbsp;**Final discussion**
 
-*Cov'Culture*, Sarah Montero (Université Bordeaux Montaigne) et Aurélie Chêne (Université Jean Monnet Saint-Etienne)
+6.30pm &nbsp; &nbsp; &nbsp;&nbsp;&nbsp;**Cocktail**
 
-*Le sommet qui cache la montagne*, Simon Dumas Primbault (EPFL, Suisse)
-
-*Visual Generics in the News*, Giorgia Aiello (University of Bologna, Italie)
-
-*Drones in civic protests*, Anat Ben David (Open University, Israel)
-
-*Sevran - controverses en action*, Thomas Tari (Sciences Po)
-
-*RePiT --- (Re)play it again,* Baptiste Buob (Université Paris Nanterre), Jérémy Demesmaeker et Laurence Maillot (Dodescaden)
-
-*Captothèque*, Laurence Allard (Université de Lille)
-
-*A l'ombre des bibliothèques*, Clément Bert-Erboul (Université Sorbonne Nouvelle) et Muriel Amar (Université Paris Nanterre)
-
-*Devenez modérateur, devenez modératrice*, Valentine Crosset et Axel Meunier (Sciences Po)
-
-*COESO*, Alessia Smaniotto (EHESS)
-
-*Shaping AI*, Pauline Gourlet (Sciences Po)
-
-*Identités numériques post mortem*, Fanny Georges (Université Sorbonne Nouvelle)
-
-*Dengue Chat*, James Holston (UC Berkeley, US)
-
-*Infrastructuring care*, Sol Martinez Demarco (Universität Tübingen, Allemagne)
-
-**Registration**
+### Registration
 
 The day session is open to the public, subject to availability. Please register at <trajectories@liste.parisnanterre.fr>
+
+### Practical information
+
+Max Weber Building
+Campus University Paris Nanterre
+200 Av. République
+92001 Nanterre
+RER A : Nanterre Université
 
 ### Abstract
 
